@@ -1,0 +1,21 @@
+# OR gate
+
+j in one_x
+j in out_one
+m out 0
+j end_byte
+l one_x
+m 2 in
+m out 1
+j end_byte
+l out_one
+m out 1
+
+l end_byte
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0

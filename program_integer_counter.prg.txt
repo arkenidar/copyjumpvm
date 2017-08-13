@@ -1,0 +1,78 @@
+# integer COUNTER
+
+#n = 0
+#while True:
+#    print(n)
+#    if n == 255:
+#        break
+#    else:
+#        n += 1
+
+l loop
+m out 2
+m out 3
+m out 4
+m out 5
+m out 6
+m out 7
+m out 8
+m out 9
+j 2 increment next
+j 3 increment next
+j 4 increment next
+j 5 increment next
+j 6 increment next
+j 7 increment next
+j 8 increment next
+j 9 increment next
+j end
+l increment
+j 2 a0is0 a0is1
+l a0is0
+m 2 1
+j loop
+l a0is1
+m 2 0
+j 3 a1is0 a1is1
+l a1is0
+m 3 1
+j loop
+l a1is1
+m 3 0
+j 4 a2is0 a2is1
+l a2is0
+m 4 1
+j loop
+l a2is1
+m 4 0
+j 5 a3is0 a3is1
+l a3is0
+m 5 1
+j loop
+l a3is1
+m 5 0
+j 6 a4is0 a4is1
+l a4is0
+m 6 1
+j loop
+l a4is1
+m 6 0
+j 7 a5is0 a5is1
+l a5is0
+m 7 1
+j loop
+l a5is1
+m 7 0
+j 8 a6is0 a6is1
+l a6is0
+m 8 1
+j loop
+l a6is1
+m 8 0
+j 9 a7is0 a7is1
+l a7is0
+m 9 1
+j loop
+l a7is1
+m 9 0
+j loop

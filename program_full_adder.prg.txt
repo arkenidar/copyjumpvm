@@ -1,0 +1,65 @@
+j in full_adder_a_is_1
+# full_adder_a_is_0
+
+m 2 in # read b
+m 3 in # read cin
+
+# calculate a0_cout (cout for a=0)
+# COUT = and(B, CIN)
+
+j 2 a0_jump_cin
+l a0_cout_b_is_0
+m out 0
+j a0_calc_s
+
+l a0_jump_cin
+j 3 a0_cout_b_is_0 next
+m out 1
+
+# S = xor(B, CIN)
+l a0_calc_s
+j 2 a0_s_b_is_1
+j 3 a0_s_is_0 a0_s_is_1
+l a0_s_b_is_1
+j 3 a0_s_is_1 a0_s_is_0
+l a0_s_is_0
+m out 0
+j full_adder_end
+l a0_s_is_1
+m out 1
+j full_adder_end
+
+l full_adder_a_is_1
+m 2 in # read b
+m 3 in # read cin
+
+# calculate a1_cout (cout for a=1)
+#COUT = or(B, CIN)
+
+j 2 a1_jumpb0 a1_jumpb1 #b
+l a1_jumpb0
+j 3 a1_cout0 a1_cout1 #cin
+
+l a1_jumpb1
+j 3 a1_cout1 a1_cout1 #cin
+
+l a1_cout0
+m out 0
+j a1_calc_s
+
+l a1_cout1
+m out 1
+
+#S = xnor(B, CIN)
+l a1_calc_s
+j 2 a1_s_b_is_1
+j 3 a1_s_is_1 a1_s_is_0
+l a1_s_b_is_1
+j 3 a1_s_is_0 a1_s_is_1
+l a1_s_is_0
+m out 0
+j full_adder_end
+l a1_s_is_1
+m out 1
+
+l full_adder_end

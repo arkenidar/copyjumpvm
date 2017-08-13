@@ -1,0 +1,16 @@
+# NOT gate
+
+j in zero
+m out 1
+j end_byte
+l zero
+m out 0
+
+l end_byte
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
