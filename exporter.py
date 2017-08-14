@@ -30,17 +30,10 @@ def parse_jump_field(idx, value, line_labels):
     return value
 
 
-def copy_to_path_chooser(copy_from_address):
-    """ Build a "copy a bit to path chooser bit" instruction."""
-    return [parse_move_field(copy_from_address), 2, 1, 1]
-
-
 def parse_line(idx, line, line_labels):
     """ Parses line from a string-based format to a integer-based format. """
     copy_from, copy_to = 0, 0
     jump_case_true, jump_case_false = 1, 1
-
-    instruction_before_current = None
 
     line = line.split(' ')
 
@@ -53,15 +46,21 @@ def parse_line(idx, line, line_labels):
             destination = parse_jump_field(idx, line[1], line_labels)
             jump_case_true, jump_case_false = destination, destination
         elif len(line) == 3:
+            # copy line[1] to path_chooser
+            copy_from = parse_move_field(line[1])
+            copy_to = 2
+
             jump_case_true = parse_jump_field(idx, line[2], line_labels)
             jump_case_false = 1
-            instruction_before_current = copy_to_path_chooser(line[1])
         elif len(line) == 4:
+            # copy line[1] to path_chooser
+            copy_from = parse_move_field(line[1])
+            copy_to = 2
+
             jump_case_true = parse_jump_field(idx, line[3], line_labels)
             jump_case_false = parse_jump_field(idx, line[2], line_labels)
-            instruction_before_current = copy_to_path_chooser(line[1])
 
-    return [[copy_from, copy_to, jump_case_true, jump_case_false], instruction_before_current]
+    return [copy_from, copy_to, jump_case_true, jump_case_false]
 
 
 def parse(code):
@@ -115,22 +114,7 @@ def parsing(file_to_parse):
         parsed_lines += [parsed_line]
         # print(parsed_line, line)
 
-    # insertions
-    parsed_lines = insertions(parsed_lines)
-
     return parsed_lines
-
-
-def insertions(parsed_lines):
-    """ Fuses two instructions. """
-    parsed_lines_output = []
-    for line in parsed_lines:
-        if line[1] is not None:
-            line = [line[1][0], line[1][1], line[0][2], line[0][3]]
-        else:
-            line = line[0]
-        parsed_lines_output += [line]
-    return parsed_lines_output
 
 
 def output_to_file(parsed_lines, numeric_format_file):
