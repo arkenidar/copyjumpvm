@@ -1,2 +1,5 @@
-/dist/
-build/*
+dist
+build
+.idea
+nbproject
+test
