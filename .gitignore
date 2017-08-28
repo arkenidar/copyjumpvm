@@ -3,3 +3,6 @@ build
 .idea
 nbproject
 test
+.gradle/
+gradle/
+gradlew*
