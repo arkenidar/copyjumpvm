@@ -10,7 +10,7 @@ public class Main {
     
     public static void main(String[] args) throws FileNotFoundException {
         try{
-            Instructions instructions = new Instructions("not_gate.cj");
+            Instructions instructions = new Instructions("integer_counter.cj");
             VirtualMachine vm;
             vm = new VirtualMachine(instructions, new Memory(1024));
             vm.run();    

@@ -11,6 +11,7 @@ public class VirtualMachine {
     VirtualMachine(Instructions instructions, Memory memory) {
         this.instructions = instructions;
         this.memory = memory;
+        this.bitPrinter = new BitPrinter();
     }
 
     void relativeJump(Integer offset) {
@@ -20,7 +21,8 @@ public class VirtualMachine {
     boolean getPathChooser() {
         return memory.getPathChooser();
     }
-    
+
+    private BitPrinter bitPrinter;
     void setMemory(int index, boolean booleanValue){
         switch(index){
             case 0: break;
@@ -29,7 +31,8 @@ public class VirtualMachine {
                 memory.setPathChooser(booleanValue);
                 break;
             case 3:
-                System.out.println("out:"+(booleanValue?"1":"0"));
+                //System.out.println("out:"+(booleanValue?"1":"0"));
+                bitPrinter.printBit(booleanValue?1:0);
                 break;
             default:
                 memory.setMemoryValue(index, booleanValue);
