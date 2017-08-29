@@ -19,12 +19,15 @@ clean() {
 
 run() {
 	echo "running..."
-	/usr/bin/java -cp "$BIN" "$COM"
+	/usr/bin/java -cp "$BIN" "$COM" $@
 }
 
 main() {
 	case $1 in
-	build|clean|run) $1;;
+	build|clean|run)
+		cmd=$1
+		shift
+		$cmd $@;;
 	*) echo "Usage: $0 [build|clean|run]"; exit 1;;
 	esac
 }
