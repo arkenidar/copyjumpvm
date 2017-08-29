@@ -96,7 +96,11 @@ def parse(code):
             lines.append(line)
         elif operands[0] == 'l':
             line_labels[operands[1]] = len(lines)
+
+    # pre-defined line labels
+    line_labels['begin'] = 0
     line_labels['end'] = len(lines)
+
     return lines, line_labels
 
 
@@ -149,6 +153,7 @@ def main():
         ['program_integer_counter.prg.txt', 'integer_counter.cj'],
         ['program_integer_sum.prg.txt', 'integer_sum.cj'],
         ['program_iloop.prg.txt', 'iloop.cj'],
+        ['program_tloop.prg.txt', 'tloop.cj'],
     ]
     for mapping in mappings:
         # parsing

@@ -1,0 +1,14 @@
+# simple infinite loop
+
+m out 2
+
+j 2 zero one
+l one
+m 2 0
+j part2
+l zero
+m 2 1
+j part2
+
+l part2
+j 2 end begin

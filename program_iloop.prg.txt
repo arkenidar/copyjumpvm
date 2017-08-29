@@ -1,0 +1,4 @@
+# simple infinite loop
+
+l begin
+j begin

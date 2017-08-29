@@ -40,7 +40,7 @@ public class BitPrinter {
                 outputByte += pos * iterationBit;
                 pos *= 2;
             }
-            System.out.println("byte:" + outputByte);
+            System.out.println("byte: " + outputByte);
             outputSequence.clear();
         }
     }

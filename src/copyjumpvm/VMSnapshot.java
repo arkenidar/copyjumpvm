@@ -1,11 +1,13 @@
 package copyjumpvm;
 
 public class VMSnapshot {
-    private Memory memory;
+
     private int currentInstruction;
-    VMSnapshot(Memory memory, int currentInstruction){
-        this.memory = memory;
+    private Memory memory;
+
+    VMSnapshot(int currentInstruction, Memory memory){
         this.currentInstruction = currentInstruction;
+        this.memory = memory;
     }
 
     @Override
@@ -18,7 +20,17 @@ public class VMSnapshot {
 
         VMSnapshot vms = (VMSnapshot) o;
 
-        return vms.memory.equals(memory) &&
-                vms.currentInstruction == currentInstruction;
+        //System.out.print("vms.equals() used (mem:"+memory+", mem2:"+vms.memory+")");
+        //System.out.println("(ci:"+currentInstruction+", ci2:"+vms.currentInstruction+")");
+
+        return
+                vms.currentInstruction == currentInstruction &&
+                vms.memory.equals(memory);
+
+    }
+
+    @Override
+    public String toString(){
+        return currentInstruction+":"+String.valueOf(memory);
     }
 }

@@ -1,9 +1,6 @@
 package copyjumpvm;
 
-import java.util.HashSet;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class VirtualMachine {
     private int currentInstruction;
@@ -14,7 +11,7 @@ public class VirtualMachine {
         this.instructions = instructions;
         this.memory = memory;
         this.bitPrinter = new BitPrinter();
-        snapshotSet = new HashSet<VMSnapshot>();
+        snapshotSet = new LinkedHashSet<VMSnapshot>();
     }
 
     void relativeJump(Integer offset) {
@@ -34,7 +31,7 @@ public class VirtualMachine {
                 memory.setPathChooser(booleanValue);
                 break;
             case 3:
-                System.out.println("out:"+(booleanValue?"1":"0"));
+                System.out.println("out: "+(booleanValue?"1":"0"));
                 bitPrinter.printBit(booleanValue?1:0);
                 break;
             default:
@@ -58,7 +55,7 @@ public class VirtualMachine {
             case 3:
                 int intValue = -1;
                 do{
-                    System.out.print("in:");
+                    System.out.print("in: ");
                     Scanner scanner = new Scanner(System.in);
                     try{
                         intValue = scanner.nextInt();
@@ -81,23 +78,27 @@ public class VirtualMachine {
     void run() {
         while(true){
             try{
-                Boolean sameAlreadyThere = save(memory, currentInstruction);
+                boolean sameAlreadyThere = save(memory, currentInstruction);
                 if(sameAlreadyThere) {
-                    System.out.println("status:loop detected");
-                    break;
+                    System.out.println("status: loop detected");
+                    break; // you can also continue, don't break
                 }
                 CopyJumpInstruction instruction = instructions.instructions.get(currentInstruction);
                 instruction.executeInstruction(this);
             }catch(IndexOutOfBoundsException e){
-                System.out.println("status:terminated");
+                System.out.println("status: terminated");
                 break;
             }
         }
     }
 
-    private Set<VMSnapshot> snapshotSet;
+    private LinkedHashSet<VMSnapshot> snapshotSet;
     private Boolean save(Memory memory, int currentInstruction) {
-        return ! snapshotSet.add(new VMSnapshot(memory,currentInstruction));
+        //System.out.println("saving: "+currentInstruction+", "+memory);
+        VMSnapshot snapshot = new VMSnapshot(currentInstruction, (Memory) memory.clone());
+        boolean alreadyContained = !snapshotSet.add(snapshot);
+        //System.out.println(snapshotSet);
+        return alreadyContained;
     }
 
 }
