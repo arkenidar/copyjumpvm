@@ -94,8 +94,8 @@ public class VirtualMachine {
 
     private LinkedHashSet<VMSnapshot> snapshotSet;
     private Boolean save(Memory memory, int currentInstruction) {
-        //System.out.println("saving: "+currentInstruction+", "+memory);
         VMSnapshot snapshot = new VMSnapshot(currentInstruction, (Memory) memory.clone());
+        System.out.println("saving: "+snapshot);
         boolean alreadyContained = !snapshotSet.add(snapshot);
         //System.out.println(snapshotSet);
         return alreadyContained;

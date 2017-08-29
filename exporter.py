@@ -154,6 +154,7 @@ def main():
         ['program_integer_sum.prg.txt', 'integer_sum.cj'],
         ['program_iloop.prg.txt', 'iloop.cj'],
         ['program_tloop.prg.txt', 'tloop.cj'],
+        ['program_conditional_exit.prg.txt', 'conditional_exit.cj'],
     ]
     for mapping in mappings:
         # parsing
