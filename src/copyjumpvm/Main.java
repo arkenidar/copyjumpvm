@@ -29,6 +29,8 @@ public class Main {
         }catch(FileNotFoundException e){
             System.out.println("FileNotFoundException ... Working Directory = " +
               System.getProperty("user.dir"));
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Pass a *.cj file as the first parameter of this program.");
         }
     }
     
