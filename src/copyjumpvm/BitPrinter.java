@@ -25,23 +25,23 @@ class BitPrinter: # pylint: disable=too-few-public-methods
             self.out_sequence = []
 */
 public class BitPrinter {
-    private ArrayList<Integer> outSequence;
+    private ArrayList<Integer> outputSequence;
     BitPrinter(){
-        outSequence = new ArrayList<Integer>();
+        outputSequence = new ArrayList<Integer>();
     }
     void printBit(int outputBit){
         assert outputBit==0 || outputBit==1;
-        outSequence.add(outputBit);
+        outputSequence.add(outputBit);
         int outputByte;
-        if(outSequence.size()==8) {
+        if(outputSequence.size()==8) {
             outputByte = 0;
             int pos = 1;
-            for (int iterBit : outSequence) {
-                outputByte += pos * iterBit;
+            for (int iterationBit : outputSequence) {
+                outputByte += pos * iterationBit;
                 pos *= 2;
             }
             System.out.println("byte:" + outputByte);
-            outSequence.clear();
+            outputSequence.clear();
         }
     }
 }

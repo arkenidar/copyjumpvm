@@ -148,13 +148,14 @@ def main():
         ['program_full_adder.prg.txt', 'full_adder.cj'],
         ['program_integer_counter.prg.txt', 'integer_counter.cj'],
         ['program_integer_sum.prg.txt', 'integer_sum.cj'],
+        ['program_iloop.prg.txt', 'iloop.cj'],
     ]
     for mapping in mappings:
         # parsing
         parsed_lines = parsing(mapping[0])
 
         # output to file
-        output_to_file(parsed_lines, '/home/mint/NetBeansProjects/copyjumpvm/'+mapping[1])
+        output_to_file(parsed_lines, '/home/user/src/copyjumpvm/'+mapping[1]) # change path accordingly
 
 if __name__ == '__main__':
     main()

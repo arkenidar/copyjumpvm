@@ -10,12 +10,12 @@ public class Main {
     
     public static void main(String[] args) throws FileNotFoundException {
         try{
-            Instructions instructions = new Instructions("integer_counter.cj");
+            Instructions instructions = new Instructions("iloop.cj");
             VirtualMachine vm;
             vm = new VirtualMachine(instructions, new Memory(1024));
             vm.run();    
         }catch(FileNotFoundException e){
-            System.out.println("Working Directory = " +
+            System.out.println("FileNotFoundException ... Working Directory = " +
               System.getProperty("user.dir"));
         }
     }
