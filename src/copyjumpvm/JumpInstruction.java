@@ -13,5 +13,4 @@ public class JumpInstruction {
     public void executeInstruction(VirtualMachine vm) {
         vm.relativeJump(vm.getPathChooser()?caseTrue:caseFalse);
     }
-
 }

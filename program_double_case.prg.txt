@@ -1,0 +1,7 @@
+# double case: embeds both termination and infinite looping
+
+j in exit next
+
+l up
+m 2 in
+j up

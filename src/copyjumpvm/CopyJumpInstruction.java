@@ -13,7 +13,7 @@ public class CopyJumpInstruction {
     /**
      * Executes an instruction.
      */
-    public void executeInstruction(VirtualMachine vm){
+    public void executeInstruction(VirtualMachine vm) {
         copy.executeInstruction(vm);
         jump.executeInstruction(vm);
     }

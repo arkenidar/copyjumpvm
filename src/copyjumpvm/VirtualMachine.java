@@ -78,12 +78,14 @@ public class VirtualMachine {
     void run() {
         while(true){
             try{
-                boolean sameAlreadyThere = save(memory, currentInstruction);
-                if(sameAlreadyThere) {
-                    System.out.println("status: loop detected");
-                    break; // you can also continue, don't break
-                }
                 CopyJumpInstruction instruction = instructions.instructions.get(currentInstruction);
+
+                boolean sameAlreadyThere = save(memory, currentInstruction);
+                if (sameAlreadyThere) {
+                    System.out.println("status: loop detected");
+                    //break; // you can also continue, don't break
+                }
+
                 instruction.executeInstruction(this);
             }catch(IndexOutOfBoundsException e){
                 System.out.println("status: terminated");

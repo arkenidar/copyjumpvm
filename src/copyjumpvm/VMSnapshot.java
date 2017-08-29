@@ -37,6 +37,6 @@ public class VMSnapshot {
 
     @Override
     public String toString(){
-        return currentInstruction+":"+String.valueOf(memory);
+        return currentInstruction+"|"+String.valueOf(memory);
     }
 }

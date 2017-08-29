@@ -1,0 +1,4 @@
+# conditional exit
+
+m out 1
+j in begin end
