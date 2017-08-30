@@ -1,7 +1,7 @@
 # double case: embeds both termination and infinite looping
 
-j in exit next
+j 1 exit next  # try with in as path selector
 
 l up
-m 2 in
+m 2 0  # try with in as path selector as origin
 j up

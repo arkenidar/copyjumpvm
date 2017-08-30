@@ -156,6 +156,7 @@ def main():
         ['program_tloop.prg.txt', 'tloop.cj'],
         ['program_conditional_exit.prg.txt', 'conditional_exit.cj'],
         ['program_double_case.prg.txt', 'double_case.cj'],
+        ['program_non_interactive.prg.txt', 'non_interactive.cj'],
     ]
     for mapping in mappings:
         # parsing

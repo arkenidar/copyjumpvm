@@ -1,0 +1,94 @@
+# initialization
+
+m 2 0 # index.0
+m 3 0 # index.1
+
+m 4 1 # inputs[0]
+m 5 1 # inputs[1]
+m 6 0 # inputs[2]
+m 7 1 # inputs[3]
+
+# main
+l repeat_main
+
+# read x. x=inputs[index]. array access by index and assignment
+
+# bifurcate on index.0
+j 2 index0_is_0 index0_is_1
+
+# index.0 is 0
+l index0_is_0
+j 3 index0_is_0_and_index1_is_0 index0_is_0_and_index1_is_1
+
+l index0_is_0_and_index1_is_0
+m 8 4 # x = inputs[0]
+j got_input
+
+l index0_is_0_and_index1_is_1
+m 8 6 # x = inputs[2]
+j got_input
+
+# index.0 is 1
+l index0_is_1
+
+j 3 index0_is_1_and_index1_is_0 index0_is_1_and_index1_is_1
+
+l index0_is_1_and_index1_is_0
+m 8 5 # x = inputs[1]
+j got_input
+
+l index0_is_1_and_index1_is_1
+m 8 7 # x = inputs[3]
+j got_input
+
+# x has been read
+l got_input
+
+##m 8 1 # set a fixed x variable for testing an input to NOT gate
+
+# NOT gate (ouputs NOT(x))
+j 8 zero one
+
+l zero
+m out 1
+j after
+
+l one
+m out 0
+j after
+
+l after
+
+# repeat for next input if there is any (limited number of inputs)
+
+j 2 post_index0_is_0 post_index0_is_1
+
+l post_index0_is_0
+j 3 post_index0_is_0_and_index1_is_0 post_index0_is_0_and_index1_is_1
+
+l post_index0_is_1
+j 3 post_index0_is_1_and_index1_is_0 post_index0_is_1_and_index1_is_1
+
+# labels and "answers to situations"
+
+# 00
+l post_index0_is_0_and_index1_is_0
+m 2 1
+m 3 0
+j repeat_main
+
+# 01
+l post_index0_is_1_and_index1_is_0
+m 2 0
+m 3 1
+j repeat_main
+
+# 10
+l post_index0_is_0_and_index1_is_1
+m 2 1
+m 3 1
+j repeat_main
+
+# 11
+l post_index0_is_1_and_index1_is_1
+j end
