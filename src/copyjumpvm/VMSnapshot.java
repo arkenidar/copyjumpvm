@@ -32,7 +32,8 @@ public class VMSnapshot {
     @Override
     public int hashCode() {
         //System.out.println("vms.hashCode() used");
-        return memory.hashCode();
+        //return memory.hashCode();
+        return currentInstruction;
     }
 
     @Override

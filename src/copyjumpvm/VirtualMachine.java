@@ -82,7 +82,9 @@ public class VirtualMachine {
 
                 boolean sameAlreadyThere = save(memory, currentInstruction);
                 if (sameAlreadyThere) {
-                    System.out.println("status: loop detected");
+                    System.out.println("status: infinite loop (iloop) detected.");
+                    System.out.println("note: infinite loops detection works properly with programs that do not take input with 'in' port.");
+                    System.out.println("note: you can convert such programs to programs that 'embed input'(then they are running taking input from the input storage: in this way they take input without asking the user).");
                     break; // you can also continue, don't break
                 }
 
