@@ -83,7 +83,7 @@ public class VirtualMachine {
                 boolean sameAlreadyThere = save(memory, currentInstruction);
                 if (sameAlreadyThere) {
                     System.out.println("status: loop detected");
-                    //break; // you can also continue, don't break
+                    break; // you can also continue, don't break
                 }
 
                 instruction.executeInstruction(this);
@@ -97,7 +97,7 @@ public class VirtualMachine {
     private LinkedHashSet<VMSnapshot> snapshotSet;
     private Boolean save(Memory memory, int currentInstruction) {
         VMSnapshot snapshot = new VMSnapshot(currentInstruction, (Memory) memory.clone());
-        System.out.println("saving: "+snapshot);
+        //System.out.println("saving: "+snapshot);
         boolean alreadyContained = !snapshotSet.add(snapshot);
         //System.out.println(snapshotSet);
         return alreadyContained;

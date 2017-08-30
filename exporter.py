@@ -157,6 +157,7 @@ def main():
         ['program_conditional_exit.prg.txt', 'conditional_exit.cj'],
         ['program_double_case.prg.txt', 'double_case.cj'],
         ['program_non_interactive.prg.txt', 'non_interactive.cj'],
+        ['program_ni_double_case.prg.txt', 'ni_double_case.cj'],
     ]
     for mapping in mappings:
         # parsing

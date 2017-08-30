@@ -1,0 +1,109 @@
+# initialization
+
+m 2 0 # index.0
+m 3 0 # index.1
+
+# with inputs [0,0,0,0] the program repeats, avoiding the iloop section,
+# ... then when there is no more input it terminates (so the overall results is it halts)
+
+# with inputs [0,0,1,0] the program repeats 2 times, and the secon time enters the iloop section,
+# ... thereby ouputting "status: loop detected"
+
+m 4 0 # inputs[0]
+m 5 0 # inputs[1]
+m 6 1 # inputs[2]
+m 7 0 # inputs[3]
+
+# main
+l repeat_main
+
+# begin program
+# program : double case (halting or ilooping)
+
+
+# begin "next input"
+# repeat for next input if there is any (limited number of inputs)
+
+j 2 post_index0_is_0 post_index0_is_1
+
+l post_index0_is_0
+j 3 post_index0_is_0_and_index1_is_0 post_index0_is_0_and_index1_is_1
+
+l post_index0_is_1
+j 3 post_index0_is_1_and_index1_is_0 post_index0_is_1_and_index1_is_1
+
+# labels and "answers to situations"
+
+# 00
+l post_index0_is_0_and_index1_is_0
+m 2 1
+m 3 0
+j input_ready1
+
+# 01
+l post_index0_is_1_and_index1_is_0
+m 2 0
+m 3 1
+j input_ready1
+
+# 10
+l post_index0_is_0_and_index1_is_1
+m 2 1
+m 3 1
+j input_ready1
+
+# 11
+l post_index0_is_1_and_index1_is_1
+j end
+#end "next input"
+
+l input_ready1
+
+# begin read
+# read x. x=inputs[index]. array access by index and assignment
+
+# bifurcate on index.0
+j 2 index0_is_0 index0_is_1
+
+# index.0 is 0
+l index0_is_0
+j 3 index0_is_0_and_index1_is_0 index0_is_0_and_index1_is_1
+
+l index0_is_0_and_index1_is_0
+m 8 4 # x = inputs[0]
+j got_input
+
+l index0_is_0_and_index1_is_1
+m 8 6 # x = inputs[2]
+j got_input
+
+# index.0 is 1
+l index0_is_1
+
+j 3 index0_is_1_and_index1_is_0 index0_is_1_and_index1_is_1
+
+l index0_is_1_and_index1_is_0
+m 8 5 # x = inputs[1]
+j got_input
+
+l index0_is_1_and_index1_is_1
+m 8 7 # x = inputs[3]
+j got_input
+
+# x has been read
+l got_input
+
+##m 8 1 # set a fixed x variable
+# end read
+
+#output 1 here
+m out 1
+j 8 repeat_main next  # try with in as path selector (used variable x)
+
+l up
+#m 2 8  # try with in as path selector as origin (used variable x)
+#output 0 here
+m out 0
+j up
+
+# end program
