@@ -98,10 +98,10 @@ l got_input
 
 #output 1 here
 m out 1
-j 8 repeat_main next  # try with in as path selector (used variable x)
+j 8 repeat_main next  # try with 'in' as path selector (used variable x)
 
 l up
-#m 2 8  # try with in as path selector as origin (used variable x)
+#m 2 8  # try with 'in' as path selector as origin (used variable x)
 #output 0 here
 m out 0
 j up

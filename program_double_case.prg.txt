@@ -1,7 +1,16 @@
 # double case: embeds both termination and infinite looping
+# loop detection works well even if we read from stdin ('in') ...
+# ... and not from fixed input storage.
 
-j 1 exit next  # try with in as path selector
+#output 1 here
+m out 1
+
+j in exit next  # try with 'in' as path selector
 
 l up
-m 2 0  # try with in as path selector as origin
+#m 2 0  # try with 'in' as path selector as origin
+
+#output 0 here
+m out 0
+
 j up
