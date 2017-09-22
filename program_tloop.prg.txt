@@ -1,4 +1,4 @@
-# simple infinite loop
+# simple terminating loop (tloop)
 
 m out 2
 
