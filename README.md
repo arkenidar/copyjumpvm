@@ -1,6 +1,8 @@
 # copyjumpvm
 "copy+jump only" virtual machine
 
+The "vm_programs" directory contains EXAMPLE programs in source format, a compiler, compiled programs, translator to copyjump.js format, translated programs
+
 you can enjoy exploring this work of mine. PS: maybe I have "accidentally" found a way to redefine the Alan Turing's "halting problem". wouldn't it be cool?
 
 ```shell
