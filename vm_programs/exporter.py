@@ -164,7 +164,8 @@ def main():
         parsed_lines = parsing(mapping[0])
 
         # output to file
-        output_to_file(parsed_lines, '/home/user/src/copyjumpvm/'+mapping[1]) # change path accordingly
+        output_to_file(parsed_lines, mapping[1]) # change path accordingly
 
 if __name__ == '__main__':
+    output_to_file(parsing('program_integer_sum_5.prg.txt'),'program_integer_sum_5.cj')
     main()
