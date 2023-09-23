@@ -1,4 +1,4 @@
-fp=open('integer_sum.cj')
+fp=open('program_integer_sum_5.cj')
 i=0
 for line in fp:
     line=list(map(int, line.split(' ')[:4]))
