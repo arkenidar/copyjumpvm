@@ -1,0 +1,27 @@
+# XOR gate
+# reads 2 input bits ('in'), outputs 1 result bit + 7 padding zeros (= 1 byte)
+# truth table: 0^0=0, 0^1=1, 1^0=1, 1^1=0
+# (no embedded constants)
+
+j in first_is_1
+# first input is 0
+j in second_is_1
+m out 0
+j end_byte
+l second_is_1
+m out 1
+j end_byte
+l first_is_1
+j in second_is_1_first1
+m out 1
+j end_byte
+l second_is_1_first1
+m out 0
+l end_byte
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
+m out 0
