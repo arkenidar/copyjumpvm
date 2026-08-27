@@ -1,0 +1,719 @@
+# xorshift32 - one step (generate ONE number from the seed)
+# runs under vm_programs/CopyJumpMachine.py
+# SEED = 0x12345678
+
+# --- init: load 32-bit SEED (0x12345678) into state x[0..31], LSB-first ---
+m 10 0   # x[0] = seed bit 0 = 0
+m 11 0   # x[1] = seed bit 1 = 0
+m 12 0   # x[2] = seed bit 2 = 0
+m 13 1   # x[3] = seed bit 3 = 1
+m 14 1   # x[4] = seed bit 4 = 1
+m 15 1   # x[5] = seed bit 5 = 1
+m 16 1   # x[6] = seed bit 6 = 1
+m 17 0   # x[7] = seed bit 7 = 0
+m 18 0   # x[8] = seed bit 8 = 0
+m 19 1   # x[9] = seed bit 9 = 1
+m 20 1   # x[10] = seed bit 10 = 1
+m 21 0   # x[11] = seed bit 11 = 0
+m 22 1   # x[12] = seed bit 12 = 1
+m 23 0   # x[13] = seed bit 13 = 0
+m 24 1   # x[14] = seed bit 14 = 1
+m 25 0   # x[15] = seed bit 15 = 0
+m 26 0   # x[16] = seed bit 16 = 0
+m 27 0   # x[17] = seed bit 17 = 0
+m 28 1   # x[18] = seed bit 18 = 1
+m 29 0   # x[19] = seed bit 19 = 0
+m 30 1   # x[20] = seed bit 20 = 1
+m 31 1   # x[21] = seed bit 21 = 1
+m 32 0   # x[22] = seed bit 22 = 0
+m 33 0   # x[23] = seed bit 23 = 0
+m 34 0   # x[24] = seed bit 24 = 0
+m 35 1   # x[25] = seed bit 25 = 1
+m 36 0   # x[26] = seed bit 26 = 0
+m 37 0   # x[27] = seed bit 27 = 0
+m 38 1   # x[28] = seed bit 28 = 1
+m 39 0   # x[29] = seed bit 29 = 0
+m 40 0   # x[30] = seed bit 30 = 0
+m 41 0   # x[31] = seed bit 31 = 0
+# --- xorshift32 step ---
+# y1 = x ^ (x << 13)
+m 50 10   # y1[0] = x[0] (shifted-out -> 0)
+m 51 11   # y1[1] = x[1] (shifted-out -> 0)
+m 52 12   # y1[2] = x[2] (shifted-out -> 0)
+m 53 13   # y1[3] = x[3] (shifted-out -> 0)
+m 54 14   # y1[4] = x[4] (shifted-out -> 0)
+m 55 15   # y1[5] = x[5] (shifted-out -> 0)
+m 56 16   # y1[6] = x[6] (shifted-out -> 0)
+m 57 17   # y1[7] = x[7] (shifted-out -> 0)
+m 58 18   # y1[8] = x[8] (shifted-out -> 0)
+m 59 19   # y1[9] = x[9] (shifted-out -> 0)
+m 60 20   # y1[10] = x[10] (shifted-out -> 0)
+m 61 21   # y1[11] = x[11] (shifted-out -> 0)
+m 62 22   # y1[12] = x[12] (shifted-out -> 0)
+j 23 a1__y1_13
+m 63 10
+j done__y1_13
+l a1__y1_13
+j 10 a1b1__y1_13
+m 63 1
+j done__y1_13
+l a1b1__y1_13
+m 63 0
+l done__y1_13
+j 24 a1__y1_14
+m 64 11
+j done__y1_14
+l a1__y1_14
+j 11 a1b1__y1_14
+m 64 1
+j done__y1_14
+l a1b1__y1_14
+m 64 0
+l done__y1_14
+j 25 a1__y1_15
+m 65 12
+j done__y1_15
+l a1__y1_15
+j 12 a1b1__y1_15
+m 65 1
+j done__y1_15
+l a1b1__y1_15
+m 65 0
+l done__y1_15
+j 26 a1__y1_16
+m 66 13
+j done__y1_16
+l a1__y1_16
+j 13 a1b1__y1_16
+m 66 1
+j done__y1_16
+l a1b1__y1_16
+m 66 0
+l done__y1_16
+j 27 a1__y1_17
+m 67 14
+j done__y1_17
+l a1__y1_17
+j 14 a1b1__y1_17
+m 67 1
+j done__y1_17
+l a1b1__y1_17
+m 67 0
+l done__y1_17
+j 28 a1__y1_18
+m 68 15
+j done__y1_18
+l a1__y1_18
+j 15 a1b1__y1_18
+m 68 1
+j done__y1_18
+l a1b1__y1_18
+m 68 0
+l done__y1_18
+j 29 a1__y1_19
+m 69 16
+j done__y1_19
+l a1__y1_19
+j 16 a1b1__y1_19
+m 69 1
+j done__y1_19
+l a1b1__y1_19
+m 69 0
+l done__y1_19
+j 30 a1__y1_20
+m 70 17
+j done__y1_20
+l a1__y1_20
+j 17 a1b1__y1_20
+m 70 1
+j done__y1_20
+l a1b1__y1_20
+m 70 0
+l done__y1_20
+j 31 a1__y1_21
+m 71 18
+j done__y1_21
+l a1__y1_21
+j 18 a1b1__y1_21
+m 71 1
+j done__y1_21
+l a1b1__y1_21
+m 71 0
+l done__y1_21
+j 32 a1__y1_22
+m 72 19
+j done__y1_22
+l a1__y1_22
+j 19 a1b1__y1_22
+m 72 1
+j done__y1_22
+l a1b1__y1_22
+m 72 0
+l done__y1_22
+j 33 a1__y1_23
+m 73 20
+j done__y1_23
+l a1__y1_23
+j 20 a1b1__y1_23
+m 73 1
+j done__y1_23
+l a1b1__y1_23
+m 73 0
+l done__y1_23
+j 34 a1__y1_24
+m 74 21
+j done__y1_24
+l a1__y1_24
+j 21 a1b1__y1_24
+m 74 1
+j done__y1_24
+l a1b1__y1_24
+m 74 0
+l done__y1_24
+j 35 a1__y1_25
+m 75 22
+j done__y1_25
+l a1__y1_25
+j 22 a1b1__y1_25
+m 75 1
+j done__y1_25
+l a1b1__y1_25
+m 75 0
+l done__y1_25
+j 36 a1__y1_26
+m 76 23
+j done__y1_26
+l a1__y1_26
+j 23 a1b1__y1_26
+m 76 1
+j done__y1_26
+l a1b1__y1_26
+m 76 0
+l done__y1_26
+j 37 a1__y1_27
+m 77 24
+j done__y1_27
+l a1__y1_27
+j 24 a1b1__y1_27
+m 77 1
+j done__y1_27
+l a1b1__y1_27
+m 77 0
+l done__y1_27
+j 38 a1__y1_28
+m 78 25
+j done__y1_28
+l a1__y1_28
+j 25 a1b1__y1_28
+m 78 1
+j done__y1_28
+l a1b1__y1_28
+m 78 0
+l done__y1_28
+j 39 a1__y1_29
+m 79 26
+j done__y1_29
+l a1__y1_29
+j 26 a1b1__y1_29
+m 79 1
+j done__y1_29
+l a1b1__y1_29
+m 79 0
+l done__y1_29
+j 40 a1__y1_30
+m 80 27
+j done__y1_30
+l a1__y1_30
+j 27 a1b1__y1_30
+m 80 1
+j done__y1_30
+l a1b1__y1_30
+m 80 0
+l done__y1_30
+j 41 a1__y1_31
+m 81 28
+j done__y1_31
+l a1__y1_31
+j 28 a1b1__y1_31
+m 81 1
+j done__y1_31
+l a1b1__y1_31
+m 81 0
+l done__y1_31
+# y2 = y1 ^ (y1 >> 17)
+j 50 a1__y2_0
+m 90 67
+j done__y2_0
+l a1__y2_0
+j 67 a1b1__y2_0
+m 90 1
+j done__y2_0
+l a1b1__y2_0
+m 90 0
+l done__y2_0
+j 51 a1__y2_1
+m 91 68
+j done__y2_1
+l a1__y2_1
+j 68 a1b1__y2_1
+m 91 1
+j done__y2_1
+l a1b1__y2_1
+m 91 0
+l done__y2_1
+j 52 a1__y2_2
+m 92 69
+j done__y2_2
+l a1__y2_2
+j 69 a1b1__y2_2
+m 92 1
+j done__y2_2
+l a1b1__y2_2
+m 92 0
+l done__y2_2
+j 53 a1__y2_3
+m 93 70
+j done__y2_3
+l a1__y2_3
+j 70 a1b1__y2_3
+m 93 1
+j done__y2_3
+l a1b1__y2_3
+m 93 0
+l done__y2_3
+j 54 a1__y2_4
+m 94 71
+j done__y2_4
+l a1__y2_4
+j 71 a1b1__y2_4
+m 94 1
+j done__y2_4
+l a1b1__y2_4
+m 94 0
+l done__y2_4
+j 55 a1__y2_5
+m 95 72
+j done__y2_5
+l a1__y2_5
+j 72 a1b1__y2_5
+m 95 1
+j done__y2_5
+l a1b1__y2_5
+m 95 0
+l done__y2_5
+j 56 a1__y2_6
+m 96 73
+j done__y2_6
+l a1__y2_6
+j 73 a1b1__y2_6
+m 96 1
+j done__y2_6
+l a1b1__y2_6
+m 96 0
+l done__y2_6
+j 57 a1__y2_7
+m 97 74
+j done__y2_7
+l a1__y2_7
+j 74 a1b1__y2_7
+m 97 1
+j done__y2_7
+l a1b1__y2_7
+m 97 0
+l done__y2_7
+j 58 a1__y2_8
+m 98 75
+j done__y2_8
+l a1__y2_8
+j 75 a1b1__y2_8
+m 98 1
+j done__y2_8
+l a1b1__y2_8
+m 98 0
+l done__y2_8
+j 59 a1__y2_9
+m 99 76
+j done__y2_9
+l a1__y2_9
+j 76 a1b1__y2_9
+m 99 1
+j done__y2_9
+l a1b1__y2_9
+m 99 0
+l done__y2_9
+j 60 a1__y2_10
+m 100 77
+j done__y2_10
+l a1__y2_10
+j 77 a1b1__y2_10
+m 100 1
+j done__y2_10
+l a1b1__y2_10
+m 100 0
+l done__y2_10
+j 61 a1__y2_11
+m 101 78
+j done__y2_11
+l a1__y2_11
+j 78 a1b1__y2_11
+m 101 1
+j done__y2_11
+l a1b1__y2_11
+m 101 0
+l done__y2_11
+j 62 a1__y2_12
+m 102 79
+j done__y2_12
+l a1__y2_12
+j 79 a1b1__y2_12
+m 102 1
+j done__y2_12
+l a1b1__y2_12
+m 102 0
+l done__y2_12
+j 63 a1__y2_13
+m 103 80
+j done__y2_13
+l a1__y2_13
+j 80 a1b1__y2_13
+m 103 1
+j done__y2_13
+l a1b1__y2_13
+m 103 0
+l done__y2_13
+j 64 a1__y2_14
+m 104 81
+j done__y2_14
+l a1__y2_14
+j 81 a1b1__y2_14
+m 104 1
+j done__y2_14
+l a1b1__y2_14
+m 104 0
+l done__y2_14
+m 105 65   # y2[15] = y1[15] (shifted-out -> 0)
+m 106 66   # y2[16] = y1[16] (shifted-out -> 0)
+m 107 67   # y2[17] = y1[17] (shifted-out -> 0)
+m 108 68   # y2[18] = y1[18] (shifted-out -> 0)
+m 109 69   # y2[19] = y1[19] (shifted-out -> 0)
+m 110 70   # y2[20] = y1[20] (shifted-out -> 0)
+m 111 71   # y2[21] = y1[21] (shifted-out -> 0)
+m 112 72   # y2[22] = y1[22] (shifted-out -> 0)
+m 113 73   # y2[23] = y1[23] (shifted-out -> 0)
+m 114 74   # y2[24] = y1[24] (shifted-out -> 0)
+m 115 75   # y2[25] = y1[25] (shifted-out -> 0)
+m 116 76   # y2[26] = y1[26] (shifted-out -> 0)
+m 117 77   # y2[27] = y1[27] (shifted-out -> 0)
+m 118 78   # y2[28] = y1[28] (shifted-out -> 0)
+m 119 79   # y2[29] = y1[29] (shifted-out -> 0)
+m 120 80   # y2[30] = y1[30] (shifted-out -> 0)
+m 121 81   # y2[31] = y1[31] (shifted-out -> 0)
+# x = y2 ^ (y2 << 5)   (written back into x)
+m 10 90   # x[0] = y2[0] (shifted-out -> 0)
+m 11 91   # x[1] = y2[1] (shifted-out -> 0)
+m 12 92   # x[2] = y2[2] (shifted-out -> 0)
+m 13 93   # x[3] = y2[3] (shifted-out -> 0)
+m 14 94   # x[4] = y2[4] (shifted-out -> 0)
+j 95 a1__y3_5
+m 15 90
+j done__y3_5
+l a1__y3_5
+j 90 a1b1__y3_5
+m 15 1
+j done__y3_5
+l a1b1__y3_5
+m 15 0
+l done__y3_5
+j 96 a1__y3_6
+m 16 91
+j done__y3_6
+l a1__y3_6
+j 91 a1b1__y3_6
+m 16 1
+j done__y3_6
+l a1b1__y3_6
+m 16 0
+l done__y3_6
+j 97 a1__y3_7
+m 17 92
+j done__y3_7
+l a1__y3_7
+j 92 a1b1__y3_7
+m 17 1
+j done__y3_7
+l a1b1__y3_7
+m 17 0
+l done__y3_7
+j 98 a1__y3_8
+m 18 93
+j done__y3_8
+l a1__y3_8
+j 93 a1b1__y3_8
+m 18 1
+j done__y3_8
+l a1b1__y3_8
+m 18 0
+l done__y3_8
+j 99 a1__y3_9
+m 19 94
+j done__y3_9
+l a1__y3_9
+j 94 a1b1__y3_9
+m 19 1
+j done__y3_9
+l a1b1__y3_9
+m 19 0
+l done__y3_9
+j 100 a1__y3_10
+m 20 95
+j done__y3_10
+l a1__y3_10
+j 95 a1b1__y3_10
+m 20 1
+j done__y3_10
+l a1b1__y3_10
+m 20 0
+l done__y3_10
+j 101 a1__y3_11
+m 21 96
+j done__y3_11
+l a1__y3_11
+j 96 a1b1__y3_11
+m 21 1
+j done__y3_11
+l a1b1__y3_11
+m 21 0
+l done__y3_11
+j 102 a1__y3_12
+m 22 97
+j done__y3_12
+l a1__y3_12
+j 97 a1b1__y3_12
+m 22 1
+j done__y3_12
+l a1b1__y3_12
+m 22 0
+l done__y3_12
+j 103 a1__y3_13
+m 23 98
+j done__y3_13
+l a1__y3_13
+j 98 a1b1__y3_13
+m 23 1
+j done__y3_13
+l a1b1__y3_13
+m 23 0
+l done__y3_13
+j 104 a1__y3_14
+m 24 99
+j done__y3_14
+l a1__y3_14
+j 99 a1b1__y3_14
+m 24 1
+j done__y3_14
+l a1b1__y3_14
+m 24 0
+l done__y3_14
+j 105 a1__y3_15
+m 25 100
+j done__y3_15
+l a1__y3_15
+j 100 a1b1__y3_15
+m 25 1
+j done__y3_15
+l a1b1__y3_15
+m 25 0
+l done__y3_15
+j 106 a1__y3_16
+m 26 101
+j done__y3_16
+l a1__y3_16
+j 101 a1b1__y3_16
+m 26 1
+j done__y3_16
+l a1b1__y3_16
+m 26 0
+l done__y3_16
+j 107 a1__y3_17
+m 27 102
+j done__y3_17
+l a1__y3_17
+j 102 a1b1__y3_17
+m 27 1
+j done__y3_17
+l a1b1__y3_17
+m 27 0
+l done__y3_17
+j 108 a1__y3_18
+m 28 103
+j done__y3_18
+l a1__y3_18
+j 103 a1b1__y3_18
+m 28 1
+j done__y3_18
+l a1b1__y3_18
+m 28 0
+l done__y3_18
+j 109 a1__y3_19
+m 29 104
+j done__y3_19
+l a1__y3_19
+j 104 a1b1__y3_19
+m 29 1
+j done__y3_19
+l a1b1__y3_19
+m 29 0
+l done__y3_19
+j 110 a1__y3_20
+m 30 105
+j done__y3_20
+l a1__y3_20
+j 105 a1b1__y3_20
+m 30 1
+j done__y3_20
+l a1b1__y3_20
+m 30 0
+l done__y3_20
+j 111 a1__y3_21
+m 31 106
+j done__y3_21
+l a1__y3_21
+j 106 a1b1__y3_21
+m 31 1
+j done__y3_21
+l a1b1__y3_21
+m 31 0
+l done__y3_21
+j 112 a1__y3_22
+m 32 107
+j done__y3_22
+l a1__y3_22
+j 107 a1b1__y3_22
+m 32 1
+j done__y3_22
+l a1b1__y3_22
+m 32 0
+l done__y3_22
+j 113 a1__y3_23
+m 33 108
+j done__y3_23
+l a1__y3_23
+j 108 a1b1__y3_23
+m 33 1
+j done__y3_23
+l a1b1__y3_23
+m 33 0
+l done__y3_23
+j 114 a1__y3_24
+m 34 109
+j done__y3_24
+l a1__y3_24
+j 109 a1b1__y3_24
+m 34 1
+j done__y3_24
+l a1b1__y3_24
+m 34 0
+l done__y3_24
+j 115 a1__y3_25
+m 35 110
+j done__y3_25
+l a1__y3_25
+j 110 a1b1__y3_25
+m 35 1
+j done__y3_25
+l a1b1__y3_25
+m 35 0
+l done__y3_25
+j 116 a1__y3_26
+m 36 111
+j done__y3_26
+l a1__y3_26
+j 111 a1b1__y3_26
+m 36 1
+j done__y3_26
+l a1b1__y3_26
+m 36 0
+l done__y3_26
+j 117 a1__y3_27
+m 37 112
+j done__y3_27
+l a1__y3_27
+j 112 a1b1__y3_27
+m 37 1
+j done__y3_27
+l a1b1__y3_27
+m 37 0
+l done__y3_27
+j 118 a1__y3_28
+m 38 113
+j done__y3_28
+l a1__y3_28
+j 113 a1b1__y3_28
+m 38 1
+j done__y3_28
+l a1b1__y3_28
+m 38 0
+l done__y3_28
+j 119 a1__y3_29
+m 39 114
+j done__y3_29
+l a1__y3_29
+j 114 a1b1__y3_29
+m 39 1
+j done__y3_29
+l a1b1__y3_29
+m 39 0
+l done__y3_29
+j 120 a1__y3_30
+m 40 115
+j done__y3_30
+l a1__y3_30
+j 115 a1b1__y3_30
+m 40 1
+j done__y3_30
+l a1b1__y3_30
+m 40 0
+l done__y3_30
+j 121 a1__y3_31
+m 41 116
+j done__y3_31
+l a1__y3_31
+j 116 a1b1__y3_31
+m 41 1
+j done__y3_31
+l a1b1__y3_31
+m 41 0
+l done__y3_31
+# --- output the 32-bit state, LSB first ---
+m out 10   # out bit 0
+m out 11   # out bit 1
+m out 12   # out bit 2
+m out 13   # out bit 3
+m out 14   # out bit 4
+m out 15   # out bit 5
+m out 16   # out bit 6
+m out 17   # out bit 7
+m out 18   # out bit 8
+m out 19   # out bit 9
+m out 20   # out bit 10
+m out 21   # out bit 11
+m out 22   # out bit 12
+m out 23   # out bit 13
+m out 24   # out bit 14
+m out 25   # out bit 15
+m out 26   # out bit 16
+m out 27   # out bit 17
+m out 28   # out bit 18
+m out 29   # out bit 19
+m out 30   # out bit 20
+m out 31   # out bit 21
+m out 32   # out bit 22
+m out 33   # out bit 23
+m out 34   # out bit 24
+m out 35   # out bit 25
+m out 36   # out bit 26
+m out 37   # out bit 27
+m out 38   # out bit 28
+m out 39   # out bit 29
+m out 40   # out bit 30
+m out 41   # out bit 31
