@@ -1,5 +1,73 @@
 # History
 
+## 2026-08-30 — MD5 in copyjump (single-block, run via the Python runner)
+
+Full MD5 computed entirely from copy+jump primitives, executed by the
+"pythonic runner" `vm_programs/CopyJumpMachine.py`.
+
+### What was built
+
+| File | Role |
+|---|---|
+| `vm_programs/md5_gen.py` | generator: emits `program_md5.prg.txt` |
+| `vm_programs/program_md5.prg.txt` | generated MD5 program (375,758 lines) |
+| `vm_programs/md5_reference.py` | expected digests via `hashlib` |
+| `vm_programs/md5_check.py` | runs the program in the VM and diffs vs `hashlib` |
+| `vm_programs/md5.md` | design notes (memory layout, primitives, round structure) |
+
+### How it works
+
+Every MD5 operation is lowered to bit-level copy+jump code:
+
+- **NOT / AND / OR / XOR** — ~7-instruction branch patterns (`j <bit> <label>`).
+- **32-bit addition mod 2^32** — a ripple-carry chain of full adders
+  (`sum = a⊕b⊕cin`, `carry = (a&b) | ((a⊕b)&cin)`), 5 adds per round.
+- **left-rotate** — free: index remapping at generation time.
+- **K[i], s[i], g, round function** — embedded constants; the 64 rounds are
+  fully unrolled (no round counter, no `mod 16` arithmetic at runtime).
+
+The standard MD5 structure is followed: per round compute `F/G/H/I(B,C,D)`,
+then `F += A + K[i] + M[g]`, `B += leftrotate(F, s[i])`, rotate registers
+`A=D, D=C, C=B`, and finally add the initial constants back
+(`a0 += A, b0 += B, c0 += C, d0 += D`). Bits are LSB-first throughout.
+
+### Verification
+
+`python3 vm_programs/md5_check.py` → **PASS** against `hashlib`:
+
+- `b""` → `d41d8cd98f00b204e9800998ecf8427e`
+- `b"abc"` → `900150983cd24fb0d6963f7d28e17f72`
+- `b"hello"` → `5d41402abc4b2a76b9719d911017c592`
+- `b"The quick brown fox jumps over the lazy dog"` → `9e107d9d372bb6826bd81d3542a419d6`
+
+Also verified through the CLI entry point
+(`python3 vm_programs/CopyJumpMachine.py vm_programs/program_md5.prg.txt`),
+which emits the 16 digest bytes LSB-first.
+
+### Usage / play
+
+```bash
+python3 vm_programs/md5_reference.py          # expected digests
+python3 vm_programs/md5_gen.py                # (re)generate the program
+python3 vm_programs/md5_check.py              # run in VM + diff vs hashlib
+python3 vm_programs/CopyJumpMachine.py vm_programs/program_md5.prg.txt
+```
+
+Change the embedded message by editing `MESSAGE` at the top of
+`md5_gen.py`, then re-running the generator.
+
+### Scope / notes
+
+- **Single 512-bit block** only (`len(message) < 56` bytes). Multi-block MD5
+  would need a block loop and running-state chaining across blocks.
+- Memory footprint is well under the 8192-bit budget (highest address used is
+  `1024+31` for `INIT_D`, plus scratch bits at 8000..8003).
+- The `.cj` numeric export is intentionally not generated (the Python runner
+  executes the textual format directly).
+- For the general RESM/BBJJ machine-model framing, see `resm_bbjj.md`.
+
+---
+
 ## 2026-08-27 — xorshift32: 5-stage build (XOR gate → PRNG)
 
 All five stages are complete and verified.
