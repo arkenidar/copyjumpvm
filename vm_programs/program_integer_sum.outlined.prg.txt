@@ -43,39 +43,39 @@ j full_adder_end__0
 l a1_s_is_1__0
 m out 1
 l full_adder_end__0
-m 8000 0
-m 8001 0
-m 8002 0
+m 5 0
+m 6 0
+m 7 0
 j __sub0
 l __sub0_ret0
-m 8000 1
-m 8001 0
-m 8002 0
+m 5 1
+m 6 0
+m 7 0
 j __sub0
 l __sub0_ret1
-m 8000 0
-m 8001 1
-m 8002 0
+m 5 0
+m 6 1
+m 7 0
 j __sub0
 l __sub0_ret2
-m 8000 1
-m 8001 1
-m 8002 0
+m 5 1
+m 6 1
+m 7 0
 j __sub0
 l __sub0_ret3
-m 8000 0
-m 8001 0
-m 8002 1
+m 5 0
+m 6 0
+m 7 1
 j __sub0
 l __sub0_ret4
-m 8000 1
-m 8001 0
-m 8002 1
+m 5 1
+m 6 0
+m 7 1
 j __sub0
 l __sub0_ret5
-m 8000 0
-m 8001 1
-m 8002 1
+m 5 0
+m 6 1
+m 7 1
 j __sub0
 l __sub0_ret6
 m out 4
@@ -126,14 +126,14 @@ j __sub0_exit
 l __sub0_l14
 m out 1
 l __sub0_exit
-j 8000 __sub0_d0 __sub0_d1
+j 5 __sub0_d0 __sub0_d1
 l __sub0_d0
-j 8001 __sub0_d2 __sub0_d3
+j 6 __sub0_d2 __sub0_d3
 l __sub0_d2
-j 8002 __sub0_ret0 __sub0_ret4
+j 7 __sub0_ret0 __sub0_ret4
 l __sub0_d3
-j 8002 __sub0_ret2 __sub0_ret6
+j 7 __sub0_ret2 __sub0_ret6
 l __sub0_d1
-j 8001 __sub0_d8 __sub0_ret3
+j 6 __sub0_d8 __sub0_ret3
 l __sub0_d8
-j 8002 __sub0_ret1 __sub0_ret5
+j 7 __sub0_ret1 __sub0_ret5

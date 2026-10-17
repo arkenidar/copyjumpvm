@@ -1,0 +1,74 @@
+m 10 0
+m 11 1
+m 12 0
+m 13 1
+m 14 0
+m 15 1
+m 16 0
+m 17 1
+m 20 1
+m 21 0
+m 22 1
+m 23 0
+m 24 1
+m 25 0
+m 26 1
+m 27 0
+m 32 0
+m 33 0
+j __sub0
+l __sub0_ret0
+m out 30
+m 32 1
+m 33 0
+j __sub0
+l __sub0_ret1
+m out 31
+m 32 0
+m 33 1
+j __sub0
+l __sub0_ret2
+m out 0
+m 34 0
+m 35 0
+j __sub1
+l __sub1_ret0
+m out 30
+m 34 1
+m 35 0
+j __sub1
+l __sub1_ret1
+m out 31
+m 34 0
+m 35 1
+j __sub1
+l __sub1_ret2
+m out 1
+j end
+l __sub0
+m out 10
+m out 11
+m out 12
+m out 13
+m out 14
+m out 15
+m out 16
+m out 17
+l __sub0_exit
+j 32 __sub0_d0 __sub0_ret1
+l __sub0_d0
+j 33 __sub0_ret0 __sub0_ret2
+j end
+l __sub1
+m out 20
+m out 21
+m out 22
+m out 23
+m out 24
+m out 25
+m out 26
+m out 27
+l __sub1_exit
+j 34 __sub1_d0 __sub1_ret1
+l __sub1_d0
+j 35 __sub1_ret0 __sub1_ret2

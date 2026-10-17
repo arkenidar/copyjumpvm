@@ -1,0 +1,78 @@
+# demo2: TWO distinct 8-instruction bodies, each inlined 3x, separated by markers
+# init: byte 0xAA at 10..17, byte 0x55 at 20..27
+m 10 0
+m 11 1
+m 12 0
+m 13 1
+m 14 0
+m 15 1
+m 16 0
+m 17 1
+m 20 1
+m 21 0
+m 22 1
+m 23 0
+m 24 1
+m 25 0
+m 26 1
+m 27 0
+# body A #1
+m out 10
+m out 11
+m out 12
+m out 13
+m out 14
+m out 15
+m out 16
+m out 17
+m out 30
+# body A #2
+m out 10
+m out 11
+m out 12
+m out 13
+m out 14
+m out 15
+m out 16
+m out 17
+m out 31
+# body A #3
+m out 10
+m out 11
+m out 12
+m out 13
+m out 14
+m out 15
+m out 16
+m out 17
+m out 0
+# body B #1
+m out 20
+m out 21
+m out 22
+m out 23
+m out 24
+m out 25
+m out 26
+m out 27
+m out 30
+# body B #2
+m out 20
+m out 21
+m out 22
+m out 23
+m out 24
+m out 25
+m out 26
+m out 27
+m out 31
+# body B #3
+m out 20
+m out 21
+m out 22
+m out 23
+m out 24
+m out 25
+m out 26
+m out 27
+m out 1

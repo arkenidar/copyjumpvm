@@ -6,23 +6,23 @@ m 14 0
 m 15 1
 m 16 0
 m 17 1
-m 8000 0
-m 8001 0
+m 32 0
+m 33 0
 j __sub0
 l __sub0_ret0
 m out 30
-m 8000 1
-m 8001 0
+m 32 1
+m 33 0
 j __sub0
 l __sub0_ret1
 m out 31
-m 8000 0
-m 8001 1
+m 32 0
+m 33 1
 j __sub0
 l __sub0_ret2
 m out 0
-m 8000 1
-m 8001 1
+m 32 1
+m 33 1
 j __sub0
 l __sub0_ret3
 m out 1
@@ -37,8 +37,8 @@ m out 15
 m out 16
 m out 17
 l __sub0_exit
-j 8000 __sub0_d0 __sub0_d1
+j 32 __sub0_d0 __sub0_d1
 l __sub0_d0
-j 8001 __sub0_ret0 __sub0_ret2
+j 33 __sub0_ret0 __sub0_ret2
 l __sub0_d1
-j 8001 __sub0_ret1 __sub0_ret3
+j 33 __sub0_ret1 __sub0_ret3
