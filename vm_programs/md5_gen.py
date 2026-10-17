@@ -63,16 +63,12 @@ class Emitter:
     def __init__(self):
         self.lines = []
         self.tag = 0
-        # shared-subroutine machinery: each distinct add32 signature is emitted
-        # ONCE and called via a return register (no re-detection needed — the
+        # shared-subroutine machinery: each distinct signature is emitted ONCE
+        # and called via a return register (no re-detection needed — the
         # generator already knows its own patterns).
-        self.sig_to_id = {}   # (dst, a, b) -> sub id
-        self.sub_sigs = []    # list of (dst, a, b) in definition order
-        self.sub_calls = []   # sub id -> list of call indices (0..N-1)
-        # round-function subroutines (F/G/H/I), each called 16x
-        self.round_id = {}    # kind -> sub id
-        self.round_sigs = []  # list of kinds in definition order
-        self.round_calls = [] # sub id -> list of call indices
+        self.sub_ids = {}         # (prefix, sig) -> sub id
+        self.sub_bodies = []      # sub id -> (prefix, sig, body_fn)
+        self.sub_call_counts = [] # sub id -> list of call indices (0..N-1)
 
     def _t(self):
         self.tag += 1
@@ -152,21 +148,29 @@ class Emitter:
         self.bit_and(T1, T0, cin)
         self.bit_or(carry_dst, T1, T2)
 
-    def add32(self, dst, a, b):
-        """Emit a CALL to a shared add32 body (the body is emitted once per
-        distinct (dst, a, b) signature by emit_subroutines())."""
-        sig = (dst, a, b)
-        if sig not in self.sig_to_id:
-            self.sig_to_id[sig] = len(self.sub_sigs)
-            self.sub_sigs.append(sig)
-            self.sub_calls.append([])
-        sub_id = self.sig_to_id[sig]
-        idx = len(self.sub_calls[sub_id])
-        self.sub_calls[sub_id].append(idx)
+    def call_subroutine(self, prefix, sig, body_fn):
+        """Emit a CALL to a shared body (emitted once per (prefix, sig))."""
+        key = (prefix, sig)
+        if key not in self.sub_ids:
+            self.sub_ids[key] = len(self.sub_bodies)
+            self.sub_bodies.append((prefix, sig, body_fn))
+            self.sub_call_counts.append([])
+        sub_id = self.sub_ids[key]
+        idx = len(self.sub_call_counts[sub_id])
+        self.sub_call_counts[sub_id].append(idx)
         for bit in range(RET_BITS):
             self.emit(f"m {RET_BASE + bit} {(idx >> bit) & 1}")
-        self.emit(f"j __add_{sub_id}")
-        self.emit(f"l __add_{sub_id}_ret_{idx}")
+        self.emit(f"j {prefix}_{sub_id}")
+        self.emit(f"l {prefix}_{sub_id}_ret_{idx}")
+
+    def add32(self, dst, a, b):
+        """Emit a CALL to a shared add32 body."""
+        self.call_subroutine("__add", (dst, a, b), lambda: self._emit_add32_body(dst, a, b))
+
+    def _emit_add32_body(self, dst, a, b):
+        self.emit(f"m {CARRY} 0")
+        for i in range(32):
+            self.full_adder(dst + i, a + i, b + i, CARRY, CARRY)
 
     def emit_dispatch(self, prefix, sub_id, idxs, bit=0):
         """Emit a decision tree over the return bits -> {prefix}_{sub_id}_ret_{idx}."""
@@ -185,37 +189,38 @@ class Emitter:
             self.emit(f"l {l1}")
             self.emit_dispatch(prefix, sub_id, one, bit + 1)
 
-    def emit_subroutines(self):
-        """Emit the shared add32 bodies (one per signature) + return dispatch."""
-        for sub_id, sig in enumerate(self.sub_sigs):
-            dst, a, b = sig
-            self.emit(f"l __add_{sub_id}")
-            self.emit(f"m {CARRY} 0")
-            for i in range(32):
-                self.full_adder(dst + i, a + i, b + i, CARRY, CARRY)
-            self.emit_dispatch("__add", sub_id, list(range(len(self.sub_calls[sub_id]))))
+    def emit_all_subroutines(self):
+        """Emit all shared bodies (one per signature) + return dispatch."""
+        for sub_id, (prefix, sig, body_fn) in enumerate(self.sub_bodies):
+            self.emit(f"l {prefix}_{sub_id}")
+            body_fn()
+            self.emit_dispatch(prefix, sub_id, list(range(len(self.sub_call_counts[sub_id]))))
 
     def round_func(self, kind):
         """Emit a CALL to the shared F/G/H/I round-function body."""
-        if kind not in self.round_id:
-            self.round_id[kind] = len(self.round_sigs)
-            self.round_sigs.append(kind)
-            self.round_calls.append([])
-        sub_id = self.round_id[kind]
-        idx = len(self.round_calls[sub_id])
-        self.round_calls[sub_id].append(idx)
-        for bit in range(RET_BITS):
-            self.emit(f"m {RET_BASE + bit} {(idx >> bit) & 1}")
-        self.emit(f"j __round_{sub_id}")
-        self.emit(f"l __round_{sub_id}_ret_{idx}")
+        self.call_subroutine("__round", kind, lambda: self._emit_round_body(kind))
 
-    def emit_round_subroutines(self):
-        """Emit the shared round-function bodies (F/G/H/I) + return dispatch."""
-        for sub_id, kind in enumerate(self.round_sigs):
-            self.emit(f"l __round_{sub_id}")
-            for bit in range(32):
-                self.round_func_bit(bit, kind)
-            self.emit_dispatch("__round", sub_id, list(range(len(self.round_calls[sub_id]))))
+    def _emit_round_body(self, kind):
+        for bit in range(32):
+            self.round_func_bit(bit, kind)
+
+    def rotate(self, s):
+        """Emit a CALL to the shared left-rotate-by-s body."""
+        self.call_subroutine("__rot", s, lambda: self._emit_rotate_body(s))
+
+    def _emit_rotate_body(self, s):
+        for j in range(32):
+            self.emit(f"m {R + j} {F + ((j - s) % 32)}")
+
+    def register_rotate(self):
+        """Emit a CALL to the shared A=D, D=C, C=B, B=BNEW body."""
+        self.call_subroutine("__regrot", (), lambda: self._emit_regrot_body())
+
+    def _emit_regrot_body(self):
+        self.copy_word(A, D)
+        self.copy_word(D, C)
+        self.copy_word(C, B)
+        self.copy_word(B, BNEW)
 
     # --- MD5 round function F/G/H/I, one bit -> F[bit] ---
     def round_func_bit(self, bit, kind):
@@ -301,14 +306,11 @@ def generate():
         e.add32(F, F, M + g * 32)
 
         # B = B + leftrotate(F, s)
-        e.rotate_left_copy(R, F, s)
+        e.rotate(s)
         e.add32(BNEW, B, R)
 
         # A, D, C, B rotation
-        e.copy_word(A, D)
-        e.copy_word(D, C)
-        e.copy_word(C, B)
-        e.copy_word(B, BNEW)
+        e.register_rotate()
 
     e.comment("--- add back initial state: A += a0, B += b0, C += c0, D += d0 ---")
     e.add32(A, A, INIT_A)
@@ -325,11 +327,8 @@ def generate():
     # terminate the main flow so it does not fall into the subroutines
     e.emit("j end")
 
-    e.comment("--- shared add32 subroutines (one body per signature + dispatch) ---")
-    e.emit_subroutines()
-
-    e.comment("--- shared round-function subroutines (F/G/H/I + dispatch) ---")
-    e.emit_round_subroutines()
+    e.comment("--- shared subroutines (add32, round func, rotate, register rotate) ---")
+    e.emit_all_subroutines()
 
     path = os.path.join(HERE, "program_md5.prg.txt")
     with open(path, "w") as f:
