@@ -71,6 +71,11 @@ rewrite (inlining → subgraph reuse) on a `.prg.txt` program:
    (a) set the return register (`⌈log₂N⌉` bits) + jump in, and (b) a dispatch
    tree at the body's exit that jumps back to the right continuation.
 
+Extraction is **iterative**: after each rewrite it re-detects and extracts
+again until no profitable fragment remains (so a program with several distinct
+repeated bodies gets them all), and the return register is placed at the first
+free address (auto-detected from the program's data, so it never collides).
+
 `vm_programs/verify_outliner.py` runs the original vs the rewritten program
 under `CopyJumpMachine.py` and asserts identical output bits.
 
@@ -79,8 +84,9 @@ under `CopyJumpMachine.py` and asserts identical output bits.
 | Program | Before | After | Saved | % | Found |
 |---|---|---|---|---|---|
 | `program_integer_sum` | 233 | **94** | −139 | ~60% | 29-instr full adder ×7 (verified bit-identical) |
-| `program_integer_sum_5` | 264 | 254 | −10 | ~4% | 8-instr block ×6 |
+| `program_integer_sum_5` | 264 | 248 | −16 | ~6% | three fragments (8×6, 7×6, 7×2) — iterative |
 | `program_inline_demo` (synthetic) | 44 | 36 | −8 | ~18% | 8-instr body ×4 (verified) |
+| `program_inline_demo2` (synthetic) | 70 | 62 | −8 | ~11% | two distinct 8-instr bodies ×3 (verified) |
 | `program_xorshift32_step` | 526 | 526 | 0 | 0% | — (parameterized, not exact dupes) |
 | `program_xorshift32_loop` | 584 | 584 | 0 | 0% | — |
 | `program_countdown` / `integer_counter` / gates | ≤65 | same | 0 | 0% | — (little/no duplication) |

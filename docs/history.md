@@ -15,6 +15,9 @@ into shared subgraphs — the inverse of inlining, implementing strategy 2 from
 - Score by net size savings and greedily extract the best fragment.
 - Rewrite: keep one body copy; each call site sets a return register
   (`⌈log₂N⌉` bits) + jumps in; a dispatch tree at the body exit routes back.
+- **Iterative**: repeat detection + extraction until no profitable fragment
+  remains (extracts multiple distinct bodies). Return register is auto-placed
+  at the first free address (no data collisions).
 
 ### Verified (semantics-preserving)
 
