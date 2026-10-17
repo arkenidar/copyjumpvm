@@ -28,6 +28,25 @@ In this repo the same instruction appears in two notations:
 - **numeric `.cj`** — `[copy_from, copy_to, jump_case_true, jump_case_false]`
 - **textual `.prg.txt`** — `m <dst> <src>` (copy) and `j <cond> <label0> <label1>` (jump)
 
+## What the machine deliberately omits
+
+The machine has **no ALU** and **no call stack** — and no shifter, comparator,
+or flag unit either. Its whole instruction set is *copy one bit + jump to one
+of two places*, so the conveniences a conventional CPU provides in dedicated
+hardware are all built in software (microcode) instead:
+
+| Unit | In RESM/BBJJ? | Replaced by |
+|---|---|---|
+| ALU (`add`/`and`/`or`/`xor`/shift) | ❌ no | gate circuits + ripple-carry full adders in copy+jump |
+| call stack (`call`/`ret`, push/pop) | ❌ no | structural returns, or a small return register + dispatch |
+| shifter | ❌ no | index remapping at generation time |
+| comparator / flags | ❌ no | the path-selector bit *is* the branch decision |
+
+So both the **data plane** (arithmetic/logic) and the **control plane**
+(subroutine reuse) are software-defined. The only "hardware" left is memory
+bits, the instruction pointer, and the path-selector bit. Code reuse without a
+stack is covered in `reuse_graphs_paths.md`.
+
 ## Relationship to a Turing machine
 
 RESM/BBJJ is derived from Turing machines and the **BitBitJump** OISC

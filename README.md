@@ -12,7 +12,9 @@ copyjumpvm is an implementation of a minimal, Turing-complete machine called
 every instruction just copies one bit and jumps to one of two next
 instructions, chosen by a path-selector bit. Any algorithm can be compiled
 down to it — see `docs/resm_bbjj.md` for the full explanation (including how
-the MD5 program in `vm_programs/` is such a compilation).
+the MD5 program in `vm_programs/` is such a compilation). It has **no ALU**
+and **no call stack**: arithmetic and subroutine reuse are built in software —
+see `docs/reuse_graphs_paths.md` for the reuse-as-graphs view.
 
 ```shell
 ./run.sh iloop.cj # this outputs: "status: infinite loop (iloop) detected."
