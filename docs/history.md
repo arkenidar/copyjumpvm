@@ -4,6 +4,19 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
+## 2026-10-17 — control track: software call stack + C-like compiler (cc.py)
+
+Implemented the **call stack** (software stack of return addresses, returned via
+`j @reg`) and a **C-borrowed function language** (`int f(int a, int b) { … }`),
+compiled by `cc.py` to copyjump with synthesized arithmetic (adder/subtractor/
+comparators from gates — no ALU). See `callstack_language.md`.
+
+Verified: `sum(3,5)`→`8`; `countdown(5)`→`[5,4,3,2,1]` (recursion); `sum(255,1)`
+→`0` (8-bit overflow). Limitation (v1): non-tail recursion needs callee-saved
+registers. See `design_evolution.md` §10.
+
+---
+
 ## 2026-10-17 — data-structure tower: software stack (push/pop) via peek/poke
 
 Built the first data structure on the substrate: a **stack** — a 13-bit stack

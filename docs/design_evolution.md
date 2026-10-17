@@ -156,5 +156,28 @@ The stack-pointer arithmetic (increment/decrement) is a ripple carry/borrow —
 no ALU needed, just copy+jump. This is the rung the **call stack** and
 **recursion** sit on.
 
-*(next: a linked list — nodes = data + next-pointer — then a call stack →
-recursion.)*
+*(next: the control track — a software call stack + a C-like function language.)*
+
+## 10. The control track: a software call stack + a C-like language
+
+Focused on *control* (not data) and built the **call stack** — a software stack
+of return addresses — plus a **C-borrowed function language** compiled to it.
+The ABI: arguments in fixed registers, return value in `R0`, the return address
+(an instruction index) pushed/popped on the stack and returned via `j @reg`.
+
+`cc.py` compiles `int f(int a, int b) { ... }` to copyjump, synthesizing
+arithmetic (`+`, `-`, comparisons) from gates + full adders (no ALU). Verified:
+
+- `sum(3,5)` → `8` (a non-recursive call),
+- `countdown(5)` → `[5,4,3,2,1]` (recursion),
+- `sum(255,1)` → `0` (8-bit overflow wraps correctly).
+
+This closes the "enabling" arc: **pointers → stack → call stack → recursion**
+is now real, built entirely from copy + jump + peek/poke. See
+`callstack_language.md` for the ABI + language spec.
+
+Limitation (v1): non-tail recursion (an argument *live across* a call) needs
+callee-saved registers — not yet implemented; the tests are tail-recursive.
+
+*(next: non-tail recursion via callee-saved registers; then the data track —
+arrays / linked structures.)*
