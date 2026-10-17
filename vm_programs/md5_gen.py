@@ -43,6 +43,8 @@ INIT_C = 992
 INIT_D = 1024
 T0, T1, T2 = 8000, 8001, 8002  # scratch bits
 CARRY = 8003      # ripple-carry bit
+RET_BASE = 8004   # add32 return register (RET_BITS bits)
+RET_BITS = 6      # ceil(log2(64)) — max 64 calls per shared add32 signature
 
 # --- MD5 constants ---
 K = [int(abs(math.sin(i + 1)) * 2 ** 32) & MASK32 for i in range(64)]
@@ -61,6 +63,12 @@ class Emitter:
     def __init__(self):
         self.lines = []
         self.tag = 0
+        # shared-subroutine machinery: each distinct add32 signature is emitted
+        # ONCE and called via a return register (no re-detection needed — the
+        # generator already knows its own patterns).
+        self.sig_to_id = {}   # (dst, a, b) -> sub id
+        self.sub_sigs = []    # list of (dst, a, b) in definition order
+        self.sub_calls = []   # sub id -> list of call indices (0..N-1)
 
     def _t(self):
         self.tag += 1
@@ -141,9 +149,47 @@ class Emitter:
         self.bit_or(carry_dst, T1, T2)
 
     def add32(self, dst, a, b):
-        self.emit(f"m {CARRY} 0")
-        for i in range(32):
-            self.full_adder(dst + i, a + i, b + i, CARRY, CARRY)
+        """Emit a CALL to a shared add32 body (the body is emitted once per
+        distinct (dst, a, b) signature by emit_subroutines())."""
+        sig = (dst, a, b)
+        if sig not in self.sig_to_id:
+            self.sig_to_id[sig] = len(self.sub_sigs)
+            self.sub_sigs.append(sig)
+            self.sub_calls.append([])
+        sub_id = self.sig_to_id[sig]
+        idx = len(self.sub_calls[sub_id])
+        self.sub_calls[sub_id].append(idx)
+        for bit in range(RET_BITS):
+            self.emit(f"m {RET_BASE + bit} {(idx >> bit) & 1}")
+        self.emit(f"j __add_{sub_id}")
+        self.emit(f"l __add_{sub_id}_ret_{idx}")
+
+    def emit_dispatch(self, sub_id, idxs, bit=0):
+        """Emit a decision tree over the return bits -> __add_{sub_id}_ret_{idx}."""
+        if len(idxs) == 1:
+            self.emit(f"j __add_{sub_id}_ret_{idxs[0]}")
+            return
+        zero = [x for x in idxs if (x >> bit) & 1 == 0]
+        one = [x for x in idxs if (x >> bit) & 1 == 1]
+        l0 = f"__add_{sub_id}_ret_{zero[0]}" if len(zero) == 1 else f"__add_{sub_id}_d{self._t()}"
+        l1 = f"__add_{sub_id}_ret_{one[0]}" if len(one) == 1 else f"__add_{sub_id}_d{self._t()}"
+        self.emit(f"j {RET_BASE + bit} {l0} {l1}")
+        if len(zero) > 1:
+            self.emit(f"l {l0}")
+            self.emit_dispatch(sub_id, zero, bit + 1)
+        if len(one) > 1:
+            self.emit(f"l {l1}")
+            self.emit_dispatch(sub_id, one, bit + 1)
+
+    def emit_subroutines(self):
+        """Emit the shared add32 bodies (one per signature) + return dispatch."""
+        for sub_id, sig in enumerate(self.sub_sigs):
+            dst, a, b = sig
+            self.emit(f"l __add_{sub_id}")
+            self.emit(f"m {CARRY} 0")
+            for i in range(32):
+                self.full_adder(dst + i, a + i, b + i, CARRY, CARRY)
+            self.emit_dispatch(sub_id, list(range(len(self.sub_calls[sub_id]))))
 
     # --- MD5 round function F/G/H/I, one bit -> F[bit] ---
     def round_func_bit(self, bit, kind):
@@ -250,6 +296,12 @@ def generate():
         for byte in range(4):
             for bit in range(8):
                 e.emit(f"m out {base + byte * 8 + bit}")
+
+    # terminate the main flow so it does not fall into the subroutines
+    e.emit("j end")
+
+    e.comment("--- shared add32 subroutines (one body per signature + dispatch) ---")
+    e.emit_subroutines()
 
     path = os.path.join(HERE, "program_md5.prg.txt")
     with open(path, "w") as f:
