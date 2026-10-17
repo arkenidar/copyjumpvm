@@ -57,6 +57,31 @@ a pushdown machine — finite-state ⊂ pushdown ⊂ Turing.
   once and jump into it from several places, returning via strategy 2 — which
   the `j <cond> <label0> <label1>` instruction already supports natively.
 
+## Implementation: `outliner.js`
+
+`vm_programs/outliner.js` is a Node script that actually performs this graph
+rewrite (inlining → subgraph reuse) on a `.prg.txt` program:
+
+1. **parse** the program into instructions + labels;
+2. **detect** exact-duplicate, self-contained, single-entry/single-exit
+   fragments (canonicalized so label-renamed clones match, and "exit labels"
+   sitting just past the body are recognized);
+3. **score** each fragment by net size savings and **greedily extract** the best;
+4. **rewrite**: keep one copy of the body; replace each occurrence with
+   (a) set the return register (`⌈log₂N⌉` bits) + jump in, and (b) a dispatch
+   tree at the body's exit that jumps back to the right continuation.
+
+`vm_programs/verify_outliner.py` runs the original vs the rewritten program
+under `CopyJumpMachine.py` and asserts identical output bits.
+
+Results on the repo's own programs:
+
+- `program_integer_sum.prg.txt`: the 29-instruction full adder (inlined 7×) is
+  extracted once → **233 → 94 instructions (−139)**, verified bit-identical on
+  several inputs.
+- `program_inline_demo.prg.txt` (synthetic): an 8-instruction body inlined 4× →
+  **44 → 36 instructions (−8)**, verified bit-identical.
+
 ## Related
 
 - `resm_bbjj.md` — the machine model (single instruction, no ALU, Turing map).

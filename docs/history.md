@@ -1,5 +1,48 @@
 # History
 
+## 2026-10-17 — outliner.js: inlining → subgraph reuse (graph rewrite)
+
+A Node rewriter (`vm_programs/outliner.js`) that turns inlined copy+jump code
+into shared subgraphs — the inverse of inlining, implementing strategy 2 from
+`docs/reuse_graphs_paths.md` (return register + dispatch tree, no call stack).
+
+### How it works
+
+- Parse `.prg.txt` → instructions + labels.
+- Detect exact-duplicate, self-contained, single-entry/single-exit fragments
+  (canonicalized so label-renamed clones match; "exit labels" just past the
+  body are recognized; `j` conditions are distinguished from jump targets).
+- Score by net size savings and greedily extract the best fragment.
+- Rewrite: keep one body copy; each call site sets a return register
+  (`⌈log₂N⌉` bits) + jumps in; a dispatch tree at the body exit routes back.
+
+### Verified (semantics-preserving)
+
+`vm_programs/verify_outliner.py` runs original vs rewritten under
+`CopyJumpMachine.py` and asserts identical output bits.
+
+- `program_integer_sum.prg.txt`: 29-instruction full adder inlined 7× →
+  **233 → 94 instructions (−139)**, bit-identical on 5 inputs (incl. carry).
+- `program_inline_demo.prg.txt` (synthetic): 8-instruction body × 4 →
+  **44 → 36 instructions (−8)**, bit-identical.
+
+### Files
+
+- `vm_programs/outliner.js` — the rewriter (Node).
+- `vm_programs/verify_outliner.py` — semantic-equivalence checker.
+- `vm_programs/program_inline_demo.prg.txt` (+ `.outlined.prg.txt`) — demo.
+- `vm_programs/program_integer_sum.outlined.prg.txt` — outlined full adder.
+
+### Notes / limits
+
+- v1 handles **exact duplicates only** (same operand addresses → no argument
+  passing); parameterized clones (e.g. the full-adder's `cin` 0 vs 4) are v2.
+- Detection is O(n²) (window enumeration); large programs (e.g. MD5's ~376k
+  instructions) would need a suffix-array for exact-repeat discovery.
+- `RET_BASE` (default 8000) must not collide with the program's own data.
+
+---
+
 ## 2026-08-30 — MD5 in copyjump (single-block, run via the Python runner)
 
 Full MD5 computed entirely from copy+jump primitives, executed by the
