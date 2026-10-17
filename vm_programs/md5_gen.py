@@ -69,6 +69,10 @@ class Emitter:
         self.sig_to_id = {}   # (dst, a, b) -> sub id
         self.sub_sigs = []    # list of (dst, a, b) in definition order
         self.sub_calls = []   # sub id -> list of call indices (0..N-1)
+        # round-function subroutines (F/G/H/I), each called 16x
+        self.round_id = {}    # kind -> sub id
+        self.round_sigs = []  # list of kinds in definition order
+        self.round_calls = [] # sub id -> list of call indices
 
     def _t(self):
         self.tag += 1
@@ -164,22 +168,22 @@ class Emitter:
         self.emit(f"j __add_{sub_id}")
         self.emit(f"l __add_{sub_id}_ret_{idx}")
 
-    def emit_dispatch(self, sub_id, idxs, bit=0):
-        """Emit a decision tree over the return bits -> __add_{sub_id}_ret_{idx}."""
+    def emit_dispatch(self, prefix, sub_id, idxs, bit=0):
+        """Emit a decision tree over the return bits -> {prefix}_{sub_id}_ret_{idx}."""
         if len(idxs) == 1:
-            self.emit(f"j __add_{sub_id}_ret_{idxs[0]}")
+            self.emit(f"j {prefix}_{sub_id}_ret_{idxs[0]}")
             return
         zero = [x for x in idxs if (x >> bit) & 1 == 0]
         one = [x for x in idxs if (x >> bit) & 1 == 1]
-        l0 = f"__add_{sub_id}_ret_{zero[0]}" if len(zero) == 1 else f"__add_{sub_id}_d{self._t()}"
-        l1 = f"__add_{sub_id}_ret_{one[0]}" if len(one) == 1 else f"__add_{sub_id}_d{self._t()}"
+        l0 = f"{prefix}_{sub_id}_ret_{zero[0]}" if len(zero) == 1 else f"{prefix}_{sub_id}_d{self._t()}"
+        l1 = f"{prefix}_{sub_id}_ret_{one[0]}" if len(one) == 1 else f"{prefix}_{sub_id}_d{self._t()}"
         self.emit(f"j {RET_BASE + bit} {l0} {l1}")
         if len(zero) > 1:
             self.emit(f"l {l0}")
-            self.emit_dispatch(sub_id, zero, bit + 1)
+            self.emit_dispatch(prefix, sub_id, zero, bit + 1)
         if len(one) > 1:
             self.emit(f"l {l1}")
-            self.emit_dispatch(sub_id, one, bit + 1)
+            self.emit_dispatch(prefix, sub_id, one, bit + 1)
 
     def emit_subroutines(self):
         """Emit the shared add32 bodies (one per signature) + return dispatch."""
@@ -189,7 +193,29 @@ class Emitter:
             self.emit(f"m {CARRY} 0")
             for i in range(32):
                 self.full_adder(dst + i, a + i, b + i, CARRY, CARRY)
-            self.emit_dispatch(sub_id, list(range(len(self.sub_calls[sub_id]))))
+            self.emit_dispatch("__add", sub_id, list(range(len(self.sub_calls[sub_id]))))
+
+    def round_func(self, kind):
+        """Emit a CALL to the shared F/G/H/I round-function body."""
+        if kind not in self.round_id:
+            self.round_id[kind] = len(self.round_sigs)
+            self.round_sigs.append(kind)
+            self.round_calls.append([])
+        sub_id = self.round_id[kind]
+        idx = len(self.round_calls[sub_id])
+        self.round_calls[sub_id].append(idx)
+        for bit in range(RET_BITS):
+            self.emit(f"m {RET_BASE + bit} {(idx >> bit) & 1}")
+        self.emit(f"j __round_{sub_id}")
+        self.emit(f"l __round_{sub_id}_ret_{idx}")
+
+    def emit_round_subroutines(self):
+        """Emit the shared round-function bodies (F/G/H/I) + return dispatch."""
+        for sub_id, kind in enumerate(self.round_sigs):
+            self.emit(f"l __round_{sub_id}")
+            for bit in range(32):
+                self.round_func_bit(bit, kind)
+            self.emit_dispatch("__round", sub_id, list(range(len(self.round_calls[sub_id]))))
 
     # --- MD5 round function F/G/H/I, one bit -> F[bit] ---
     def round_func_bit(self, bit, kind):
@@ -266,8 +292,7 @@ def generate():
 
         e.comment(f"--- round {i} ({kind}, g={g}, s={s}, K=0x{K[i]:08X}) ---")
 
-        for bit in range(32):
-            e.round_func_bit(bit, kind)
+        e.round_func(kind)
 
         # F = F + A + K[i] + M[g]  (mod 2^32)
         e.add32(F, F, A)
@@ -302,6 +327,9 @@ def generate():
 
     e.comment("--- shared add32 subroutines (one body per signature + dispatch) ---")
     e.emit_subroutines()
+
+    e.comment("--- shared round-function subroutines (F/G/H/I + dispatch) ---")
+    e.emit_round_subroutines()
 
     path = os.path.join(HERE, "program_md5.prg.txt")
     with open(path, "w") as f:
