@@ -4,6 +4,24 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`.
 
+## 2026-10-17 — md5_gen.py: reuse-aware codegen (shared add32 subroutines)
+
+The MD5 generator now emits **shared `add32` subroutines** instead of inlining
+the ~769-instruction body 260 times. Each distinct `(dst, a, b)` signature is
+written once (fixed addresses) and called via a return register + dispatch tree
+— source-level reuse, no post-hoc detection.
+
+- `program_md5.prg.txt`: **260,996 → 65,637 instructions (~4× smaller)**,
+  375,758 → 89,893 lines.
+- Still **verified** against `hashlib` (all RFC 1321 vectors).
+
+This is the "generator should be *aware* of the optimizations from the start"
+idea — the generator knows its patterns by name, so it never emits the
+duplicated code in the first place (vs. `outliner.js`, which rediscovers
+duplication post-hoc in code it didn't generate).
+
+---
+
 ## 2026-10-17 — outliner.js: inlining → subgraph reuse (graph rewrite)
 
 A Node rewriter (`vm_programs/outliner.js`) that turns inlined copy+jump code
@@ -44,7 +62,7 @@ into shared subgraphs — the inverse of inlining, implementing strategy 2 from
 
 - v1 handles **exact duplicates only** (same operand addresses → no argument
   passing); parameterized clones (e.g. the full-adder's `cin` 0 vs 4) are v2.
-- Detection is O(n²) (window enumeration); large programs (e.g. MD5's ~376k
+- Detection is O(n²) (window enumeration); large programs (e.g. MD5's ~66k
   instructions) would need a suffix-array for exact-repeat discovery.
 - `RET_BASE` (default 8000) must not collide with the program's own data.
 - See `reuse_graphs_paths.md` for the full measured-results table and the cost
@@ -62,7 +80,7 @@ Full MD5 computed entirely from copy+jump primitives, executed by the
 | File | Role |
 |---|---|
 | `vm_programs/md5_gen.py` | generator: emits `program_md5.prg.txt` |
-| `vm_programs/program_md5.prg.txt` | generated MD5 program (375,758 lines) |
+| `vm_programs/program_md5.prg.txt` | generated MD5 program (65,637 instructions) |
 | `vm_programs/md5_reference.py` | expected digests via `hashlib` |
 | `vm_programs/md5_check.py` | runs the program in the VM and diffs vs `hashlib` |
 | `vm_programs/md5.md` | design notes (memory layout, primitives, round structure) |

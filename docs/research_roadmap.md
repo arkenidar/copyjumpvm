@@ -74,7 +74,8 @@ program optimization to the repo's halting-detection claim.
 
 - `vm_programs/outliner.js` — greedy outlining (a special case of directions 1 & 3).
 - `vm_programs/peephole.js` — the start of the rewrite taxonomy (direction 1).
-- `vm_programs/md5_gen.py` — a compiler that lowers an algorithm to the substrate.
+- `vm_programs/md5_gen.py` — a compiler that lowers an algorithm to the substrate,
+  **reuse-aware** (shared `add32` subroutines, ~4× smaller output).
 - `arkenidar/simple` (external) — brute-force synthesis (direction 4, naïve form).
 
 ## Concrete next steps
