@@ -4,6 +4,15 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
+## 2026-10-17 — data-structure tower: software stack (push/pop) via peek/poke
+
+Built the first data structure on the substrate: a **stack** — a 13-bit stack
+pointer + `poke` (push) / `peek` (pop), with ripple increment/decrement for the
+pointer. `stack_demo_gen.py` → `program_stack_demo.prg.txt` (push `0,1,1`, pop
+→ `[1, 1, 0]`), verified. See `design_evolution.md` §9.
+
+---
+
 ## 2026-10-17 — md5_gen.py: share register rotation + rotate; the round-loop finding
 
 Shared the remaining fixed-address bodies (register rotation `A=D,D=C,C=B,B=BNEW`

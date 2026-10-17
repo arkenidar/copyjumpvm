@@ -143,3 +143,18 @@ consumed for free while tables are read back through peek.
 
 *(next: demonstrate the data-structure tower — a software stack / call-stack /
 linked list — now that peek/poke exist.)*
+
+## 9. The tower, first rung: a software stack (push/pop)
+
+With peek/poke we built the first data structure — a **stack** — entirely in
+software: a stack pointer (a 13-bit address register) + `poke` to push and
+`peek` to pop. `stack_demo_gen.py` generates `program_stack_demo.prg.txt`
+(push `0,1,1` then pop → `[1, 1, 0]`, LIFO — the reversal is visible), verified
+against the expected order.
+
+The stack-pointer arithmetic (increment/decrement) is a ripple carry/borrow —
+no ALU needed, just copy+jump. This is the rung the **call stack** and
+**recursion** sit on.
+
+*(next: a linked list — nodes = data + next-pointer — then a call stack →
+recursion.)*

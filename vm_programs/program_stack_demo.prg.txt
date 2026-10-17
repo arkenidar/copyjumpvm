@@ -1,0 +1,489 @@
+# stack demo (peek/poke): push 0,1,1 then pop -> expect [1,1,0] (LIFO reversal)
+m 2000 0
+m 2001 0
+m 2002 0
+m 2003 1
+m 2004 0
+m 2005 0
+m 2006 0
+m 2007 1
+m 2008 1
+m 2009 1
+m 2010 0
+m 2011 0
+m 2012 1
+m @2000 0
+j 2000 i0_is1__1
+m 2000 1
+j inc_done__1
+l i0_is1__1
+m 2000 0
+j 2001 i1_is1__1
+m 2001 1
+j inc_done__1
+l i1_is1__1
+m 2001 0
+j 2002 i2_is1__1
+m 2002 1
+j inc_done__1
+l i2_is1__1
+m 2002 0
+j 2003 i3_is1__1
+m 2003 1
+j inc_done__1
+l i3_is1__1
+m 2003 0
+j 2004 i4_is1__1
+m 2004 1
+j inc_done__1
+l i4_is1__1
+m 2004 0
+j 2005 i5_is1__1
+m 2005 1
+j inc_done__1
+l i5_is1__1
+m 2005 0
+j 2006 i6_is1__1
+m 2006 1
+j inc_done__1
+l i6_is1__1
+m 2006 0
+j 2007 i7_is1__1
+m 2007 1
+j inc_done__1
+l i7_is1__1
+m 2007 0
+j 2008 i8_is1__1
+m 2008 1
+j inc_done__1
+l i8_is1__1
+m 2008 0
+j 2009 i9_is1__1
+m 2009 1
+j inc_done__1
+l i9_is1__1
+m 2009 0
+j 2010 i10_is1__1
+m 2010 1
+j inc_done__1
+l i10_is1__1
+m 2010 0
+j 2011 i11_is1__1
+m 2011 1
+j inc_done__1
+l i11_is1__1
+m 2011 0
+j 2012 i12_is1__1
+m 2012 1
+j inc_done__1
+l i12_is1__1
+m 2012 0
+l inc_done__1
+m @2000 1
+j 2000 i0_is1__2
+m 2000 1
+j inc_done__2
+l i0_is1__2
+m 2000 0
+j 2001 i1_is1__2
+m 2001 1
+j inc_done__2
+l i1_is1__2
+m 2001 0
+j 2002 i2_is1__2
+m 2002 1
+j inc_done__2
+l i2_is1__2
+m 2002 0
+j 2003 i3_is1__2
+m 2003 1
+j inc_done__2
+l i3_is1__2
+m 2003 0
+j 2004 i4_is1__2
+m 2004 1
+j inc_done__2
+l i4_is1__2
+m 2004 0
+j 2005 i5_is1__2
+m 2005 1
+j inc_done__2
+l i5_is1__2
+m 2005 0
+j 2006 i6_is1__2
+m 2006 1
+j inc_done__2
+l i6_is1__2
+m 2006 0
+j 2007 i7_is1__2
+m 2007 1
+j inc_done__2
+l i7_is1__2
+m 2007 0
+j 2008 i8_is1__2
+m 2008 1
+j inc_done__2
+l i8_is1__2
+m 2008 0
+j 2009 i9_is1__2
+m 2009 1
+j inc_done__2
+l i9_is1__2
+m 2009 0
+j 2010 i10_is1__2
+m 2010 1
+j inc_done__2
+l i10_is1__2
+m 2010 0
+j 2011 i11_is1__2
+m 2011 1
+j inc_done__2
+l i11_is1__2
+m 2011 0
+j 2012 i12_is1__2
+m 2012 1
+j inc_done__2
+l i12_is1__2
+m 2012 0
+l inc_done__2
+m @2000 1
+j 2000 i0_is1__3
+m 2000 1
+j inc_done__3
+l i0_is1__3
+m 2000 0
+j 2001 i1_is1__3
+m 2001 1
+j inc_done__3
+l i1_is1__3
+m 2001 0
+j 2002 i2_is1__3
+m 2002 1
+j inc_done__3
+l i2_is1__3
+m 2002 0
+j 2003 i3_is1__3
+m 2003 1
+j inc_done__3
+l i3_is1__3
+m 2003 0
+j 2004 i4_is1__3
+m 2004 1
+j inc_done__3
+l i4_is1__3
+m 2004 0
+j 2005 i5_is1__3
+m 2005 1
+j inc_done__3
+l i5_is1__3
+m 2005 0
+j 2006 i6_is1__3
+m 2006 1
+j inc_done__3
+l i6_is1__3
+m 2006 0
+j 2007 i7_is1__3
+m 2007 1
+j inc_done__3
+l i7_is1__3
+m 2007 0
+j 2008 i8_is1__3
+m 2008 1
+j inc_done__3
+l i8_is1__3
+m 2008 0
+j 2009 i9_is1__3
+m 2009 1
+j inc_done__3
+l i9_is1__3
+m 2009 0
+j 2010 i10_is1__3
+m 2010 1
+j inc_done__3
+l i10_is1__3
+m 2010 0
+j 2011 i11_is1__3
+m 2011 1
+j inc_done__3
+l i11_is1__3
+m 2011 0
+j 2012 i12_is1__3
+m 2012 1
+j inc_done__3
+l i12_is1__3
+m 2012 0
+l inc_done__3
+j 2000 d0_is1__4
+m 2000 1
+j d1__4
+l d0_is1__4
+m 2000 0
+j dec_done__4
+l d1__4
+j 2001 d1_is1__4
+m 2001 1
+j d2__4
+l d1_is1__4
+m 2001 0
+j dec_done__4
+l d2__4
+j 2002 d2_is1__4
+m 2002 1
+j d3__4
+l d2_is1__4
+m 2002 0
+j dec_done__4
+l d3__4
+j 2003 d3_is1__4
+m 2003 1
+j d4__4
+l d3_is1__4
+m 2003 0
+j dec_done__4
+l d4__4
+j 2004 d4_is1__4
+m 2004 1
+j d5__4
+l d4_is1__4
+m 2004 0
+j dec_done__4
+l d5__4
+j 2005 d5_is1__4
+m 2005 1
+j d6__4
+l d5_is1__4
+m 2005 0
+j dec_done__4
+l d6__4
+j 2006 d6_is1__4
+m 2006 1
+j d7__4
+l d6_is1__4
+m 2006 0
+j dec_done__4
+l d7__4
+j 2007 d7_is1__4
+m 2007 1
+j d8__4
+l d7_is1__4
+m 2007 0
+j dec_done__4
+l d8__4
+j 2008 d8_is1__4
+m 2008 1
+j d9__4
+l d8_is1__4
+m 2008 0
+j dec_done__4
+l d9__4
+j 2009 d9_is1__4
+m 2009 1
+j d10__4
+l d9_is1__4
+m 2009 0
+j dec_done__4
+l d10__4
+j 2010 d10_is1__4
+m 2010 1
+j d11__4
+l d10_is1__4
+m 2010 0
+j dec_done__4
+l d11__4
+j 2011 d11_is1__4
+m 2011 1
+j d12__4
+l d11_is1__4
+m 2011 0
+j dec_done__4
+l d12__4
+j 2012 d12_is1__4
+m 2012 1
+j dec_done__4
+l d12_is1__4
+m 2012 0
+l dec_done__4
+m out @2000
+j 2000 d0_is1__5
+m 2000 1
+j d1__5
+l d0_is1__5
+m 2000 0
+j dec_done__5
+l d1__5
+j 2001 d1_is1__5
+m 2001 1
+j d2__5
+l d1_is1__5
+m 2001 0
+j dec_done__5
+l d2__5
+j 2002 d2_is1__5
+m 2002 1
+j d3__5
+l d2_is1__5
+m 2002 0
+j dec_done__5
+l d3__5
+j 2003 d3_is1__5
+m 2003 1
+j d4__5
+l d3_is1__5
+m 2003 0
+j dec_done__5
+l d4__5
+j 2004 d4_is1__5
+m 2004 1
+j d5__5
+l d4_is1__5
+m 2004 0
+j dec_done__5
+l d5__5
+j 2005 d5_is1__5
+m 2005 1
+j d6__5
+l d5_is1__5
+m 2005 0
+j dec_done__5
+l d6__5
+j 2006 d6_is1__5
+m 2006 1
+j d7__5
+l d6_is1__5
+m 2006 0
+j dec_done__5
+l d7__5
+j 2007 d7_is1__5
+m 2007 1
+j d8__5
+l d7_is1__5
+m 2007 0
+j dec_done__5
+l d8__5
+j 2008 d8_is1__5
+m 2008 1
+j d9__5
+l d8_is1__5
+m 2008 0
+j dec_done__5
+l d9__5
+j 2009 d9_is1__5
+m 2009 1
+j d10__5
+l d9_is1__5
+m 2009 0
+j dec_done__5
+l d10__5
+j 2010 d10_is1__5
+m 2010 1
+j d11__5
+l d10_is1__5
+m 2010 0
+j dec_done__5
+l d11__5
+j 2011 d11_is1__5
+m 2011 1
+j d12__5
+l d11_is1__5
+m 2011 0
+j dec_done__5
+l d12__5
+j 2012 d12_is1__5
+m 2012 1
+j dec_done__5
+l d12_is1__5
+m 2012 0
+l dec_done__5
+m out @2000
+j 2000 d0_is1__6
+m 2000 1
+j d1__6
+l d0_is1__6
+m 2000 0
+j dec_done__6
+l d1__6
+j 2001 d1_is1__6
+m 2001 1
+j d2__6
+l d1_is1__6
+m 2001 0
+j dec_done__6
+l d2__6
+j 2002 d2_is1__6
+m 2002 1
+j d3__6
+l d2_is1__6
+m 2002 0
+j dec_done__6
+l d3__6
+j 2003 d3_is1__6
+m 2003 1
+j d4__6
+l d3_is1__6
+m 2003 0
+j dec_done__6
+l d4__6
+j 2004 d4_is1__6
+m 2004 1
+j d5__6
+l d4_is1__6
+m 2004 0
+j dec_done__6
+l d5__6
+j 2005 d5_is1__6
+m 2005 1
+j d6__6
+l d5_is1__6
+m 2005 0
+j dec_done__6
+l d6__6
+j 2006 d6_is1__6
+m 2006 1
+j d7__6
+l d6_is1__6
+m 2006 0
+j dec_done__6
+l d7__6
+j 2007 d7_is1__6
+m 2007 1
+j d8__6
+l d7_is1__6
+m 2007 0
+j dec_done__6
+l d8__6
+j 2008 d8_is1__6
+m 2008 1
+j d9__6
+l d8_is1__6
+m 2008 0
+j dec_done__6
+l d9__6
+j 2009 d9_is1__6
+m 2009 1
+j d10__6
+l d9_is1__6
+m 2009 0
+j dec_done__6
+l d10__6
+j 2010 d10_is1__6
+m 2010 1
+j d11__6
+l d10_is1__6
+m 2010 0
+j dec_done__6
+l d11__6
+j 2011 d11_is1__6
+m 2011 1
+j d12__6
+l d11_is1__6
+m 2011 0
+j dec_done__6
+l d12__6
+j 2012 d12_is1__6
+m 2012 1
+j dec_done__6
+l d12_is1__6
+m 2012 0
+l dec_done__6
+m out @2000
+j end
