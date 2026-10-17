@@ -4,6 +4,20 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
+## 2026-10-17 — peek/poke: indirect addressing as an addressing mode
+
+Extended `CopyJumpMachine.py` with indirect addressing: an operand prefixed
+with `@` is dereferenced (the 13-bit value at that address is the actual
+address) — `m dst @src` (peek), `m @dst src` (poke), `j @reg` (computed goto).
+Added as an **addressing mode**, not a new opcode, so the machine stays OISC /
+URISC. Verified by `program_indirect_demo.prg.txt` (peek + poke) and a
+computed-goto check; MD5 and the outliner demos still pass (no regression).
+
+This makes **pointers** expressible — the primitive that unlocks arrays, heap,
+stacks, call-stacks (recursion), and linked structures, all built in software.
+
+---
+
 ## 2026-10-17 — md5_gen.py: also share the round function (F/G/H/I)
 
 Continuing the reuse-aware codegen: the `F/G/H/I` round functions (fixed

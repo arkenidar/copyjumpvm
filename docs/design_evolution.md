@@ -88,5 +88,33 @@ it's peek/poke + an allocator + a linked list.
 
 ---
 
-*(next steps, to be appended as they are reasoned through: the peek/poke VM
-experiment, then the data-structure tower demonstrated on this substrate.)*
+## 7. Peek/poke implemented — still OISC, now with pointers
+
+We added indirect addressing **as an addressing mode, not a new opcode**: an
+operand prefixed with `@` is dereferenced — the 13-bit value stored at that
+address is used as the actual address.
+
+**Key insight — OISC vs URISC:** *OISC* counts instructions; *URISC* is the
+minimality philosophy (Mavaddat & Parhami 1988). Adding indirection as a *mode*
+keeps the single instruction (`[copy_from|ind, copy_to|ind, j0, j1]`) — so the
+machine is **still OISC and still URISC**, just with a richer addressing model.
+
+The extended ISA (same `m`/`j`; `@` is a mode):
+
+```
+m  dst  src    # direct
+m  dst  @src   # peek (indirect read)
+m  @dst src    # poke (indirect write)
+m  @dst @src   # both
+j  @reg        # computed goto (indirect jump / return)
+```
+
+Implemented in `CopyJumpMachine.py` (`ADDR_BITS=13`, `addr_of`), verified by
+`program_indirect_demo.prg.txt` (peek + poke) and a computed-goto check.
+
+This is "one primitive unlocks the tower" made real: pointers are now
+expressible, so arrays / heap / stacks / call-stacks / recursion become
+*software* built on the substrate.
+
+*(next: the round loop — use peek to read `K[i]`/`M[g]`/`s[i]` and collapse the
+64× unrolled rounds into one loop; then demonstrate the data-structure tower.)*

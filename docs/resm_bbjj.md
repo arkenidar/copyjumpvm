@@ -28,6 +28,12 @@ In this repo the same instruction appears in two notations:
 - **numeric `.cj`** — `[copy_from, copy_to, jump_case_true, jump_case_false]`
 - **textual `.prg.txt`** — `m <dst> <src>` (copy) and `j <cond> <label0> <label1>` (jump)
 
+**Extended addressing (peek/poke).** An operand prefixed with `@` is
+*dereferenced*: the 13-bit value stored at that address is used as the actual
+address — `m <dst> @<src>` (indirect read / peek), `m @<dst> <src>` (indirect
+write / poke), `j @<reg>` (computed goto). This is an *addressing mode*, not a
+new opcode, so the machine stays a single-instruction set (OISC / URISC).
+
 ## What the machine deliberately omits
 
 The machine has **no ALU** and **no call stack** — and no shifter, comparator,
