@@ -62,6 +62,13 @@ a pushdown machine — finite-state ⊂ pushdown ⊂ Turing.
 `vm_programs/outliner.js` is a Node script that actually performs this graph
 rewrite (inlining → subgraph reuse) on a `.prg.txt` program:
 
+**Naming.** "Outlining" is the compiler term for the *inverse of inlining*: an
+*inliner* copies a function body into each call site, an *outliner* finds
+repeated code and pulls it out into one shared function. Synonyms in the
+literature: **procedure extraction**, **function outlining** (LLVM/GCC
+`-moutline`), **identical code folding / ICF** (linkers), and **procedural
+abstraction** (binary rewriters).
+
 1. **parse** the program into instructions + labels;
 2. **detect** exact-duplicate, self-contained, single-entry/single-exit
    fragments (canonicalized so label-renamed clones match, and "exit labels"

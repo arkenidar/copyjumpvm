@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * outliner.js — rewrite inlined copy+jump code into shared subgraphs.
+ * (Named after "outlining", the compiler term for the inverse of inlining.)
  *
  * v1: extracts exact-duplicate, self-contained, single-entry/single-exit
  *     fragments (fall-through only; all internal labels are local). The shared
