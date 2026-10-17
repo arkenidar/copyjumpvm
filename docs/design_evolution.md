@@ -34,9 +34,10 @@ then realized something better.
 
 **Key insight:** a **generator knows its patterns by name**, so it should emit
 shared subroutines *from the start* instead of inlining and re-discovering
-them. `md5_gen.py` became **reuse-aware** (shared `add32` subroutines):
-`program_md5.prg.txt` dropped **260,996 → 65,637 instructions (~4×)** with no
-post-hoc pass. → `reuse_graphs_paths.md`
+them. `md5_gen.py` became **reuse-aware** — shared `add32` subroutines, then the
+`F/G/H/I` round functions — `program_md5.prg.txt` dropped
+**260,996 → 36,865 instructions (~7×)**, each step with no post-hoc pass and
+verified against `hashlib`. → `reuse_graphs_paths.md`
 
 ## 4. Research framing — optimize copyjump *in general*
 

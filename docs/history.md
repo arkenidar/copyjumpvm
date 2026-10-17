@@ -4,6 +4,19 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
+## 2026-10-17 — md5_gen.py: also share the round function (F/G/H/I)
+
+Continuing the reuse-aware codegen: the `F/G/H/I` round functions (fixed
+addresses `B, C, D → F`) are now shared as 4 subroutines, called 16× each —
+like `add32`. `program_md5.prg.txt`: **65,637 → 36,865 instructions**
+(47,326 lines), still verified against `hashlib` (all RFC 1321 vectors).
+
+Cumulative: 260,996 → 65,637 (add32) → **36,865 (add32 + round function)**,
+~7× smaller than the original inlined program, entirely from source-level
+reuse.
+
+---
+
 ## 2026-10-17 — md5_gen.py: reuse-aware codegen (shared add32 subroutines)
 
 The MD5 generator now emits **shared `add32` subroutines** instead of inlining

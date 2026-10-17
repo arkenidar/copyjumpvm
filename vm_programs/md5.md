@@ -11,7 +11,7 @@ For the general machine model (RESM / BBJJ) behind this, see
 | File | Role |
 |---|---|
 | `md5_gen.py` | generator: emits `program_md5.prg.txt` |
-| `program_md5.prg.txt` | generated MD5 program (~66k instructions / ~90k lines; shared `add32` subroutines) |
+| `program_md5.prg.txt` | generated MD5 program (~37k instructions / ~47k lines; shared `add32` + round-function subroutines) |
 | `md5_reference.py` | expected digests via `hashlib` |
 | `md5_check.py` | runs the program in the VM and diffs vs `hashlib` |
 
@@ -79,14 +79,14 @@ A += a0; B += b0; C += c0; D += d0
 `K[i] = int(abs(sin(i+1)) * 2^32) & 0xFFFFFFFF`, and `s[i]`, `g`, and the
 function kind are hard-coded per round (no runtime tables).
 
-## Code reuse — shared `add32` subroutines
+## Code reuse — shared `add32` + round-function subroutines
 
-The generator is **reuse-aware**: each distinct `add32(dst, a, b)` signature is
-emitted *once* as a shared subroutine (fixed addresses) and called via a return
-register + dispatch tree, instead of inlining the ~769-instruction body 260
-times. This shrinks `program_md5.prg.txt` from **~261k to ~66k instructions
-(~4× smaller)** with *no* post-hoc optimization pass — the generator already
-knows its own patterns.
+The generator is **reuse-aware**: each distinct `add32(dst, a, b)` signature
+and each of the four `F/G/H/I` round functions is emitted *once* as a shared
+subroutine (fixed addresses) and called via a return register + dispatch tree,
+instead of inlining. This shrinks `program_md5.prg.txt` from **~261k to ~37k
+instructions (~7× smaller)** with *no* post-hoc optimization pass — the
+generator already knows its own patterns.
 
 ## Padding
 
