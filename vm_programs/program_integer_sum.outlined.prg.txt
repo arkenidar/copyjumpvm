@@ -1,0 +1,139 @@
+j in full_adder_a_is_1__0
+m 2 in
+m 3 0
+j 2 a0_jump_cin__0
+l a0_cout_b_is_0__0
+m 4 0
+j a0_calc_s__0
+l a0_jump_cin__0
+j 3 a0_cout_b_is_0__0 next
+m 4 1
+l a0_calc_s__0
+j 2 a0_s_b_is_1__0
+j 3 a0_s_is_0__0 a0_s_is_1__0
+l a0_s_b_is_1__0
+j 3 a0_s_is_1__0 a0_s_is_0__0
+l a0_s_is_0__0
+m out 0
+j full_adder_end__0
+l a0_s_is_1__0
+m out 1
+j full_adder_end__0
+l full_adder_a_is_1__0
+m 2 in
+m 3 0
+j 2 a1_jumpb0__0 a1_jumpb1__0
+l a1_jumpb0__0
+j 3 a1_cout0__0 a1_cout1__0
+l a1_jumpb1__0
+j 3 a1_cout1__0 a1_cout1__0
+l a1_cout0__0
+m 4 0
+j a1_calc_s__0
+l a1_cout1__0
+m 4 1
+l a1_calc_s__0
+j 2 a1_s_b_is_1__0
+j 3 a1_s_is_1__0 a1_s_is_0__0
+l a1_s_b_is_1__0
+j 3 a1_s_is_0__0 a1_s_is_1__0
+l a1_s_is_0__0
+m out 0
+j full_adder_end__0
+l a1_s_is_1__0
+m out 1
+l full_adder_end__0
+m 8000 0
+m 8001 0
+m 8002 0
+j __sub0
+l __sub0_ret0
+m 8000 1
+m 8001 0
+m 8002 0
+j __sub0
+l __sub0_ret1
+m 8000 0
+m 8001 1
+m 8002 0
+j __sub0
+l __sub0_ret2
+m 8000 1
+m 8001 1
+m 8002 0
+j __sub0
+l __sub0_ret3
+m 8000 0
+m 8001 0
+m 8002 1
+j __sub0
+l __sub0_ret4
+m 8000 1
+m 8001 0
+m 8002 1
+j __sub0
+l __sub0_ret5
+m 8000 0
+m 8001 1
+m 8002 1
+j __sub0
+l __sub0_ret6
+m out 4
+j end
+l __sub0
+j in __sub0_l6
+m 2 in
+m 3 4
+j 2 __sub0_l1
+l __sub0_l0
+m 4 0
+j __sub0_l2
+l __sub0_l1
+j 3 __sub0_l0 next
+m 4 1
+l __sub0_l2
+j 2 __sub0_l3
+j 3 __sub0_l4 __sub0_l5
+l __sub0_l3
+j 3 __sub0_l5 __sub0_l4
+l __sub0_l4
+m out 0
+j __sub0_exit
+l __sub0_l5
+m out 1
+j __sub0_exit
+l __sub0_l6
+m 2 in
+m 3 4
+j 2 __sub0_l7 __sub0_l8
+l __sub0_l7
+j 3 __sub0_l9 __sub0_l10
+l __sub0_l8
+j 3 __sub0_l10 __sub0_l10
+l __sub0_l9
+m 4 0
+j __sub0_l11
+l __sub0_l10
+m 4 1
+l __sub0_l11
+j 2 __sub0_l12
+j 3 __sub0_l14 __sub0_l13
+l __sub0_l12
+j 3 __sub0_l13 __sub0_l14
+l __sub0_l13
+m out 0
+j __sub0_exit
+l __sub0_l14
+m out 1
+l __sub0_exit
+j 8000 __sub0_d0 __sub0_d1
+l __sub0_d0
+j 8001 __sub0_d2 __sub0_d3
+l __sub0_d2
+j 8002 __sub0_ret0 __sub0_ret4
+l __sub0_d3
+j 8002 __sub0_ret2 __sub0_ret6
+l __sub0_d1
+j 8001 __sub0_d8 __sub0_ret3
+l __sub0_d8
+j 8002 __sub0_ret1 __sub0_ret5
