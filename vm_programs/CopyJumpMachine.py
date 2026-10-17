@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-'''A bytecode interpreter. Possible instructions are of assignment or jump type.'''
+'''A bytecode interpreter. Possible instructions are of assignment or jump type.
+
+Extended with indirect addressing ("peek"/"poke"): an operand prefixed with '@'
+is dereferenced — the ADDR_BITS-bit value stored at that address is used as the
+actual address. This adds pointer support while keeping the single copy+jump
+instruction (the '@' is an addressing mode, not a new opcode), so the machine
+stays an OISC / URISC.'''
+
+ADDR_BITS = 13  # width of an "address register" (a pointer), in bits
 
 class BitPrinter: # pylint: disable=too-few-public-methods
     '''Prints a bit and a byte.'''
@@ -74,8 +82,17 @@ def run_code(code, bit_printer, memory):
     def execute(lines, line_labels, bit_printer):
         '''Runs some byte code.'''
 
+        def addr_of(base):
+            '''Reads ADDR_BITS bits (LSB-first) as an address.'''
+            addr = 0
+            for i in range(ADDR_BITS):
+                addr |= mem[base + i] << i
+            return addr
+
         def read(src): # read from address
-            '''Reads a bit from an address.'''
+            '''Reads a bit from an address ('@' = indirect read / peek).'''
+            if src.startswith('@'):
+                src = str(addr_of(int(src[1:])))
             try:
                 src = int(src)
                 value = mem[src]
@@ -91,7 +108,10 @@ def run_code(code, bit_printer, memory):
             return value
 
         def write(dst, src, bit_printer): # write to address
-            '''Writes a bit copying from source address to destination address.'''
+            '''Writes a bit copying from source address to destination address
+            ('@' prefix on dst = indirect write / poke).'''
+            if dst.startswith('@'):
+                dst = str(addr_of(int(dst[1:])))
             try:
                 dst = int(dst)
                 mem[dst] = src
@@ -102,7 +122,10 @@ def run_code(code, bit_printer, memory):
         def jump(cline, instruction_pointer, line_labels): # pylint: disable=too-many-arguments
             '''Handles Jump instructions.'''
             if len(cline) == 2: # unconditional jump
-                new_instruction_pointer = cline[1]
+                if cline[1].startswith('@'): # computed goto (indirect jump)
+                    new_instruction_pointer = addr_of(int(cline[1][1:]))
+                else:
+                    new_instruction_pointer = cline[1]
 
             elif len(cline) == 3: # conditional jump
                 bit = read(cline[1])

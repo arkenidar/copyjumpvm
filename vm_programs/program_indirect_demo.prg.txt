@@ -1,0 +1,23 @@
+# indirect addressing demo: peek and poke via a 13-bit address register
+# address register at bits 100..112, loaded with address 20 (0b10100, LSB-first)
+m 100 0
+m 101 0
+m 102 1
+m 103 0
+m 104 1
+m 105 0
+m 106 0
+m 107 0
+m 108 0
+m 109 0
+m 110 0
+m 111 0
+m 112 0
+# set mem[20] = 1
+m 20 1
+# peek: output mem[addr(100)] = mem[20] = 1
+m out @100
+# poke: write mem[addr(100)] = 0  (i.e. mem[20] = 0)
+m @100 0
+# output mem[20] directly = 0
+m out 20
