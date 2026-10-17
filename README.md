@@ -50,8 +50,9 @@ python3 vm_programs/xorshift32_reference.py 0x12345678 10
 python3 vm_programs/CopyJumpMachine.py vm_programs/program_xorshift32_loop.prg.txt
 ```
 
-See `docs/history.md` for the build logs and `vm_programs/md5.md` for the MD5
-design notes.
+See `docs/history.md` for the build logs, `vm_programs/md5.md` for the MD5
+design notes, and `docs/research_roadmap.md` for the program-optimization
+research directions.
 
 ---
 

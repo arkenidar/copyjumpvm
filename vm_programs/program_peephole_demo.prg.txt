@@ -1,0 +1,13 @@
+# peephole demo: real work + removable no-ops (self-copies and jump-to-next)
+m 10 0
+m 11 1
+m 5 5
+m out 10
+j skip
+l skip
+m out 11
+m 7 7
+m out 10
+m out 11
+j done
+l done

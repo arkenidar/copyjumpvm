@@ -1,0 +1,8 @@
+m 10 0
+m 11 1
+m out 10
+l skip
+m out 11
+m out 10
+m out 11
+l done

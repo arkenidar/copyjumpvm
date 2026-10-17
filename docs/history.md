@@ -1,7 +1,8 @@
 # History
 
 > Origin & motivation: see `compression_intelligence.md` (the Hutter-Prize
-> thesis this build log descends from).
+> thesis this build log descends from). Research directions: see
+> `research_roadmap.md`.
 
 ## 2026-10-17 — outliner.js: inlining → subgraph reuse (graph rewrite)
 
