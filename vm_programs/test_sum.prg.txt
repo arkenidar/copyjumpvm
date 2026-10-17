@@ -1,0 +1,4497 @@
+m 6000 0
+m 6001 0
+m 6002 0
+m 6003 0
+m 6004 0
+m 6005 1
+m 6006 0
+m 6007 1
+m 6008 1
+m 6009 1
+m 6010 1
+m 6011 1
+m 6012 0
+m @6000 0
+j 6000 i0_is1__1
+m 6000 1
+j inc_done__1
+l i0_is1__1
+m 6000 0
+j 6001 i1_is1__1
+m 6001 1
+j inc_done__1
+l i1_is1__1
+m 6001 0
+j 6002 i2_is1__1
+m 6002 1
+j inc_done__1
+l i2_is1__1
+m 6002 0
+j 6003 i3_is1__1
+m 6003 1
+j inc_done__1
+l i3_is1__1
+m 6003 0
+j 6004 i4_is1__1
+m 6004 1
+j inc_done__1
+l i4_is1__1
+m 6004 0
+j 6005 i5_is1__1
+m 6005 1
+j inc_done__1
+l i5_is1__1
+m 6005 0
+j 6006 i6_is1__1
+m 6006 1
+j inc_done__1
+l i6_is1__1
+m 6006 0
+j 6007 i7_is1__1
+m 6007 1
+j inc_done__1
+l i7_is1__1
+m 6007 0
+j 6008 i8_is1__1
+m 6008 1
+j inc_done__1
+l i8_is1__1
+m 6008 0
+j 6009 i9_is1__1
+m 6009 1
+j inc_done__1
+l i9_is1__1
+m 6009 0
+j 6010 i10_is1__1
+m 6010 1
+j inc_done__1
+l i10_is1__1
+m 6010 0
+j 6011 i11_is1__1
+m 6011 1
+j inc_done__1
+l i11_is1__1
+m 6011 0
+j 6012 i12_is1__1
+m 6012 1
+j inc_done__1
+l i12_is1__1
+m 6012 0
+l inc_done__1
+m @6000 0
+j 6000 i0_is1__2
+m 6000 1
+j inc_done__2
+l i0_is1__2
+m 6000 0
+j 6001 i1_is1__2
+m 6001 1
+j inc_done__2
+l i1_is1__2
+m 6001 0
+j 6002 i2_is1__2
+m 6002 1
+j inc_done__2
+l i2_is1__2
+m 6002 0
+j 6003 i3_is1__2
+m 6003 1
+j inc_done__2
+l i3_is1__2
+m 6003 0
+j 6004 i4_is1__2
+m 6004 1
+j inc_done__2
+l i4_is1__2
+m 6004 0
+j 6005 i5_is1__2
+m 6005 1
+j inc_done__2
+l i5_is1__2
+m 6005 0
+j 6006 i6_is1__2
+m 6006 1
+j inc_done__2
+l i6_is1__2
+m 6006 0
+j 6007 i7_is1__2
+m 6007 1
+j inc_done__2
+l i7_is1__2
+m 6007 0
+j 6008 i8_is1__2
+m 6008 1
+j inc_done__2
+l i8_is1__2
+m 6008 0
+j 6009 i9_is1__2
+m 6009 1
+j inc_done__2
+l i9_is1__2
+m 6009 0
+j 6010 i10_is1__2
+m 6010 1
+j inc_done__2
+l i10_is1__2
+m 6010 0
+j 6011 i11_is1__2
+m 6011 1
+j inc_done__2
+l i11_is1__2
+m 6011 0
+j 6012 i12_is1__2
+m 6012 1
+j inc_done__2
+l i12_is1__2
+m 6012 0
+l inc_done__2
+m @6000 0
+j 6000 i0_is1__3
+m 6000 1
+j inc_done__3
+l i0_is1__3
+m 6000 0
+j 6001 i1_is1__3
+m 6001 1
+j inc_done__3
+l i1_is1__3
+m 6001 0
+j 6002 i2_is1__3
+m 6002 1
+j inc_done__3
+l i2_is1__3
+m 6002 0
+j 6003 i3_is1__3
+m 6003 1
+j inc_done__3
+l i3_is1__3
+m 6003 0
+j 6004 i4_is1__3
+m 6004 1
+j inc_done__3
+l i4_is1__3
+m 6004 0
+j 6005 i5_is1__3
+m 6005 1
+j inc_done__3
+l i5_is1__3
+m 6005 0
+j 6006 i6_is1__3
+m 6006 1
+j inc_done__3
+l i6_is1__3
+m 6006 0
+j 6007 i7_is1__3
+m 6007 1
+j inc_done__3
+l i7_is1__3
+m 6007 0
+j 6008 i8_is1__3
+m 6008 1
+j inc_done__3
+l i8_is1__3
+m 6008 0
+j 6009 i9_is1__3
+m 6009 1
+j inc_done__3
+l i9_is1__3
+m 6009 0
+j 6010 i10_is1__3
+m 6010 1
+j inc_done__3
+l i10_is1__3
+m 6010 0
+j 6011 i11_is1__3
+m 6011 1
+j inc_done__3
+l i11_is1__3
+m 6011 0
+j 6012 i12_is1__3
+m 6012 1
+j inc_done__3
+l i12_is1__3
+m 6012 0
+l inc_done__3
+m @6000 1
+j 6000 i0_is1__4
+m 6000 1
+j inc_done__4
+l i0_is1__4
+m 6000 0
+j 6001 i1_is1__4
+m 6001 1
+j inc_done__4
+l i1_is1__4
+m 6001 0
+j 6002 i2_is1__4
+m 6002 1
+j inc_done__4
+l i2_is1__4
+m 6002 0
+j 6003 i3_is1__4
+m 6003 1
+j inc_done__4
+l i3_is1__4
+m 6003 0
+j 6004 i4_is1__4
+m 6004 1
+j inc_done__4
+l i4_is1__4
+m 6004 0
+j 6005 i5_is1__4
+m 6005 1
+j inc_done__4
+l i5_is1__4
+m 6005 0
+j 6006 i6_is1__4
+m 6006 1
+j inc_done__4
+l i6_is1__4
+m 6006 0
+j 6007 i7_is1__4
+m 6007 1
+j inc_done__4
+l i7_is1__4
+m 6007 0
+j 6008 i8_is1__4
+m 6008 1
+j inc_done__4
+l i8_is1__4
+m 6008 0
+j 6009 i9_is1__4
+m 6009 1
+j inc_done__4
+l i9_is1__4
+m 6009 0
+j 6010 i10_is1__4
+m 6010 1
+j inc_done__4
+l i10_is1__4
+m 6010 0
+j 6011 i11_is1__4
+m 6011 1
+j inc_done__4
+l i11_is1__4
+m 6011 0
+j 6012 i12_is1__4
+m 6012 1
+j inc_done__4
+l i12_is1__4
+m 6012 0
+l inc_done__4
+m @6000 0
+j 6000 i0_is1__5
+m 6000 1
+j inc_done__5
+l i0_is1__5
+m 6000 0
+j 6001 i1_is1__5
+m 6001 1
+j inc_done__5
+l i1_is1__5
+m 6001 0
+j 6002 i2_is1__5
+m 6002 1
+j inc_done__5
+l i2_is1__5
+m 6002 0
+j 6003 i3_is1__5
+m 6003 1
+j inc_done__5
+l i3_is1__5
+m 6003 0
+j 6004 i4_is1__5
+m 6004 1
+j inc_done__5
+l i4_is1__5
+m 6004 0
+j 6005 i5_is1__5
+m 6005 1
+j inc_done__5
+l i5_is1__5
+m 6005 0
+j 6006 i6_is1__5
+m 6006 1
+j inc_done__5
+l i6_is1__5
+m 6006 0
+j 6007 i7_is1__5
+m 6007 1
+j inc_done__5
+l i7_is1__5
+m 6007 0
+j 6008 i8_is1__5
+m 6008 1
+j inc_done__5
+l i8_is1__5
+m 6008 0
+j 6009 i9_is1__5
+m 6009 1
+j inc_done__5
+l i9_is1__5
+m 6009 0
+j 6010 i10_is1__5
+m 6010 1
+j inc_done__5
+l i10_is1__5
+m 6010 0
+j 6011 i11_is1__5
+m 6011 1
+j inc_done__5
+l i11_is1__5
+m 6011 0
+j 6012 i12_is1__5
+m 6012 1
+j inc_done__5
+l i12_is1__5
+m 6012 0
+l inc_done__5
+m @6000 1
+j 6000 i0_is1__6
+m 6000 1
+j inc_done__6
+l i0_is1__6
+m 6000 0
+j 6001 i1_is1__6
+m 6001 1
+j inc_done__6
+l i1_is1__6
+m 6001 0
+j 6002 i2_is1__6
+m 6002 1
+j inc_done__6
+l i2_is1__6
+m 6002 0
+j 6003 i3_is1__6
+m 6003 1
+j inc_done__6
+l i3_is1__6
+m 6003 0
+j 6004 i4_is1__6
+m 6004 1
+j inc_done__6
+l i4_is1__6
+m 6004 0
+j 6005 i5_is1__6
+m 6005 1
+j inc_done__6
+l i5_is1__6
+m 6005 0
+j 6006 i6_is1__6
+m 6006 1
+j inc_done__6
+l i6_is1__6
+m 6006 0
+j 6007 i7_is1__6
+m 6007 1
+j inc_done__6
+l i7_is1__6
+m 6007 0
+j 6008 i8_is1__6
+m 6008 1
+j inc_done__6
+l i8_is1__6
+m 6008 0
+j 6009 i9_is1__6
+m 6009 1
+j inc_done__6
+l i9_is1__6
+m 6009 0
+j 6010 i10_is1__6
+m 6010 1
+j inc_done__6
+l i10_is1__6
+m 6010 0
+j 6011 i11_is1__6
+m 6011 1
+j inc_done__6
+l i11_is1__6
+m 6011 0
+j 6012 i12_is1__6
+m 6012 1
+j inc_done__6
+l i12_is1__6
+m 6012 0
+l inc_done__6
+m @6000 0
+j 6000 i0_is1__7
+m 6000 1
+j inc_done__7
+l i0_is1__7
+m 6000 0
+j 6001 i1_is1__7
+m 6001 1
+j inc_done__7
+l i1_is1__7
+m 6001 0
+j 6002 i2_is1__7
+m 6002 1
+j inc_done__7
+l i2_is1__7
+m 6002 0
+j 6003 i3_is1__7
+m 6003 1
+j inc_done__7
+l i3_is1__7
+m 6003 0
+j 6004 i4_is1__7
+m 6004 1
+j inc_done__7
+l i4_is1__7
+m 6004 0
+j 6005 i5_is1__7
+m 6005 1
+j inc_done__7
+l i5_is1__7
+m 6005 0
+j 6006 i6_is1__7
+m 6006 1
+j inc_done__7
+l i6_is1__7
+m 6006 0
+j 6007 i7_is1__7
+m 6007 1
+j inc_done__7
+l i7_is1__7
+m 6007 0
+j 6008 i8_is1__7
+m 6008 1
+j inc_done__7
+l i8_is1__7
+m 6008 0
+j 6009 i9_is1__7
+m 6009 1
+j inc_done__7
+l i9_is1__7
+m 6009 0
+j 6010 i10_is1__7
+m 6010 1
+j inc_done__7
+l i10_is1__7
+m 6010 0
+j 6011 i11_is1__7
+m 6011 1
+j inc_done__7
+l i11_is1__7
+m 6011 0
+j 6012 i12_is1__7
+m 6012 1
+j inc_done__7
+l i12_is1__7
+m 6012 0
+l inc_done__7
+m @6000 1
+j 6000 i0_is1__8
+m 6000 1
+j inc_done__8
+l i0_is1__8
+m 6000 0
+j 6001 i1_is1__8
+m 6001 1
+j inc_done__8
+l i1_is1__8
+m 6001 0
+j 6002 i2_is1__8
+m 6002 1
+j inc_done__8
+l i2_is1__8
+m 6002 0
+j 6003 i3_is1__8
+m 6003 1
+j inc_done__8
+l i3_is1__8
+m 6003 0
+j 6004 i4_is1__8
+m 6004 1
+j inc_done__8
+l i4_is1__8
+m 6004 0
+j 6005 i5_is1__8
+m 6005 1
+j inc_done__8
+l i5_is1__8
+m 6005 0
+j 6006 i6_is1__8
+m 6006 1
+j inc_done__8
+l i6_is1__8
+m 6006 0
+j 6007 i7_is1__8
+m 6007 1
+j inc_done__8
+l i7_is1__8
+m 6007 0
+j 6008 i8_is1__8
+m 6008 1
+j inc_done__8
+l i8_is1__8
+m 6008 0
+j 6009 i9_is1__8
+m 6009 1
+j inc_done__8
+l i9_is1__8
+m 6009 0
+j 6010 i10_is1__8
+m 6010 1
+j inc_done__8
+l i10_is1__8
+m 6010 0
+j 6011 i11_is1__8
+m 6011 1
+j inc_done__8
+l i11_is1__8
+m 6011 0
+j 6012 i12_is1__8
+m 6012 1
+j inc_done__8
+l i12_is1__8
+m 6012 0
+l inc_done__8
+m @6000 1
+j 6000 i0_is1__9
+m 6000 1
+j inc_done__9
+l i0_is1__9
+m 6000 0
+j 6001 i1_is1__9
+m 6001 1
+j inc_done__9
+l i1_is1__9
+m 6001 0
+j 6002 i2_is1__9
+m 6002 1
+j inc_done__9
+l i2_is1__9
+m 6002 0
+j 6003 i3_is1__9
+m 6003 1
+j inc_done__9
+l i3_is1__9
+m 6003 0
+j 6004 i4_is1__9
+m 6004 1
+j inc_done__9
+l i4_is1__9
+m 6004 0
+j 6005 i5_is1__9
+m 6005 1
+j inc_done__9
+l i5_is1__9
+m 6005 0
+j 6006 i6_is1__9
+m 6006 1
+j inc_done__9
+l i6_is1__9
+m 6006 0
+j 6007 i7_is1__9
+m 6007 1
+j inc_done__9
+l i7_is1__9
+m 6007 0
+j 6008 i8_is1__9
+m 6008 1
+j inc_done__9
+l i8_is1__9
+m 6008 0
+j 6009 i9_is1__9
+m 6009 1
+j inc_done__9
+l i9_is1__9
+m 6009 0
+j 6010 i10_is1__9
+m 6010 1
+j inc_done__9
+l i10_is1__9
+m 6010 0
+j 6011 i11_is1__9
+m 6011 1
+j inc_done__9
+l i11_is1__9
+m 6011 0
+j 6012 i12_is1__9
+m 6012 1
+j inc_done__9
+l i12_is1__9
+m 6012 0
+l inc_done__9
+m @6000 1
+j 6000 i0_is1__10
+m 6000 1
+j inc_done__10
+l i0_is1__10
+m 6000 0
+j 6001 i1_is1__10
+m 6001 1
+j inc_done__10
+l i1_is1__10
+m 6001 0
+j 6002 i2_is1__10
+m 6002 1
+j inc_done__10
+l i2_is1__10
+m 6002 0
+j 6003 i3_is1__10
+m 6003 1
+j inc_done__10
+l i3_is1__10
+m 6003 0
+j 6004 i4_is1__10
+m 6004 1
+j inc_done__10
+l i4_is1__10
+m 6004 0
+j 6005 i5_is1__10
+m 6005 1
+j inc_done__10
+l i5_is1__10
+m 6005 0
+j 6006 i6_is1__10
+m 6006 1
+j inc_done__10
+l i6_is1__10
+m 6006 0
+j 6007 i7_is1__10
+m 6007 1
+j inc_done__10
+l i7_is1__10
+m 6007 0
+j 6008 i8_is1__10
+m 6008 1
+j inc_done__10
+l i8_is1__10
+m 6008 0
+j 6009 i9_is1__10
+m 6009 1
+j inc_done__10
+l i9_is1__10
+m 6009 0
+j 6010 i10_is1__10
+m 6010 1
+j inc_done__10
+l i10_is1__10
+m 6010 0
+j 6011 i11_is1__10
+m 6011 1
+j inc_done__10
+l i11_is1__10
+m 6011 0
+j 6012 i12_is1__10
+m 6012 1
+j inc_done__10
+l i12_is1__10
+m 6012 0
+l inc_done__10
+m @6000 1
+j 6000 i0_is1__11
+m 6000 1
+j inc_done__11
+l i0_is1__11
+m 6000 0
+j 6001 i1_is1__11
+m 6001 1
+j inc_done__11
+l i1_is1__11
+m 6001 0
+j 6002 i2_is1__11
+m 6002 1
+j inc_done__11
+l i2_is1__11
+m 6002 0
+j 6003 i3_is1__11
+m 6003 1
+j inc_done__11
+l i3_is1__11
+m 6003 0
+j 6004 i4_is1__11
+m 6004 1
+j inc_done__11
+l i4_is1__11
+m 6004 0
+j 6005 i5_is1__11
+m 6005 1
+j inc_done__11
+l i5_is1__11
+m 6005 0
+j 6006 i6_is1__11
+m 6006 1
+j inc_done__11
+l i6_is1__11
+m 6006 0
+j 6007 i7_is1__11
+m 6007 1
+j inc_done__11
+l i7_is1__11
+m 6007 0
+j 6008 i8_is1__11
+m 6008 1
+j inc_done__11
+l i8_is1__11
+m 6008 0
+j 6009 i9_is1__11
+m 6009 1
+j inc_done__11
+l i9_is1__11
+m 6009 0
+j 6010 i10_is1__11
+m 6010 1
+j inc_done__11
+l i10_is1__11
+m 6010 0
+j 6011 i11_is1__11
+m 6011 1
+j inc_done__11
+l i11_is1__11
+m 6011 0
+j 6012 i12_is1__11
+m 6012 1
+j inc_done__11
+l i12_is1__11
+m 6012 0
+l inc_done__11
+m @6000 1
+j 6000 i0_is1__12
+m 6000 1
+j inc_done__12
+l i0_is1__12
+m 6000 0
+j 6001 i1_is1__12
+m 6001 1
+j inc_done__12
+l i1_is1__12
+m 6001 0
+j 6002 i2_is1__12
+m 6002 1
+j inc_done__12
+l i2_is1__12
+m 6002 0
+j 6003 i3_is1__12
+m 6003 1
+j inc_done__12
+l i3_is1__12
+m 6003 0
+j 6004 i4_is1__12
+m 6004 1
+j inc_done__12
+l i4_is1__12
+m 6004 0
+j 6005 i5_is1__12
+m 6005 1
+j inc_done__12
+l i5_is1__12
+m 6005 0
+j 6006 i6_is1__12
+m 6006 1
+j inc_done__12
+l i6_is1__12
+m 6006 0
+j 6007 i7_is1__12
+m 6007 1
+j inc_done__12
+l i7_is1__12
+m 6007 0
+j 6008 i8_is1__12
+m 6008 1
+j inc_done__12
+l i8_is1__12
+m 6008 0
+j 6009 i9_is1__12
+m 6009 1
+j inc_done__12
+l i9_is1__12
+m 6009 0
+j 6010 i10_is1__12
+m 6010 1
+j inc_done__12
+l i10_is1__12
+m 6010 0
+j 6011 i11_is1__12
+m 6011 1
+j inc_done__12
+l i11_is1__12
+m 6011 0
+j 6012 i12_is1__12
+m 6012 1
+j inc_done__12
+l i12_is1__12
+m 6012 0
+l inc_done__12
+m @6000 1
+j 6000 i0_is1__13
+m 6000 1
+j inc_done__13
+l i0_is1__13
+m 6000 0
+j 6001 i1_is1__13
+m 6001 1
+j inc_done__13
+l i1_is1__13
+m 6001 0
+j 6002 i2_is1__13
+m 6002 1
+j inc_done__13
+l i2_is1__13
+m 6002 0
+j 6003 i3_is1__13
+m 6003 1
+j inc_done__13
+l i3_is1__13
+m 6003 0
+j 6004 i4_is1__13
+m 6004 1
+j inc_done__13
+l i4_is1__13
+m 6004 0
+j 6005 i5_is1__13
+m 6005 1
+j inc_done__13
+l i5_is1__13
+m 6005 0
+j 6006 i6_is1__13
+m 6006 1
+j inc_done__13
+l i6_is1__13
+m 6006 0
+j 6007 i7_is1__13
+m 6007 1
+j inc_done__13
+l i7_is1__13
+m 6007 0
+j 6008 i8_is1__13
+m 6008 1
+j inc_done__13
+l i8_is1__13
+m 6008 0
+j 6009 i9_is1__13
+m 6009 1
+j inc_done__13
+l i9_is1__13
+m 6009 0
+j 6010 i10_is1__13
+m 6010 1
+j inc_done__13
+l i10_is1__13
+m 6010 0
+j 6011 i11_is1__13
+m 6011 1
+j inc_done__13
+l i11_is1__13
+m 6011 0
+j 6012 i12_is1__13
+m 6012 1
+j inc_done__13
+l i12_is1__13
+m 6012 0
+l inc_done__13
+j main
+j end
+l sum
+m 7004 0
+j 100 a1__14
+m 7000 108
+j done__14
+l a1__14
+j 108 a1b1__14
+m 7000 1
+j done__14
+l a1b1__14
+m 7000 0
+l done__14
+j 100 a1__15
+m 7002 0
+j done__15
+l a1__15
+m 7002 108
+l done__15
+j 7000 a1__16
+m 200 7004
+j done__16
+l a1__16
+j 7004 a1b1__16
+m 200 1
+j done__16
+l a1b1__16
+m 200 0
+l done__16
+j 7000 a1__17
+m 7001 0
+j done__17
+l a1__17
+m 7001 7004
+l done__17
+j 7001 a1__18
+m 7004 7002
+j done__18
+l a1__18
+m 7004 1
+l done__18
+j 101 a1__19
+m 7000 109
+j done__19
+l a1__19
+j 109 a1b1__19
+m 7000 1
+j done__19
+l a1b1__19
+m 7000 0
+l done__19
+j 101 a1__20
+m 7002 0
+j done__20
+l a1__20
+m 7002 109
+l done__20
+j 7000 a1__21
+m 201 7004
+j done__21
+l a1__21
+j 7004 a1b1__21
+m 201 1
+j done__21
+l a1b1__21
+m 201 0
+l done__21
+j 7000 a1__22
+m 7001 0
+j done__22
+l a1__22
+m 7001 7004
+l done__22
+j 7001 a1__23
+m 7004 7002
+j done__23
+l a1__23
+m 7004 1
+l done__23
+j 102 a1__24
+m 7000 110
+j done__24
+l a1__24
+j 110 a1b1__24
+m 7000 1
+j done__24
+l a1b1__24
+m 7000 0
+l done__24
+j 102 a1__25
+m 7002 0
+j done__25
+l a1__25
+m 7002 110
+l done__25
+j 7000 a1__26
+m 202 7004
+j done__26
+l a1__26
+j 7004 a1b1__26
+m 202 1
+j done__26
+l a1b1__26
+m 202 0
+l done__26
+j 7000 a1__27
+m 7001 0
+j done__27
+l a1__27
+m 7001 7004
+l done__27
+j 7001 a1__28
+m 7004 7002
+j done__28
+l a1__28
+m 7004 1
+l done__28
+j 103 a1__29
+m 7000 111
+j done__29
+l a1__29
+j 111 a1b1__29
+m 7000 1
+j done__29
+l a1b1__29
+m 7000 0
+l done__29
+j 103 a1__30
+m 7002 0
+j done__30
+l a1__30
+m 7002 111
+l done__30
+j 7000 a1__31
+m 203 7004
+j done__31
+l a1__31
+j 7004 a1b1__31
+m 203 1
+j done__31
+l a1b1__31
+m 203 0
+l done__31
+j 7000 a1__32
+m 7001 0
+j done__32
+l a1__32
+m 7001 7004
+l done__32
+j 7001 a1__33
+m 7004 7002
+j done__33
+l a1__33
+m 7004 1
+l done__33
+j 104 a1__34
+m 7000 112
+j done__34
+l a1__34
+j 112 a1b1__34
+m 7000 1
+j done__34
+l a1b1__34
+m 7000 0
+l done__34
+j 104 a1__35
+m 7002 0
+j done__35
+l a1__35
+m 7002 112
+l done__35
+j 7000 a1__36
+m 204 7004
+j done__36
+l a1__36
+j 7004 a1b1__36
+m 204 1
+j done__36
+l a1b1__36
+m 204 0
+l done__36
+j 7000 a1__37
+m 7001 0
+j done__37
+l a1__37
+m 7001 7004
+l done__37
+j 7001 a1__38
+m 7004 7002
+j done__38
+l a1__38
+m 7004 1
+l done__38
+j 105 a1__39
+m 7000 113
+j done__39
+l a1__39
+j 113 a1b1__39
+m 7000 1
+j done__39
+l a1b1__39
+m 7000 0
+l done__39
+j 105 a1__40
+m 7002 0
+j done__40
+l a1__40
+m 7002 113
+l done__40
+j 7000 a1__41
+m 205 7004
+j done__41
+l a1__41
+j 7004 a1b1__41
+m 205 1
+j done__41
+l a1b1__41
+m 205 0
+l done__41
+j 7000 a1__42
+m 7001 0
+j done__42
+l a1__42
+m 7001 7004
+l done__42
+j 7001 a1__43
+m 7004 7002
+j done__43
+l a1__43
+m 7004 1
+l done__43
+j 106 a1__44
+m 7000 114
+j done__44
+l a1__44
+j 114 a1b1__44
+m 7000 1
+j done__44
+l a1b1__44
+m 7000 0
+l done__44
+j 106 a1__45
+m 7002 0
+j done__45
+l a1__45
+m 7002 114
+l done__45
+j 7000 a1__46
+m 206 7004
+j done__46
+l a1__46
+j 7004 a1b1__46
+m 206 1
+j done__46
+l a1b1__46
+m 206 0
+l done__46
+j 7000 a1__47
+m 7001 0
+j done__47
+l a1__47
+m 7001 7004
+l done__47
+j 7001 a1__48
+m 7004 7002
+j done__48
+l a1__48
+m 7004 1
+l done__48
+j 107 a1__49
+m 7000 115
+j done__49
+l a1__49
+j 115 a1b1__49
+m 7000 1
+j done__49
+l a1b1__49
+m 7000 0
+l done__49
+j 107 a1__50
+m 7002 0
+j done__50
+l a1__50
+m 7002 115
+l done__50
+j 7000 a1__51
+m 207 7004
+j done__51
+l a1__51
+j 7004 a1b1__51
+m 207 1
+j done__51
+l a1b1__51
+m 207 0
+l done__51
+j 7000 a1__52
+m 7001 0
+j done__52
+l a1__52
+m 7001 7004
+l done__52
+j 7001 a1__53
+m 7004 7002
+j done__53
+l a1__53
+m 7004 1
+l done__53
+m 124 200
+m 125 201
+m 126 202
+m 127 203
+m 128 204
+m 129 205
+m 130 206
+m 131 207
+j 6000 d0_is1__54
+m 6000 1
+j d1__54
+l d0_is1__54
+m 6000 0
+j dec_done__54
+l d1__54
+j 6001 d1_is1__54
+m 6001 1
+j d2__54
+l d1_is1__54
+m 6001 0
+j dec_done__54
+l d2__54
+j 6002 d2_is1__54
+m 6002 1
+j d3__54
+l d2_is1__54
+m 6002 0
+j dec_done__54
+l d3__54
+j 6003 d3_is1__54
+m 6003 1
+j d4__54
+l d3_is1__54
+m 6003 0
+j dec_done__54
+l d4__54
+j 6004 d4_is1__54
+m 6004 1
+j d5__54
+l d4_is1__54
+m 6004 0
+j dec_done__54
+l d5__54
+j 6005 d5_is1__54
+m 6005 1
+j d6__54
+l d5_is1__54
+m 6005 0
+j dec_done__54
+l d6__54
+j 6006 d6_is1__54
+m 6006 1
+j d7__54
+l d6_is1__54
+m 6006 0
+j dec_done__54
+l d7__54
+j 6007 d7_is1__54
+m 6007 1
+j d8__54
+l d7_is1__54
+m 6007 0
+j dec_done__54
+l d8__54
+j 6008 d8_is1__54
+m 6008 1
+j d9__54
+l d8_is1__54
+m 6008 0
+j dec_done__54
+l d9__54
+j 6009 d9_is1__54
+m 6009 1
+j d10__54
+l d9_is1__54
+m 6009 0
+j dec_done__54
+l d10__54
+j 6010 d10_is1__54
+m 6010 1
+j d11__54
+l d10_is1__54
+m 6010 0
+j dec_done__54
+l d11__54
+j 6011 d11_is1__54
+m 6011 1
+j d12__54
+l d11_is1__54
+m 6011 0
+j dec_done__54
+l d12__54
+j 6012 d12_is1__54
+m 6012 1
+j dec_done__54
+l d12_is1__54
+m 6012 0
+l dec_done__54
+m 6200 @6000
+j 6000 d0_is1__55
+m 6000 1
+j d1__55
+l d0_is1__55
+m 6000 0
+j dec_done__55
+l d1__55
+j 6001 d1_is1__55
+m 6001 1
+j d2__55
+l d1_is1__55
+m 6001 0
+j dec_done__55
+l d2__55
+j 6002 d2_is1__55
+m 6002 1
+j d3__55
+l d2_is1__55
+m 6002 0
+j dec_done__55
+l d3__55
+j 6003 d3_is1__55
+m 6003 1
+j d4__55
+l d3_is1__55
+m 6003 0
+j dec_done__55
+l d4__55
+j 6004 d4_is1__55
+m 6004 1
+j d5__55
+l d4_is1__55
+m 6004 0
+j dec_done__55
+l d5__55
+j 6005 d5_is1__55
+m 6005 1
+j d6__55
+l d5_is1__55
+m 6005 0
+j dec_done__55
+l d6__55
+j 6006 d6_is1__55
+m 6006 1
+j d7__55
+l d6_is1__55
+m 6006 0
+j dec_done__55
+l d7__55
+j 6007 d7_is1__55
+m 6007 1
+j d8__55
+l d7_is1__55
+m 6007 0
+j dec_done__55
+l d8__55
+j 6008 d8_is1__55
+m 6008 1
+j d9__55
+l d8_is1__55
+m 6008 0
+j dec_done__55
+l d9__55
+j 6009 d9_is1__55
+m 6009 1
+j d10__55
+l d9_is1__55
+m 6009 0
+j dec_done__55
+l d10__55
+j 6010 d10_is1__55
+m 6010 1
+j d11__55
+l d10_is1__55
+m 6010 0
+j dec_done__55
+l d11__55
+j 6011 d11_is1__55
+m 6011 1
+j d12__55
+l d11_is1__55
+m 6011 0
+j dec_done__55
+l d12__55
+j 6012 d12_is1__55
+m 6012 1
+j dec_done__55
+l d12_is1__55
+m 6012 0
+l dec_done__55
+m 6201 @6000
+j 6000 d0_is1__56
+m 6000 1
+j d1__56
+l d0_is1__56
+m 6000 0
+j dec_done__56
+l d1__56
+j 6001 d1_is1__56
+m 6001 1
+j d2__56
+l d1_is1__56
+m 6001 0
+j dec_done__56
+l d2__56
+j 6002 d2_is1__56
+m 6002 1
+j d3__56
+l d2_is1__56
+m 6002 0
+j dec_done__56
+l d3__56
+j 6003 d3_is1__56
+m 6003 1
+j d4__56
+l d3_is1__56
+m 6003 0
+j dec_done__56
+l d4__56
+j 6004 d4_is1__56
+m 6004 1
+j d5__56
+l d4_is1__56
+m 6004 0
+j dec_done__56
+l d5__56
+j 6005 d5_is1__56
+m 6005 1
+j d6__56
+l d5_is1__56
+m 6005 0
+j dec_done__56
+l d6__56
+j 6006 d6_is1__56
+m 6006 1
+j d7__56
+l d6_is1__56
+m 6006 0
+j dec_done__56
+l d7__56
+j 6007 d7_is1__56
+m 6007 1
+j d8__56
+l d7_is1__56
+m 6007 0
+j dec_done__56
+l d8__56
+j 6008 d8_is1__56
+m 6008 1
+j d9__56
+l d8_is1__56
+m 6008 0
+j dec_done__56
+l d9__56
+j 6009 d9_is1__56
+m 6009 1
+j d10__56
+l d9_is1__56
+m 6009 0
+j dec_done__56
+l d10__56
+j 6010 d10_is1__56
+m 6010 1
+j d11__56
+l d10_is1__56
+m 6010 0
+j dec_done__56
+l d11__56
+j 6011 d11_is1__56
+m 6011 1
+j d12__56
+l d11_is1__56
+m 6011 0
+j dec_done__56
+l d12__56
+j 6012 d12_is1__56
+m 6012 1
+j dec_done__56
+l d12_is1__56
+m 6012 0
+l dec_done__56
+m 6202 @6000
+j 6000 d0_is1__57
+m 6000 1
+j d1__57
+l d0_is1__57
+m 6000 0
+j dec_done__57
+l d1__57
+j 6001 d1_is1__57
+m 6001 1
+j d2__57
+l d1_is1__57
+m 6001 0
+j dec_done__57
+l d2__57
+j 6002 d2_is1__57
+m 6002 1
+j d3__57
+l d2_is1__57
+m 6002 0
+j dec_done__57
+l d3__57
+j 6003 d3_is1__57
+m 6003 1
+j d4__57
+l d3_is1__57
+m 6003 0
+j dec_done__57
+l d4__57
+j 6004 d4_is1__57
+m 6004 1
+j d5__57
+l d4_is1__57
+m 6004 0
+j dec_done__57
+l d5__57
+j 6005 d5_is1__57
+m 6005 1
+j d6__57
+l d5_is1__57
+m 6005 0
+j dec_done__57
+l d6__57
+j 6006 d6_is1__57
+m 6006 1
+j d7__57
+l d6_is1__57
+m 6006 0
+j dec_done__57
+l d7__57
+j 6007 d7_is1__57
+m 6007 1
+j d8__57
+l d7_is1__57
+m 6007 0
+j dec_done__57
+l d8__57
+j 6008 d8_is1__57
+m 6008 1
+j d9__57
+l d8_is1__57
+m 6008 0
+j dec_done__57
+l d9__57
+j 6009 d9_is1__57
+m 6009 1
+j d10__57
+l d9_is1__57
+m 6009 0
+j dec_done__57
+l d10__57
+j 6010 d10_is1__57
+m 6010 1
+j d11__57
+l d10_is1__57
+m 6010 0
+j dec_done__57
+l d11__57
+j 6011 d11_is1__57
+m 6011 1
+j d12__57
+l d11_is1__57
+m 6011 0
+j dec_done__57
+l d12__57
+j 6012 d12_is1__57
+m 6012 1
+j dec_done__57
+l d12_is1__57
+m 6012 0
+l dec_done__57
+m 6203 @6000
+j 6000 d0_is1__58
+m 6000 1
+j d1__58
+l d0_is1__58
+m 6000 0
+j dec_done__58
+l d1__58
+j 6001 d1_is1__58
+m 6001 1
+j d2__58
+l d1_is1__58
+m 6001 0
+j dec_done__58
+l d2__58
+j 6002 d2_is1__58
+m 6002 1
+j d3__58
+l d2_is1__58
+m 6002 0
+j dec_done__58
+l d3__58
+j 6003 d3_is1__58
+m 6003 1
+j d4__58
+l d3_is1__58
+m 6003 0
+j dec_done__58
+l d4__58
+j 6004 d4_is1__58
+m 6004 1
+j d5__58
+l d4_is1__58
+m 6004 0
+j dec_done__58
+l d5__58
+j 6005 d5_is1__58
+m 6005 1
+j d6__58
+l d5_is1__58
+m 6005 0
+j dec_done__58
+l d6__58
+j 6006 d6_is1__58
+m 6006 1
+j d7__58
+l d6_is1__58
+m 6006 0
+j dec_done__58
+l d7__58
+j 6007 d7_is1__58
+m 6007 1
+j d8__58
+l d7_is1__58
+m 6007 0
+j dec_done__58
+l d8__58
+j 6008 d8_is1__58
+m 6008 1
+j d9__58
+l d8_is1__58
+m 6008 0
+j dec_done__58
+l d9__58
+j 6009 d9_is1__58
+m 6009 1
+j d10__58
+l d9_is1__58
+m 6009 0
+j dec_done__58
+l d10__58
+j 6010 d10_is1__58
+m 6010 1
+j d11__58
+l d10_is1__58
+m 6010 0
+j dec_done__58
+l d11__58
+j 6011 d11_is1__58
+m 6011 1
+j d12__58
+l d11_is1__58
+m 6011 0
+j dec_done__58
+l d12__58
+j 6012 d12_is1__58
+m 6012 1
+j dec_done__58
+l d12_is1__58
+m 6012 0
+l dec_done__58
+m 6204 @6000
+j 6000 d0_is1__59
+m 6000 1
+j d1__59
+l d0_is1__59
+m 6000 0
+j dec_done__59
+l d1__59
+j 6001 d1_is1__59
+m 6001 1
+j d2__59
+l d1_is1__59
+m 6001 0
+j dec_done__59
+l d2__59
+j 6002 d2_is1__59
+m 6002 1
+j d3__59
+l d2_is1__59
+m 6002 0
+j dec_done__59
+l d3__59
+j 6003 d3_is1__59
+m 6003 1
+j d4__59
+l d3_is1__59
+m 6003 0
+j dec_done__59
+l d4__59
+j 6004 d4_is1__59
+m 6004 1
+j d5__59
+l d4_is1__59
+m 6004 0
+j dec_done__59
+l d5__59
+j 6005 d5_is1__59
+m 6005 1
+j d6__59
+l d5_is1__59
+m 6005 0
+j dec_done__59
+l d6__59
+j 6006 d6_is1__59
+m 6006 1
+j d7__59
+l d6_is1__59
+m 6006 0
+j dec_done__59
+l d7__59
+j 6007 d7_is1__59
+m 6007 1
+j d8__59
+l d7_is1__59
+m 6007 0
+j dec_done__59
+l d8__59
+j 6008 d8_is1__59
+m 6008 1
+j d9__59
+l d8_is1__59
+m 6008 0
+j dec_done__59
+l d9__59
+j 6009 d9_is1__59
+m 6009 1
+j d10__59
+l d9_is1__59
+m 6009 0
+j dec_done__59
+l d10__59
+j 6010 d10_is1__59
+m 6010 1
+j d11__59
+l d10_is1__59
+m 6010 0
+j dec_done__59
+l d11__59
+j 6011 d11_is1__59
+m 6011 1
+j d12__59
+l d11_is1__59
+m 6011 0
+j dec_done__59
+l d12__59
+j 6012 d12_is1__59
+m 6012 1
+j dec_done__59
+l d12_is1__59
+m 6012 0
+l dec_done__59
+m 6205 @6000
+j 6000 d0_is1__60
+m 6000 1
+j d1__60
+l d0_is1__60
+m 6000 0
+j dec_done__60
+l d1__60
+j 6001 d1_is1__60
+m 6001 1
+j d2__60
+l d1_is1__60
+m 6001 0
+j dec_done__60
+l d2__60
+j 6002 d2_is1__60
+m 6002 1
+j d3__60
+l d2_is1__60
+m 6002 0
+j dec_done__60
+l d3__60
+j 6003 d3_is1__60
+m 6003 1
+j d4__60
+l d3_is1__60
+m 6003 0
+j dec_done__60
+l d4__60
+j 6004 d4_is1__60
+m 6004 1
+j d5__60
+l d4_is1__60
+m 6004 0
+j dec_done__60
+l d5__60
+j 6005 d5_is1__60
+m 6005 1
+j d6__60
+l d5_is1__60
+m 6005 0
+j dec_done__60
+l d6__60
+j 6006 d6_is1__60
+m 6006 1
+j d7__60
+l d6_is1__60
+m 6006 0
+j dec_done__60
+l d7__60
+j 6007 d7_is1__60
+m 6007 1
+j d8__60
+l d7_is1__60
+m 6007 0
+j dec_done__60
+l d8__60
+j 6008 d8_is1__60
+m 6008 1
+j d9__60
+l d8_is1__60
+m 6008 0
+j dec_done__60
+l d9__60
+j 6009 d9_is1__60
+m 6009 1
+j d10__60
+l d9_is1__60
+m 6009 0
+j dec_done__60
+l d10__60
+j 6010 d10_is1__60
+m 6010 1
+j d11__60
+l d10_is1__60
+m 6010 0
+j dec_done__60
+l d11__60
+j 6011 d11_is1__60
+m 6011 1
+j d12__60
+l d11_is1__60
+m 6011 0
+j dec_done__60
+l d12__60
+j 6012 d12_is1__60
+m 6012 1
+j dec_done__60
+l d12_is1__60
+m 6012 0
+l dec_done__60
+m 6206 @6000
+j 6000 d0_is1__61
+m 6000 1
+j d1__61
+l d0_is1__61
+m 6000 0
+j dec_done__61
+l d1__61
+j 6001 d1_is1__61
+m 6001 1
+j d2__61
+l d1_is1__61
+m 6001 0
+j dec_done__61
+l d2__61
+j 6002 d2_is1__61
+m 6002 1
+j d3__61
+l d2_is1__61
+m 6002 0
+j dec_done__61
+l d3__61
+j 6003 d3_is1__61
+m 6003 1
+j d4__61
+l d3_is1__61
+m 6003 0
+j dec_done__61
+l d4__61
+j 6004 d4_is1__61
+m 6004 1
+j d5__61
+l d4_is1__61
+m 6004 0
+j dec_done__61
+l d5__61
+j 6005 d5_is1__61
+m 6005 1
+j d6__61
+l d5_is1__61
+m 6005 0
+j dec_done__61
+l d6__61
+j 6006 d6_is1__61
+m 6006 1
+j d7__61
+l d6_is1__61
+m 6006 0
+j dec_done__61
+l d7__61
+j 6007 d7_is1__61
+m 6007 1
+j d8__61
+l d7_is1__61
+m 6007 0
+j dec_done__61
+l d8__61
+j 6008 d8_is1__61
+m 6008 1
+j d9__61
+l d8_is1__61
+m 6008 0
+j dec_done__61
+l d9__61
+j 6009 d9_is1__61
+m 6009 1
+j d10__61
+l d9_is1__61
+m 6009 0
+j dec_done__61
+l d10__61
+j 6010 d10_is1__61
+m 6010 1
+j d11__61
+l d10_is1__61
+m 6010 0
+j dec_done__61
+l d11__61
+j 6011 d11_is1__61
+m 6011 1
+j d12__61
+l d11_is1__61
+m 6011 0
+j dec_done__61
+l d12__61
+j 6012 d12_is1__61
+m 6012 1
+j dec_done__61
+l d12_is1__61
+m 6012 0
+l dec_done__61
+m 6207 @6000
+j 6000 d0_is1__62
+m 6000 1
+j d1__62
+l d0_is1__62
+m 6000 0
+j dec_done__62
+l d1__62
+j 6001 d1_is1__62
+m 6001 1
+j d2__62
+l d1_is1__62
+m 6001 0
+j dec_done__62
+l d2__62
+j 6002 d2_is1__62
+m 6002 1
+j d3__62
+l d2_is1__62
+m 6002 0
+j dec_done__62
+l d3__62
+j 6003 d3_is1__62
+m 6003 1
+j d4__62
+l d3_is1__62
+m 6003 0
+j dec_done__62
+l d4__62
+j 6004 d4_is1__62
+m 6004 1
+j d5__62
+l d4_is1__62
+m 6004 0
+j dec_done__62
+l d5__62
+j 6005 d5_is1__62
+m 6005 1
+j d6__62
+l d5_is1__62
+m 6005 0
+j dec_done__62
+l d6__62
+j 6006 d6_is1__62
+m 6006 1
+j d7__62
+l d6_is1__62
+m 6006 0
+j dec_done__62
+l d7__62
+j 6007 d7_is1__62
+m 6007 1
+j d8__62
+l d7_is1__62
+m 6007 0
+j dec_done__62
+l d8__62
+j 6008 d8_is1__62
+m 6008 1
+j d9__62
+l d8_is1__62
+m 6008 0
+j dec_done__62
+l d9__62
+j 6009 d9_is1__62
+m 6009 1
+j d10__62
+l d9_is1__62
+m 6009 0
+j dec_done__62
+l d10__62
+j 6010 d10_is1__62
+m 6010 1
+j d11__62
+l d10_is1__62
+m 6010 0
+j dec_done__62
+l d11__62
+j 6011 d11_is1__62
+m 6011 1
+j d12__62
+l d11_is1__62
+m 6011 0
+j dec_done__62
+l d12__62
+j 6012 d12_is1__62
+m 6012 1
+j dec_done__62
+l d12_is1__62
+m 6012 0
+l dec_done__62
+m 6208 @6000
+j 6000 d0_is1__63
+m 6000 1
+j d1__63
+l d0_is1__63
+m 6000 0
+j dec_done__63
+l d1__63
+j 6001 d1_is1__63
+m 6001 1
+j d2__63
+l d1_is1__63
+m 6001 0
+j dec_done__63
+l d2__63
+j 6002 d2_is1__63
+m 6002 1
+j d3__63
+l d2_is1__63
+m 6002 0
+j dec_done__63
+l d3__63
+j 6003 d3_is1__63
+m 6003 1
+j d4__63
+l d3_is1__63
+m 6003 0
+j dec_done__63
+l d4__63
+j 6004 d4_is1__63
+m 6004 1
+j d5__63
+l d4_is1__63
+m 6004 0
+j dec_done__63
+l d5__63
+j 6005 d5_is1__63
+m 6005 1
+j d6__63
+l d5_is1__63
+m 6005 0
+j dec_done__63
+l d6__63
+j 6006 d6_is1__63
+m 6006 1
+j d7__63
+l d6_is1__63
+m 6006 0
+j dec_done__63
+l d7__63
+j 6007 d7_is1__63
+m 6007 1
+j d8__63
+l d7_is1__63
+m 6007 0
+j dec_done__63
+l d8__63
+j 6008 d8_is1__63
+m 6008 1
+j d9__63
+l d8_is1__63
+m 6008 0
+j dec_done__63
+l d9__63
+j 6009 d9_is1__63
+m 6009 1
+j d10__63
+l d9_is1__63
+m 6009 0
+j dec_done__63
+l d10__63
+j 6010 d10_is1__63
+m 6010 1
+j d11__63
+l d10_is1__63
+m 6010 0
+j dec_done__63
+l d11__63
+j 6011 d11_is1__63
+m 6011 1
+j d12__63
+l d11_is1__63
+m 6011 0
+j dec_done__63
+l d12__63
+j 6012 d12_is1__63
+m 6012 1
+j dec_done__63
+l d12_is1__63
+m 6012 0
+l dec_done__63
+m 6209 @6000
+j 6000 d0_is1__64
+m 6000 1
+j d1__64
+l d0_is1__64
+m 6000 0
+j dec_done__64
+l d1__64
+j 6001 d1_is1__64
+m 6001 1
+j d2__64
+l d1_is1__64
+m 6001 0
+j dec_done__64
+l d2__64
+j 6002 d2_is1__64
+m 6002 1
+j d3__64
+l d2_is1__64
+m 6002 0
+j dec_done__64
+l d3__64
+j 6003 d3_is1__64
+m 6003 1
+j d4__64
+l d3_is1__64
+m 6003 0
+j dec_done__64
+l d4__64
+j 6004 d4_is1__64
+m 6004 1
+j d5__64
+l d4_is1__64
+m 6004 0
+j dec_done__64
+l d5__64
+j 6005 d5_is1__64
+m 6005 1
+j d6__64
+l d5_is1__64
+m 6005 0
+j dec_done__64
+l d6__64
+j 6006 d6_is1__64
+m 6006 1
+j d7__64
+l d6_is1__64
+m 6006 0
+j dec_done__64
+l d7__64
+j 6007 d7_is1__64
+m 6007 1
+j d8__64
+l d7_is1__64
+m 6007 0
+j dec_done__64
+l d8__64
+j 6008 d8_is1__64
+m 6008 1
+j d9__64
+l d8_is1__64
+m 6008 0
+j dec_done__64
+l d9__64
+j 6009 d9_is1__64
+m 6009 1
+j d10__64
+l d9_is1__64
+m 6009 0
+j dec_done__64
+l d10__64
+j 6010 d10_is1__64
+m 6010 1
+j d11__64
+l d10_is1__64
+m 6010 0
+j dec_done__64
+l d11__64
+j 6011 d11_is1__64
+m 6011 1
+j d12__64
+l d11_is1__64
+m 6011 0
+j dec_done__64
+l d12__64
+j 6012 d12_is1__64
+m 6012 1
+j dec_done__64
+l d12_is1__64
+m 6012 0
+l dec_done__64
+m 6210 @6000
+j 6000 d0_is1__65
+m 6000 1
+j d1__65
+l d0_is1__65
+m 6000 0
+j dec_done__65
+l d1__65
+j 6001 d1_is1__65
+m 6001 1
+j d2__65
+l d1_is1__65
+m 6001 0
+j dec_done__65
+l d2__65
+j 6002 d2_is1__65
+m 6002 1
+j d3__65
+l d2_is1__65
+m 6002 0
+j dec_done__65
+l d3__65
+j 6003 d3_is1__65
+m 6003 1
+j d4__65
+l d3_is1__65
+m 6003 0
+j dec_done__65
+l d4__65
+j 6004 d4_is1__65
+m 6004 1
+j d5__65
+l d4_is1__65
+m 6004 0
+j dec_done__65
+l d5__65
+j 6005 d5_is1__65
+m 6005 1
+j d6__65
+l d5_is1__65
+m 6005 0
+j dec_done__65
+l d6__65
+j 6006 d6_is1__65
+m 6006 1
+j d7__65
+l d6_is1__65
+m 6006 0
+j dec_done__65
+l d7__65
+j 6007 d7_is1__65
+m 6007 1
+j d8__65
+l d7_is1__65
+m 6007 0
+j dec_done__65
+l d8__65
+j 6008 d8_is1__65
+m 6008 1
+j d9__65
+l d8_is1__65
+m 6008 0
+j dec_done__65
+l d9__65
+j 6009 d9_is1__65
+m 6009 1
+j d10__65
+l d9_is1__65
+m 6009 0
+j dec_done__65
+l d10__65
+j 6010 d10_is1__65
+m 6010 1
+j d11__65
+l d10_is1__65
+m 6010 0
+j dec_done__65
+l d11__65
+j 6011 d11_is1__65
+m 6011 1
+j d12__65
+l d11_is1__65
+m 6011 0
+j dec_done__65
+l d12__65
+j 6012 d12_is1__65
+m 6012 1
+j dec_done__65
+l d12_is1__65
+m 6012 0
+l dec_done__65
+m 6211 @6000
+j 6000 d0_is1__66
+m 6000 1
+j d1__66
+l d0_is1__66
+m 6000 0
+j dec_done__66
+l d1__66
+j 6001 d1_is1__66
+m 6001 1
+j d2__66
+l d1_is1__66
+m 6001 0
+j dec_done__66
+l d2__66
+j 6002 d2_is1__66
+m 6002 1
+j d3__66
+l d2_is1__66
+m 6002 0
+j dec_done__66
+l d3__66
+j 6003 d3_is1__66
+m 6003 1
+j d4__66
+l d3_is1__66
+m 6003 0
+j dec_done__66
+l d4__66
+j 6004 d4_is1__66
+m 6004 1
+j d5__66
+l d4_is1__66
+m 6004 0
+j dec_done__66
+l d5__66
+j 6005 d5_is1__66
+m 6005 1
+j d6__66
+l d5_is1__66
+m 6005 0
+j dec_done__66
+l d6__66
+j 6006 d6_is1__66
+m 6006 1
+j d7__66
+l d6_is1__66
+m 6006 0
+j dec_done__66
+l d7__66
+j 6007 d7_is1__66
+m 6007 1
+j d8__66
+l d7_is1__66
+m 6007 0
+j dec_done__66
+l d8__66
+j 6008 d8_is1__66
+m 6008 1
+j d9__66
+l d8_is1__66
+m 6008 0
+j dec_done__66
+l d9__66
+j 6009 d9_is1__66
+m 6009 1
+j d10__66
+l d9_is1__66
+m 6009 0
+j dec_done__66
+l d10__66
+j 6010 d10_is1__66
+m 6010 1
+j d11__66
+l d10_is1__66
+m 6010 0
+j dec_done__66
+l d11__66
+j 6011 d11_is1__66
+m 6011 1
+j d12__66
+l d11_is1__66
+m 6011 0
+j dec_done__66
+l d12__66
+j 6012 d12_is1__66
+m 6012 1
+j dec_done__66
+l d12_is1__66
+m 6012 0
+l dec_done__66
+m 6212 @6000
+j @6200
+l main
+m 208 1
+m 209 1
+m 210 0
+m 211 0
+m 212 0
+m 213 0
+m 214 0
+m 215 0
+m 100 208
+m 101 209
+m 102 210
+m 103 211
+m 104 212
+m 105 213
+m 106 214
+m 107 215
+m 216 1
+m 217 0
+m 218 1
+m 219 0
+m 220 0
+m 221 0
+m 222 0
+m 223 0
+m 108 216
+m 109 217
+m 110 218
+m 111 219
+m 112 220
+m 113 221
+m 114 222
+m 115 223
+m @6000 0
+j 6000 i0_is1__67
+m 6000 1
+j inc_done__67
+l i0_is1__67
+m 6000 0
+j 6001 i1_is1__67
+m 6001 1
+j inc_done__67
+l i1_is1__67
+m 6001 0
+j 6002 i2_is1__67
+m 6002 1
+j inc_done__67
+l i2_is1__67
+m 6002 0
+j 6003 i3_is1__67
+m 6003 1
+j inc_done__67
+l i3_is1__67
+m 6003 0
+j 6004 i4_is1__67
+m 6004 1
+j inc_done__67
+l i4_is1__67
+m 6004 0
+j 6005 i5_is1__67
+m 6005 1
+j inc_done__67
+l i5_is1__67
+m 6005 0
+j 6006 i6_is1__67
+m 6006 1
+j inc_done__67
+l i6_is1__67
+m 6006 0
+j 6007 i7_is1__67
+m 6007 1
+j inc_done__67
+l i7_is1__67
+m 6007 0
+j 6008 i8_is1__67
+m 6008 1
+j inc_done__67
+l i8_is1__67
+m 6008 0
+j 6009 i9_is1__67
+m 6009 1
+j inc_done__67
+l i9_is1__67
+m 6009 0
+j 6010 i10_is1__67
+m 6010 1
+j inc_done__67
+l i10_is1__67
+m 6010 0
+j 6011 i11_is1__67
+m 6011 1
+j inc_done__67
+l i11_is1__67
+m 6011 0
+j 6012 i12_is1__67
+m 6012 1
+j inc_done__67
+l i12_is1__67
+m 6012 0
+l inc_done__67
+m @6000 1
+j 6000 i0_is1__68
+m 6000 1
+j inc_done__68
+l i0_is1__68
+m 6000 0
+j 6001 i1_is1__68
+m 6001 1
+j inc_done__68
+l i1_is1__68
+m 6001 0
+j 6002 i2_is1__68
+m 6002 1
+j inc_done__68
+l i2_is1__68
+m 6002 0
+j 6003 i3_is1__68
+m 6003 1
+j inc_done__68
+l i3_is1__68
+m 6003 0
+j 6004 i4_is1__68
+m 6004 1
+j inc_done__68
+l i4_is1__68
+m 6004 0
+j 6005 i5_is1__68
+m 6005 1
+j inc_done__68
+l i5_is1__68
+m 6005 0
+j 6006 i6_is1__68
+m 6006 1
+j inc_done__68
+l i6_is1__68
+m 6006 0
+j 6007 i7_is1__68
+m 6007 1
+j inc_done__68
+l i7_is1__68
+m 6007 0
+j 6008 i8_is1__68
+m 6008 1
+j inc_done__68
+l i8_is1__68
+m 6008 0
+j 6009 i9_is1__68
+m 6009 1
+j inc_done__68
+l i9_is1__68
+m 6009 0
+j 6010 i10_is1__68
+m 6010 1
+j inc_done__68
+l i10_is1__68
+m 6010 0
+j 6011 i11_is1__68
+m 6011 1
+j inc_done__68
+l i11_is1__68
+m 6011 0
+j 6012 i12_is1__68
+m 6012 1
+j inc_done__68
+l i12_is1__68
+m 6012 0
+l inc_done__68
+m @6000 0
+j 6000 i0_is1__69
+m 6000 1
+j inc_done__69
+l i0_is1__69
+m 6000 0
+j 6001 i1_is1__69
+m 6001 1
+j inc_done__69
+l i1_is1__69
+m 6001 0
+j 6002 i2_is1__69
+m 6002 1
+j inc_done__69
+l i2_is1__69
+m 6002 0
+j 6003 i3_is1__69
+m 6003 1
+j inc_done__69
+l i3_is1__69
+m 6003 0
+j 6004 i4_is1__69
+m 6004 1
+j inc_done__69
+l i4_is1__69
+m 6004 0
+j 6005 i5_is1__69
+m 6005 1
+j inc_done__69
+l i5_is1__69
+m 6005 0
+j 6006 i6_is1__69
+m 6006 1
+j inc_done__69
+l i6_is1__69
+m 6006 0
+j 6007 i7_is1__69
+m 6007 1
+j inc_done__69
+l i7_is1__69
+m 6007 0
+j 6008 i8_is1__69
+m 6008 1
+j inc_done__69
+l i8_is1__69
+m 6008 0
+j 6009 i9_is1__69
+m 6009 1
+j inc_done__69
+l i9_is1__69
+m 6009 0
+j 6010 i10_is1__69
+m 6010 1
+j inc_done__69
+l i10_is1__69
+m 6010 0
+j 6011 i11_is1__69
+m 6011 1
+j inc_done__69
+l i11_is1__69
+m 6011 0
+j 6012 i12_is1__69
+m 6012 1
+j inc_done__69
+l i12_is1__69
+m 6012 0
+l inc_done__69
+m @6000 0
+j 6000 i0_is1__70
+m 6000 1
+j inc_done__70
+l i0_is1__70
+m 6000 0
+j 6001 i1_is1__70
+m 6001 1
+j inc_done__70
+l i1_is1__70
+m 6001 0
+j 6002 i2_is1__70
+m 6002 1
+j inc_done__70
+l i2_is1__70
+m 6002 0
+j 6003 i3_is1__70
+m 6003 1
+j inc_done__70
+l i3_is1__70
+m 6003 0
+j 6004 i4_is1__70
+m 6004 1
+j inc_done__70
+l i4_is1__70
+m 6004 0
+j 6005 i5_is1__70
+m 6005 1
+j inc_done__70
+l i5_is1__70
+m 6005 0
+j 6006 i6_is1__70
+m 6006 1
+j inc_done__70
+l i6_is1__70
+m 6006 0
+j 6007 i7_is1__70
+m 6007 1
+j inc_done__70
+l i7_is1__70
+m 6007 0
+j 6008 i8_is1__70
+m 6008 1
+j inc_done__70
+l i8_is1__70
+m 6008 0
+j 6009 i9_is1__70
+m 6009 1
+j inc_done__70
+l i9_is1__70
+m 6009 0
+j 6010 i10_is1__70
+m 6010 1
+j inc_done__70
+l i10_is1__70
+m 6010 0
+j 6011 i11_is1__70
+m 6011 1
+j inc_done__70
+l i11_is1__70
+m 6011 0
+j 6012 i12_is1__70
+m 6012 1
+j inc_done__70
+l i12_is1__70
+m 6012 0
+l inc_done__70
+m @6000 1
+j 6000 i0_is1__71
+m 6000 1
+j inc_done__71
+l i0_is1__71
+m 6000 0
+j 6001 i1_is1__71
+m 6001 1
+j inc_done__71
+l i1_is1__71
+m 6001 0
+j 6002 i2_is1__71
+m 6002 1
+j inc_done__71
+l i2_is1__71
+m 6002 0
+j 6003 i3_is1__71
+m 6003 1
+j inc_done__71
+l i3_is1__71
+m 6003 0
+j 6004 i4_is1__71
+m 6004 1
+j inc_done__71
+l i4_is1__71
+m 6004 0
+j 6005 i5_is1__71
+m 6005 1
+j inc_done__71
+l i5_is1__71
+m 6005 0
+j 6006 i6_is1__71
+m 6006 1
+j inc_done__71
+l i6_is1__71
+m 6006 0
+j 6007 i7_is1__71
+m 6007 1
+j inc_done__71
+l i7_is1__71
+m 6007 0
+j 6008 i8_is1__71
+m 6008 1
+j inc_done__71
+l i8_is1__71
+m 6008 0
+j 6009 i9_is1__71
+m 6009 1
+j inc_done__71
+l i9_is1__71
+m 6009 0
+j 6010 i10_is1__71
+m 6010 1
+j inc_done__71
+l i10_is1__71
+m 6010 0
+j 6011 i11_is1__71
+m 6011 1
+j inc_done__71
+l i11_is1__71
+m 6011 0
+j 6012 i12_is1__71
+m 6012 1
+j inc_done__71
+l i12_is1__71
+m 6012 0
+l inc_done__71
+m @6000 1
+j 6000 i0_is1__72
+m 6000 1
+j inc_done__72
+l i0_is1__72
+m 6000 0
+j 6001 i1_is1__72
+m 6001 1
+j inc_done__72
+l i1_is1__72
+m 6001 0
+j 6002 i2_is1__72
+m 6002 1
+j inc_done__72
+l i2_is1__72
+m 6002 0
+j 6003 i3_is1__72
+m 6003 1
+j inc_done__72
+l i3_is1__72
+m 6003 0
+j 6004 i4_is1__72
+m 6004 1
+j inc_done__72
+l i4_is1__72
+m 6004 0
+j 6005 i5_is1__72
+m 6005 1
+j inc_done__72
+l i5_is1__72
+m 6005 0
+j 6006 i6_is1__72
+m 6006 1
+j inc_done__72
+l i6_is1__72
+m 6006 0
+j 6007 i7_is1__72
+m 6007 1
+j inc_done__72
+l i7_is1__72
+m 6007 0
+j 6008 i8_is1__72
+m 6008 1
+j inc_done__72
+l i8_is1__72
+m 6008 0
+j 6009 i9_is1__72
+m 6009 1
+j inc_done__72
+l i9_is1__72
+m 6009 0
+j 6010 i10_is1__72
+m 6010 1
+j inc_done__72
+l i10_is1__72
+m 6010 0
+j 6011 i11_is1__72
+m 6011 1
+j inc_done__72
+l i11_is1__72
+m 6011 0
+j 6012 i12_is1__72
+m 6012 1
+j inc_done__72
+l i12_is1__72
+m 6012 0
+l inc_done__72
+m @6000 0
+j 6000 i0_is1__73
+m 6000 1
+j inc_done__73
+l i0_is1__73
+m 6000 0
+j 6001 i1_is1__73
+m 6001 1
+j inc_done__73
+l i1_is1__73
+m 6001 0
+j 6002 i2_is1__73
+m 6002 1
+j inc_done__73
+l i2_is1__73
+m 6002 0
+j 6003 i3_is1__73
+m 6003 1
+j inc_done__73
+l i3_is1__73
+m 6003 0
+j 6004 i4_is1__73
+m 6004 1
+j inc_done__73
+l i4_is1__73
+m 6004 0
+j 6005 i5_is1__73
+m 6005 1
+j inc_done__73
+l i5_is1__73
+m 6005 0
+j 6006 i6_is1__73
+m 6006 1
+j inc_done__73
+l i6_is1__73
+m 6006 0
+j 6007 i7_is1__73
+m 6007 1
+j inc_done__73
+l i7_is1__73
+m 6007 0
+j 6008 i8_is1__73
+m 6008 1
+j inc_done__73
+l i8_is1__73
+m 6008 0
+j 6009 i9_is1__73
+m 6009 1
+j inc_done__73
+l i9_is1__73
+m 6009 0
+j 6010 i10_is1__73
+m 6010 1
+j inc_done__73
+l i10_is1__73
+m 6010 0
+j 6011 i11_is1__73
+m 6011 1
+j inc_done__73
+l i11_is1__73
+m 6011 0
+j 6012 i12_is1__73
+m 6012 1
+j inc_done__73
+l i12_is1__73
+m 6012 0
+l inc_done__73
+m @6000 1
+j 6000 i0_is1__74
+m 6000 1
+j inc_done__74
+l i0_is1__74
+m 6000 0
+j 6001 i1_is1__74
+m 6001 1
+j inc_done__74
+l i1_is1__74
+m 6001 0
+j 6002 i2_is1__74
+m 6002 1
+j inc_done__74
+l i2_is1__74
+m 6002 0
+j 6003 i3_is1__74
+m 6003 1
+j inc_done__74
+l i3_is1__74
+m 6003 0
+j 6004 i4_is1__74
+m 6004 1
+j inc_done__74
+l i4_is1__74
+m 6004 0
+j 6005 i5_is1__74
+m 6005 1
+j inc_done__74
+l i5_is1__74
+m 6005 0
+j 6006 i6_is1__74
+m 6006 1
+j inc_done__74
+l i6_is1__74
+m 6006 0
+j 6007 i7_is1__74
+m 6007 1
+j inc_done__74
+l i7_is1__74
+m 6007 0
+j 6008 i8_is1__74
+m 6008 1
+j inc_done__74
+l i8_is1__74
+m 6008 0
+j 6009 i9_is1__74
+m 6009 1
+j inc_done__74
+l i9_is1__74
+m 6009 0
+j 6010 i10_is1__74
+m 6010 1
+j inc_done__74
+l i10_is1__74
+m 6010 0
+j 6011 i11_is1__74
+m 6011 1
+j inc_done__74
+l i11_is1__74
+m 6011 0
+j 6012 i12_is1__74
+m 6012 1
+j inc_done__74
+l i12_is1__74
+m 6012 0
+l inc_done__74
+m @6000 1
+j 6000 i0_is1__75
+m 6000 1
+j inc_done__75
+l i0_is1__75
+m 6000 0
+j 6001 i1_is1__75
+m 6001 1
+j inc_done__75
+l i1_is1__75
+m 6001 0
+j 6002 i2_is1__75
+m 6002 1
+j inc_done__75
+l i2_is1__75
+m 6002 0
+j 6003 i3_is1__75
+m 6003 1
+j inc_done__75
+l i3_is1__75
+m 6003 0
+j 6004 i4_is1__75
+m 6004 1
+j inc_done__75
+l i4_is1__75
+m 6004 0
+j 6005 i5_is1__75
+m 6005 1
+j inc_done__75
+l i5_is1__75
+m 6005 0
+j 6006 i6_is1__75
+m 6006 1
+j inc_done__75
+l i6_is1__75
+m 6006 0
+j 6007 i7_is1__75
+m 6007 1
+j inc_done__75
+l i7_is1__75
+m 6007 0
+j 6008 i8_is1__75
+m 6008 1
+j inc_done__75
+l i8_is1__75
+m 6008 0
+j 6009 i9_is1__75
+m 6009 1
+j inc_done__75
+l i9_is1__75
+m 6009 0
+j 6010 i10_is1__75
+m 6010 1
+j inc_done__75
+l i10_is1__75
+m 6010 0
+j 6011 i11_is1__75
+m 6011 1
+j inc_done__75
+l i11_is1__75
+m 6011 0
+j 6012 i12_is1__75
+m 6012 1
+j inc_done__75
+l i12_is1__75
+m 6012 0
+l inc_done__75
+m @6000 1
+j 6000 i0_is1__76
+m 6000 1
+j inc_done__76
+l i0_is1__76
+m 6000 0
+j 6001 i1_is1__76
+m 6001 1
+j inc_done__76
+l i1_is1__76
+m 6001 0
+j 6002 i2_is1__76
+m 6002 1
+j inc_done__76
+l i2_is1__76
+m 6002 0
+j 6003 i3_is1__76
+m 6003 1
+j inc_done__76
+l i3_is1__76
+m 6003 0
+j 6004 i4_is1__76
+m 6004 1
+j inc_done__76
+l i4_is1__76
+m 6004 0
+j 6005 i5_is1__76
+m 6005 1
+j inc_done__76
+l i5_is1__76
+m 6005 0
+j 6006 i6_is1__76
+m 6006 1
+j inc_done__76
+l i6_is1__76
+m 6006 0
+j 6007 i7_is1__76
+m 6007 1
+j inc_done__76
+l i7_is1__76
+m 6007 0
+j 6008 i8_is1__76
+m 6008 1
+j inc_done__76
+l i8_is1__76
+m 6008 0
+j 6009 i9_is1__76
+m 6009 1
+j inc_done__76
+l i9_is1__76
+m 6009 0
+j 6010 i10_is1__76
+m 6010 1
+j inc_done__76
+l i10_is1__76
+m 6010 0
+j 6011 i11_is1__76
+m 6011 1
+j inc_done__76
+l i11_is1__76
+m 6011 0
+j 6012 i12_is1__76
+m 6012 1
+j inc_done__76
+l i12_is1__76
+m 6012 0
+l inc_done__76
+m @6000 0
+j 6000 i0_is1__77
+m 6000 1
+j inc_done__77
+l i0_is1__77
+m 6000 0
+j 6001 i1_is1__77
+m 6001 1
+j inc_done__77
+l i1_is1__77
+m 6001 0
+j 6002 i2_is1__77
+m 6002 1
+j inc_done__77
+l i2_is1__77
+m 6002 0
+j 6003 i3_is1__77
+m 6003 1
+j inc_done__77
+l i3_is1__77
+m 6003 0
+j 6004 i4_is1__77
+m 6004 1
+j inc_done__77
+l i4_is1__77
+m 6004 0
+j 6005 i5_is1__77
+m 6005 1
+j inc_done__77
+l i5_is1__77
+m 6005 0
+j 6006 i6_is1__77
+m 6006 1
+j inc_done__77
+l i6_is1__77
+m 6006 0
+j 6007 i7_is1__77
+m 6007 1
+j inc_done__77
+l i7_is1__77
+m 6007 0
+j 6008 i8_is1__77
+m 6008 1
+j inc_done__77
+l i8_is1__77
+m 6008 0
+j 6009 i9_is1__77
+m 6009 1
+j inc_done__77
+l i9_is1__77
+m 6009 0
+j 6010 i10_is1__77
+m 6010 1
+j inc_done__77
+l i10_is1__77
+m 6010 0
+j 6011 i11_is1__77
+m 6011 1
+j inc_done__77
+l i11_is1__77
+m 6011 0
+j 6012 i12_is1__77
+m 6012 1
+j inc_done__77
+l i12_is1__77
+m 6012 0
+l inc_done__77
+m @6000 0
+j 6000 i0_is1__78
+m 6000 1
+j inc_done__78
+l i0_is1__78
+m 6000 0
+j 6001 i1_is1__78
+m 6001 1
+j inc_done__78
+l i1_is1__78
+m 6001 0
+j 6002 i2_is1__78
+m 6002 1
+j inc_done__78
+l i2_is1__78
+m 6002 0
+j 6003 i3_is1__78
+m 6003 1
+j inc_done__78
+l i3_is1__78
+m 6003 0
+j 6004 i4_is1__78
+m 6004 1
+j inc_done__78
+l i4_is1__78
+m 6004 0
+j 6005 i5_is1__78
+m 6005 1
+j inc_done__78
+l i5_is1__78
+m 6005 0
+j 6006 i6_is1__78
+m 6006 1
+j inc_done__78
+l i6_is1__78
+m 6006 0
+j 6007 i7_is1__78
+m 6007 1
+j inc_done__78
+l i7_is1__78
+m 6007 0
+j 6008 i8_is1__78
+m 6008 1
+j inc_done__78
+l i8_is1__78
+m 6008 0
+j 6009 i9_is1__78
+m 6009 1
+j inc_done__78
+l i9_is1__78
+m 6009 0
+j 6010 i10_is1__78
+m 6010 1
+j inc_done__78
+l i10_is1__78
+m 6010 0
+j 6011 i11_is1__78
+m 6011 1
+j inc_done__78
+l i11_is1__78
+m 6011 0
+j 6012 i12_is1__78
+m 6012 1
+j inc_done__78
+l i12_is1__78
+m 6012 0
+l inc_done__78
+m @6000 1
+j 6000 i0_is1__79
+m 6000 1
+j inc_done__79
+l i0_is1__79
+m 6000 0
+j 6001 i1_is1__79
+m 6001 1
+j inc_done__79
+l i1_is1__79
+m 6001 0
+j 6002 i2_is1__79
+m 6002 1
+j inc_done__79
+l i2_is1__79
+m 6002 0
+j 6003 i3_is1__79
+m 6003 1
+j inc_done__79
+l i3_is1__79
+m 6003 0
+j 6004 i4_is1__79
+m 6004 1
+j inc_done__79
+l i4_is1__79
+m 6004 0
+j 6005 i5_is1__79
+m 6005 1
+j inc_done__79
+l i5_is1__79
+m 6005 0
+j 6006 i6_is1__79
+m 6006 1
+j inc_done__79
+l i6_is1__79
+m 6006 0
+j 6007 i7_is1__79
+m 6007 1
+j inc_done__79
+l i7_is1__79
+m 6007 0
+j 6008 i8_is1__79
+m 6008 1
+j inc_done__79
+l i8_is1__79
+m 6008 0
+j 6009 i9_is1__79
+m 6009 1
+j inc_done__79
+l i9_is1__79
+m 6009 0
+j 6010 i10_is1__79
+m 6010 1
+j inc_done__79
+l i10_is1__79
+m 6010 0
+j 6011 i11_is1__79
+m 6011 1
+j inc_done__79
+l i11_is1__79
+m 6011 0
+j 6012 i12_is1__79
+m 6012 1
+j inc_done__79
+l i12_is1__79
+m 6012 0
+l inc_done__79
+j sum
+m out 124
+m out 125
+m out 126
+m out 127
+m out 128
+m out 129
+m out 130
+m out 131
+m 224 0
+m 225 0
+m 226 0
+m 227 0
+m 228 0
+m 229 0
+m 230 0
+m 231 0
+m 124 224
+m 125 225
+m 126 226
+m 127 227
+m 128 228
+m 129 229
+m 130 230
+m 131 231
+j 6000 d0_is1__80
+m 6000 1
+j d1__80
+l d0_is1__80
+m 6000 0
+j dec_done__80
+l d1__80
+j 6001 d1_is1__80
+m 6001 1
+j d2__80
+l d1_is1__80
+m 6001 0
+j dec_done__80
+l d2__80
+j 6002 d2_is1__80
+m 6002 1
+j d3__80
+l d2_is1__80
+m 6002 0
+j dec_done__80
+l d3__80
+j 6003 d3_is1__80
+m 6003 1
+j d4__80
+l d3_is1__80
+m 6003 0
+j dec_done__80
+l d4__80
+j 6004 d4_is1__80
+m 6004 1
+j d5__80
+l d4_is1__80
+m 6004 0
+j dec_done__80
+l d5__80
+j 6005 d5_is1__80
+m 6005 1
+j d6__80
+l d5_is1__80
+m 6005 0
+j dec_done__80
+l d6__80
+j 6006 d6_is1__80
+m 6006 1
+j d7__80
+l d6_is1__80
+m 6006 0
+j dec_done__80
+l d7__80
+j 6007 d7_is1__80
+m 6007 1
+j d8__80
+l d7_is1__80
+m 6007 0
+j dec_done__80
+l d8__80
+j 6008 d8_is1__80
+m 6008 1
+j d9__80
+l d8_is1__80
+m 6008 0
+j dec_done__80
+l d9__80
+j 6009 d9_is1__80
+m 6009 1
+j d10__80
+l d9_is1__80
+m 6009 0
+j dec_done__80
+l d10__80
+j 6010 d10_is1__80
+m 6010 1
+j d11__80
+l d10_is1__80
+m 6010 0
+j dec_done__80
+l d11__80
+j 6011 d11_is1__80
+m 6011 1
+j d12__80
+l d11_is1__80
+m 6011 0
+j dec_done__80
+l d12__80
+j 6012 d12_is1__80
+m 6012 1
+j dec_done__80
+l d12_is1__80
+m 6012 0
+l dec_done__80
+m 6200 @6000
+j 6000 d0_is1__81
+m 6000 1
+j d1__81
+l d0_is1__81
+m 6000 0
+j dec_done__81
+l d1__81
+j 6001 d1_is1__81
+m 6001 1
+j d2__81
+l d1_is1__81
+m 6001 0
+j dec_done__81
+l d2__81
+j 6002 d2_is1__81
+m 6002 1
+j d3__81
+l d2_is1__81
+m 6002 0
+j dec_done__81
+l d3__81
+j 6003 d3_is1__81
+m 6003 1
+j d4__81
+l d3_is1__81
+m 6003 0
+j dec_done__81
+l d4__81
+j 6004 d4_is1__81
+m 6004 1
+j d5__81
+l d4_is1__81
+m 6004 0
+j dec_done__81
+l d5__81
+j 6005 d5_is1__81
+m 6005 1
+j d6__81
+l d5_is1__81
+m 6005 0
+j dec_done__81
+l d6__81
+j 6006 d6_is1__81
+m 6006 1
+j d7__81
+l d6_is1__81
+m 6006 0
+j dec_done__81
+l d7__81
+j 6007 d7_is1__81
+m 6007 1
+j d8__81
+l d7_is1__81
+m 6007 0
+j dec_done__81
+l d8__81
+j 6008 d8_is1__81
+m 6008 1
+j d9__81
+l d8_is1__81
+m 6008 0
+j dec_done__81
+l d9__81
+j 6009 d9_is1__81
+m 6009 1
+j d10__81
+l d9_is1__81
+m 6009 0
+j dec_done__81
+l d10__81
+j 6010 d10_is1__81
+m 6010 1
+j d11__81
+l d10_is1__81
+m 6010 0
+j dec_done__81
+l d11__81
+j 6011 d11_is1__81
+m 6011 1
+j d12__81
+l d11_is1__81
+m 6011 0
+j dec_done__81
+l d12__81
+j 6012 d12_is1__81
+m 6012 1
+j dec_done__81
+l d12_is1__81
+m 6012 0
+l dec_done__81
+m 6201 @6000
+j 6000 d0_is1__82
+m 6000 1
+j d1__82
+l d0_is1__82
+m 6000 0
+j dec_done__82
+l d1__82
+j 6001 d1_is1__82
+m 6001 1
+j d2__82
+l d1_is1__82
+m 6001 0
+j dec_done__82
+l d2__82
+j 6002 d2_is1__82
+m 6002 1
+j d3__82
+l d2_is1__82
+m 6002 0
+j dec_done__82
+l d3__82
+j 6003 d3_is1__82
+m 6003 1
+j d4__82
+l d3_is1__82
+m 6003 0
+j dec_done__82
+l d4__82
+j 6004 d4_is1__82
+m 6004 1
+j d5__82
+l d4_is1__82
+m 6004 0
+j dec_done__82
+l d5__82
+j 6005 d5_is1__82
+m 6005 1
+j d6__82
+l d5_is1__82
+m 6005 0
+j dec_done__82
+l d6__82
+j 6006 d6_is1__82
+m 6006 1
+j d7__82
+l d6_is1__82
+m 6006 0
+j dec_done__82
+l d7__82
+j 6007 d7_is1__82
+m 6007 1
+j d8__82
+l d7_is1__82
+m 6007 0
+j dec_done__82
+l d8__82
+j 6008 d8_is1__82
+m 6008 1
+j d9__82
+l d8_is1__82
+m 6008 0
+j dec_done__82
+l d9__82
+j 6009 d9_is1__82
+m 6009 1
+j d10__82
+l d9_is1__82
+m 6009 0
+j dec_done__82
+l d10__82
+j 6010 d10_is1__82
+m 6010 1
+j d11__82
+l d10_is1__82
+m 6010 0
+j dec_done__82
+l d11__82
+j 6011 d11_is1__82
+m 6011 1
+j d12__82
+l d11_is1__82
+m 6011 0
+j dec_done__82
+l d12__82
+j 6012 d12_is1__82
+m 6012 1
+j dec_done__82
+l d12_is1__82
+m 6012 0
+l dec_done__82
+m 6202 @6000
+j 6000 d0_is1__83
+m 6000 1
+j d1__83
+l d0_is1__83
+m 6000 0
+j dec_done__83
+l d1__83
+j 6001 d1_is1__83
+m 6001 1
+j d2__83
+l d1_is1__83
+m 6001 0
+j dec_done__83
+l d2__83
+j 6002 d2_is1__83
+m 6002 1
+j d3__83
+l d2_is1__83
+m 6002 0
+j dec_done__83
+l d3__83
+j 6003 d3_is1__83
+m 6003 1
+j d4__83
+l d3_is1__83
+m 6003 0
+j dec_done__83
+l d4__83
+j 6004 d4_is1__83
+m 6004 1
+j d5__83
+l d4_is1__83
+m 6004 0
+j dec_done__83
+l d5__83
+j 6005 d5_is1__83
+m 6005 1
+j d6__83
+l d5_is1__83
+m 6005 0
+j dec_done__83
+l d6__83
+j 6006 d6_is1__83
+m 6006 1
+j d7__83
+l d6_is1__83
+m 6006 0
+j dec_done__83
+l d7__83
+j 6007 d7_is1__83
+m 6007 1
+j d8__83
+l d7_is1__83
+m 6007 0
+j dec_done__83
+l d8__83
+j 6008 d8_is1__83
+m 6008 1
+j d9__83
+l d8_is1__83
+m 6008 0
+j dec_done__83
+l d9__83
+j 6009 d9_is1__83
+m 6009 1
+j d10__83
+l d9_is1__83
+m 6009 0
+j dec_done__83
+l d10__83
+j 6010 d10_is1__83
+m 6010 1
+j d11__83
+l d10_is1__83
+m 6010 0
+j dec_done__83
+l d11__83
+j 6011 d11_is1__83
+m 6011 1
+j d12__83
+l d11_is1__83
+m 6011 0
+j dec_done__83
+l d12__83
+j 6012 d12_is1__83
+m 6012 1
+j dec_done__83
+l d12_is1__83
+m 6012 0
+l dec_done__83
+m 6203 @6000
+j 6000 d0_is1__84
+m 6000 1
+j d1__84
+l d0_is1__84
+m 6000 0
+j dec_done__84
+l d1__84
+j 6001 d1_is1__84
+m 6001 1
+j d2__84
+l d1_is1__84
+m 6001 0
+j dec_done__84
+l d2__84
+j 6002 d2_is1__84
+m 6002 1
+j d3__84
+l d2_is1__84
+m 6002 0
+j dec_done__84
+l d3__84
+j 6003 d3_is1__84
+m 6003 1
+j d4__84
+l d3_is1__84
+m 6003 0
+j dec_done__84
+l d4__84
+j 6004 d4_is1__84
+m 6004 1
+j d5__84
+l d4_is1__84
+m 6004 0
+j dec_done__84
+l d5__84
+j 6005 d5_is1__84
+m 6005 1
+j d6__84
+l d5_is1__84
+m 6005 0
+j dec_done__84
+l d6__84
+j 6006 d6_is1__84
+m 6006 1
+j d7__84
+l d6_is1__84
+m 6006 0
+j dec_done__84
+l d7__84
+j 6007 d7_is1__84
+m 6007 1
+j d8__84
+l d7_is1__84
+m 6007 0
+j dec_done__84
+l d8__84
+j 6008 d8_is1__84
+m 6008 1
+j d9__84
+l d8_is1__84
+m 6008 0
+j dec_done__84
+l d9__84
+j 6009 d9_is1__84
+m 6009 1
+j d10__84
+l d9_is1__84
+m 6009 0
+j dec_done__84
+l d10__84
+j 6010 d10_is1__84
+m 6010 1
+j d11__84
+l d10_is1__84
+m 6010 0
+j dec_done__84
+l d11__84
+j 6011 d11_is1__84
+m 6011 1
+j d12__84
+l d11_is1__84
+m 6011 0
+j dec_done__84
+l d12__84
+j 6012 d12_is1__84
+m 6012 1
+j dec_done__84
+l d12_is1__84
+m 6012 0
+l dec_done__84
+m 6204 @6000
+j 6000 d0_is1__85
+m 6000 1
+j d1__85
+l d0_is1__85
+m 6000 0
+j dec_done__85
+l d1__85
+j 6001 d1_is1__85
+m 6001 1
+j d2__85
+l d1_is1__85
+m 6001 0
+j dec_done__85
+l d2__85
+j 6002 d2_is1__85
+m 6002 1
+j d3__85
+l d2_is1__85
+m 6002 0
+j dec_done__85
+l d3__85
+j 6003 d3_is1__85
+m 6003 1
+j d4__85
+l d3_is1__85
+m 6003 0
+j dec_done__85
+l d4__85
+j 6004 d4_is1__85
+m 6004 1
+j d5__85
+l d4_is1__85
+m 6004 0
+j dec_done__85
+l d5__85
+j 6005 d5_is1__85
+m 6005 1
+j d6__85
+l d5_is1__85
+m 6005 0
+j dec_done__85
+l d6__85
+j 6006 d6_is1__85
+m 6006 1
+j d7__85
+l d6_is1__85
+m 6006 0
+j dec_done__85
+l d7__85
+j 6007 d7_is1__85
+m 6007 1
+j d8__85
+l d7_is1__85
+m 6007 0
+j dec_done__85
+l d8__85
+j 6008 d8_is1__85
+m 6008 1
+j d9__85
+l d8_is1__85
+m 6008 0
+j dec_done__85
+l d9__85
+j 6009 d9_is1__85
+m 6009 1
+j d10__85
+l d9_is1__85
+m 6009 0
+j dec_done__85
+l d10__85
+j 6010 d10_is1__85
+m 6010 1
+j d11__85
+l d10_is1__85
+m 6010 0
+j dec_done__85
+l d11__85
+j 6011 d11_is1__85
+m 6011 1
+j d12__85
+l d11_is1__85
+m 6011 0
+j dec_done__85
+l d12__85
+j 6012 d12_is1__85
+m 6012 1
+j dec_done__85
+l d12_is1__85
+m 6012 0
+l dec_done__85
+m 6205 @6000
+j 6000 d0_is1__86
+m 6000 1
+j d1__86
+l d0_is1__86
+m 6000 0
+j dec_done__86
+l d1__86
+j 6001 d1_is1__86
+m 6001 1
+j d2__86
+l d1_is1__86
+m 6001 0
+j dec_done__86
+l d2__86
+j 6002 d2_is1__86
+m 6002 1
+j d3__86
+l d2_is1__86
+m 6002 0
+j dec_done__86
+l d3__86
+j 6003 d3_is1__86
+m 6003 1
+j d4__86
+l d3_is1__86
+m 6003 0
+j dec_done__86
+l d4__86
+j 6004 d4_is1__86
+m 6004 1
+j d5__86
+l d4_is1__86
+m 6004 0
+j dec_done__86
+l d5__86
+j 6005 d5_is1__86
+m 6005 1
+j d6__86
+l d5_is1__86
+m 6005 0
+j dec_done__86
+l d6__86
+j 6006 d6_is1__86
+m 6006 1
+j d7__86
+l d6_is1__86
+m 6006 0
+j dec_done__86
+l d7__86
+j 6007 d7_is1__86
+m 6007 1
+j d8__86
+l d7_is1__86
+m 6007 0
+j dec_done__86
+l d8__86
+j 6008 d8_is1__86
+m 6008 1
+j d9__86
+l d8_is1__86
+m 6008 0
+j dec_done__86
+l d9__86
+j 6009 d9_is1__86
+m 6009 1
+j d10__86
+l d9_is1__86
+m 6009 0
+j dec_done__86
+l d10__86
+j 6010 d10_is1__86
+m 6010 1
+j d11__86
+l d10_is1__86
+m 6010 0
+j dec_done__86
+l d11__86
+j 6011 d11_is1__86
+m 6011 1
+j d12__86
+l d11_is1__86
+m 6011 0
+j dec_done__86
+l d12__86
+j 6012 d12_is1__86
+m 6012 1
+j dec_done__86
+l d12_is1__86
+m 6012 0
+l dec_done__86
+m 6206 @6000
+j 6000 d0_is1__87
+m 6000 1
+j d1__87
+l d0_is1__87
+m 6000 0
+j dec_done__87
+l d1__87
+j 6001 d1_is1__87
+m 6001 1
+j d2__87
+l d1_is1__87
+m 6001 0
+j dec_done__87
+l d2__87
+j 6002 d2_is1__87
+m 6002 1
+j d3__87
+l d2_is1__87
+m 6002 0
+j dec_done__87
+l d3__87
+j 6003 d3_is1__87
+m 6003 1
+j d4__87
+l d3_is1__87
+m 6003 0
+j dec_done__87
+l d4__87
+j 6004 d4_is1__87
+m 6004 1
+j d5__87
+l d4_is1__87
+m 6004 0
+j dec_done__87
+l d5__87
+j 6005 d5_is1__87
+m 6005 1
+j d6__87
+l d5_is1__87
+m 6005 0
+j dec_done__87
+l d6__87
+j 6006 d6_is1__87
+m 6006 1
+j d7__87
+l d6_is1__87
+m 6006 0
+j dec_done__87
+l d7__87
+j 6007 d7_is1__87
+m 6007 1
+j d8__87
+l d7_is1__87
+m 6007 0
+j dec_done__87
+l d8__87
+j 6008 d8_is1__87
+m 6008 1
+j d9__87
+l d8_is1__87
+m 6008 0
+j dec_done__87
+l d9__87
+j 6009 d9_is1__87
+m 6009 1
+j d10__87
+l d9_is1__87
+m 6009 0
+j dec_done__87
+l d10__87
+j 6010 d10_is1__87
+m 6010 1
+j d11__87
+l d10_is1__87
+m 6010 0
+j dec_done__87
+l d11__87
+j 6011 d11_is1__87
+m 6011 1
+j d12__87
+l d11_is1__87
+m 6011 0
+j dec_done__87
+l d12__87
+j 6012 d12_is1__87
+m 6012 1
+j dec_done__87
+l d12_is1__87
+m 6012 0
+l dec_done__87
+m 6207 @6000
+j 6000 d0_is1__88
+m 6000 1
+j d1__88
+l d0_is1__88
+m 6000 0
+j dec_done__88
+l d1__88
+j 6001 d1_is1__88
+m 6001 1
+j d2__88
+l d1_is1__88
+m 6001 0
+j dec_done__88
+l d2__88
+j 6002 d2_is1__88
+m 6002 1
+j d3__88
+l d2_is1__88
+m 6002 0
+j dec_done__88
+l d3__88
+j 6003 d3_is1__88
+m 6003 1
+j d4__88
+l d3_is1__88
+m 6003 0
+j dec_done__88
+l d4__88
+j 6004 d4_is1__88
+m 6004 1
+j d5__88
+l d4_is1__88
+m 6004 0
+j dec_done__88
+l d5__88
+j 6005 d5_is1__88
+m 6005 1
+j d6__88
+l d5_is1__88
+m 6005 0
+j dec_done__88
+l d6__88
+j 6006 d6_is1__88
+m 6006 1
+j d7__88
+l d6_is1__88
+m 6006 0
+j dec_done__88
+l d7__88
+j 6007 d7_is1__88
+m 6007 1
+j d8__88
+l d7_is1__88
+m 6007 0
+j dec_done__88
+l d8__88
+j 6008 d8_is1__88
+m 6008 1
+j d9__88
+l d8_is1__88
+m 6008 0
+j dec_done__88
+l d9__88
+j 6009 d9_is1__88
+m 6009 1
+j d10__88
+l d9_is1__88
+m 6009 0
+j dec_done__88
+l d10__88
+j 6010 d10_is1__88
+m 6010 1
+j d11__88
+l d10_is1__88
+m 6010 0
+j dec_done__88
+l d11__88
+j 6011 d11_is1__88
+m 6011 1
+j d12__88
+l d11_is1__88
+m 6011 0
+j dec_done__88
+l d12__88
+j 6012 d12_is1__88
+m 6012 1
+j dec_done__88
+l d12_is1__88
+m 6012 0
+l dec_done__88
+m 6208 @6000
+j 6000 d0_is1__89
+m 6000 1
+j d1__89
+l d0_is1__89
+m 6000 0
+j dec_done__89
+l d1__89
+j 6001 d1_is1__89
+m 6001 1
+j d2__89
+l d1_is1__89
+m 6001 0
+j dec_done__89
+l d2__89
+j 6002 d2_is1__89
+m 6002 1
+j d3__89
+l d2_is1__89
+m 6002 0
+j dec_done__89
+l d3__89
+j 6003 d3_is1__89
+m 6003 1
+j d4__89
+l d3_is1__89
+m 6003 0
+j dec_done__89
+l d4__89
+j 6004 d4_is1__89
+m 6004 1
+j d5__89
+l d4_is1__89
+m 6004 0
+j dec_done__89
+l d5__89
+j 6005 d5_is1__89
+m 6005 1
+j d6__89
+l d5_is1__89
+m 6005 0
+j dec_done__89
+l d6__89
+j 6006 d6_is1__89
+m 6006 1
+j d7__89
+l d6_is1__89
+m 6006 0
+j dec_done__89
+l d7__89
+j 6007 d7_is1__89
+m 6007 1
+j d8__89
+l d7_is1__89
+m 6007 0
+j dec_done__89
+l d8__89
+j 6008 d8_is1__89
+m 6008 1
+j d9__89
+l d8_is1__89
+m 6008 0
+j dec_done__89
+l d9__89
+j 6009 d9_is1__89
+m 6009 1
+j d10__89
+l d9_is1__89
+m 6009 0
+j dec_done__89
+l d10__89
+j 6010 d10_is1__89
+m 6010 1
+j d11__89
+l d10_is1__89
+m 6010 0
+j dec_done__89
+l d11__89
+j 6011 d11_is1__89
+m 6011 1
+j d12__89
+l d11_is1__89
+m 6011 0
+j dec_done__89
+l d12__89
+j 6012 d12_is1__89
+m 6012 1
+j dec_done__89
+l d12_is1__89
+m 6012 0
+l dec_done__89
+m 6209 @6000
+j 6000 d0_is1__90
+m 6000 1
+j d1__90
+l d0_is1__90
+m 6000 0
+j dec_done__90
+l d1__90
+j 6001 d1_is1__90
+m 6001 1
+j d2__90
+l d1_is1__90
+m 6001 0
+j dec_done__90
+l d2__90
+j 6002 d2_is1__90
+m 6002 1
+j d3__90
+l d2_is1__90
+m 6002 0
+j dec_done__90
+l d3__90
+j 6003 d3_is1__90
+m 6003 1
+j d4__90
+l d3_is1__90
+m 6003 0
+j dec_done__90
+l d4__90
+j 6004 d4_is1__90
+m 6004 1
+j d5__90
+l d4_is1__90
+m 6004 0
+j dec_done__90
+l d5__90
+j 6005 d5_is1__90
+m 6005 1
+j d6__90
+l d5_is1__90
+m 6005 0
+j dec_done__90
+l d6__90
+j 6006 d6_is1__90
+m 6006 1
+j d7__90
+l d6_is1__90
+m 6006 0
+j dec_done__90
+l d7__90
+j 6007 d7_is1__90
+m 6007 1
+j d8__90
+l d7_is1__90
+m 6007 0
+j dec_done__90
+l d8__90
+j 6008 d8_is1__90
+m 6008 1
+j d9__90
+l d8_is1__90
+m 6008 0
+j dec_done__90
+l d9__90
+j 6009 d9_is1__90
+m 6009 1
+j d10__90
+l d9_is1__90
+m 6009 0
+j dec_done__90
+l d10__90
+j 6010 d10_is1__90
+m 6010 1
+j d11__90
+l d10_is1__90
+m 6010 0
+j dec_done__90
+l d11__90
+j 6011 d11_is1__90
+m 6011 1
+j d12__90
+l d11_is1__90
+m 6011 0
+j dec_done__90
+l d12__90
+j 6012 d12_is1__90
+m 6012 1
+j dec_done__90
+l d12_is1__90
+m 6012 0
+l dec_done__90
+m 6210 @6000
+j 6000 d0_is1__91
+m 6000 1
+j d1__91
+l d0_is1__91
+m 6000 0
+j dec_done__91
+l d1__91
+j 6001 d1_is1__91
+m 6001 1
+j d2__91
+l d1_is1__91
+m 6001 0
+j dec_done__91
+l d2__91
+j 6002 d2_is1__91
+m 6002 1
+j d3__91
+l d2_is1__91
+m 6002 0
+j dec_done__91
+l d3__91
+j 6003 d3_is1__91
+m 6003 1
+j d4__91
+l d3_is1__91
+m 6003 0
+j dec_done__91
+l d4__91
+j 6004 d4_is1__91
+m 6004 1
+j d5__91
+l d4_is1__91
+m 6004 0
+j dec_done__91
+l d5__91
+j 6005 d5_is1__91
+m 6005 1
+j d6__91
+l d5_is1__91
+m 6005 0
+j dec_done__91
+l d6__91
+j 6006 d6_is1__91
+m 6006 1
+j d7__91
+l d6_is1__91
+m 6006 0
+j dec_done__91
+l d7__91
+j 6007 d7_is1__91
+m 6007 1
+j d8__91
+l d7_is1__91
+m 6007 0
+j dec_done__91
+l d8__91
+j 6008 d8_is1__91
+m 6008 1
+j d9__91
+l d8_is1__91
+m 6008 0
+j dec_done__91
+l d9__91
+j 6009 d9_is1__91
+m 6009 1
+j d10__91
+l d9_is1__91
+m 6009 0
+j dec_done__91
+l d10__91
+j 6010 d10_is1__91
+m 6010 1
+j d11__91
+l d10_is1__91
+m 6010 0
+j dec_done__91
+l d11__91
+j 6011 d11_is1__91
+m 6011 1
+j d12__91
+l d11_is1__91
+m 6011 0
+j dec_done__91
+l d12__91
+j 6012 d12_is1__91
+m 6012 1
+j dec_done__91
+l d12_is1__91
+m 6012 0
+l dec_done__91
+m 6211 @6000
+j 6000 d0_is1__92
+m 6000 1
+j d1__92
+l d0_is1__92
+m 6000 0
+j dec_done__92
+l d1__92
+j 6001 d1_is1__92
+m 6001 1
+j d2__92
+l d1_is1__92
+m 6001 0
+j dec_done__92
+l d2__92
+j 6002 d2_is1__92
+m 6002 1
+j d3__92
+l d2_is1__92
+m 6002 0
+j dec_done__92
+l d3__92
+j 6003 d3_is1__92
+m 6003 1
+j d4__92
+l d3_is1__92
+m 6003 0
+j dec_done__92
+l d4__92
+j 6004 d4_is1__92
+m 6004 1
+j d5__92
+l d4_is1__92
+m 6004 0
+j dec_done__92
+l d5__92
+j 6005 d5_is1__92
+m 6005 1
+j d6__92
+l d5_is1__92
+m 6005 0
+j dec_done__92
+l d6__92
+j 6006 d6_is1__92
+m 6006 1
+j d7__92
+l d6_is1__92
+m 6006 0
+j dec_done__92
+l d7__92
+j 6007 d7_is1__92
+m 6007 1
+j d8__92
+l d7_is1__92
+m 6007 0
+j dec_done__92
+l d8__92
+j 6008 d8_is1__92
+m 6008 1
+j d9__92
+l d8_is1__92
+m 6008 0
+j dec_done__92
+l d9__92
+j 6009 d9_is1__92
+m 6009 1
+j d10__92
+l d9_is1__92
+m 6009 0
+j dec_done__92
+l d10__92
+j 6010 d10_is1__92
+m 6010 1
+j d11__92
+l d10_is1__92
+m 6010 0
+j dec_done__92
+l d11__92
+j 6011 d11_is1__92
+m 6011 1
+j d12__92
+l d11_is1__92
+m 6011 0
+j dec_done__92
+l d12__92
+j 6012 d12_is1__92
+m 6012 1
+j dec_done__92
+l d12_is1__92
+m 6012 0
+l dec_done__92
+m 6212 @6000
+j @6200
