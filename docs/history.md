@@ -40,6 +40,8 @@ into shared subgraphs — the inverse of inlining, implementing strategy 2 from
 - Detection is O(n²) (window enumeration); large programs (e.g. MD5's ~376k
   instructions) would need a suffix-array for exact-repeat discovery.
 - `RET_BASE` (default 8000) must not collide with the program's own data.
+- See `reuse_graphs_paths.md` for the full measured-results table and the cost
+  model (when reuse actually shrinks a program).
 
 ---
 

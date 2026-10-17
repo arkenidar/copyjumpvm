@@ -74,13 +74,48 @@ rewrite (inlining → subgraph reuse) on a `.prg.txt` program:
 `vm_programs/verify_outliner.py` runs the original vs the rewritten program
 under `CopyJumpMachine.py` and asserts identical output bits.
 
-Results on the repo's own programs:
+### Measured results (v1, exact-duplicate fragments)
 
-- `program_integer_sum.prg.txt`: the 29-instruction full adder (inlined 7×) is
-  extracted once → **233 → 94 instructions (−139)**, verified bit-identical on
-  several inputs.
-- `program_inline_demo.prg.txt` (synthetic): an 8-instruction body inlined 4× →
-  **44 → 36 instructions (−8)**, verified bit-identical.
+| Program | Before | After | Saved | % | Found |
+|---|---|---|---|---|---|
+| `program_integer_sum` | 233 | **94** | −139 | ~60% | 29-instr full adder ×7 (verified bit-identical) |
+| `program_integer_sum_5` | 264 | 254 | −10 | ~4% | 8-instr block ×6 |
+| `program_inline_demo` (synthetic) | 44 | 36 | −8 | ~18% | 8-instr body ×4 (verified) |
+| `program_xorshift32_step` | 526 | 526 | 0 | 0% | — (parameterized, not exact dupes) |
+| `program_xorshift32_loop` | 584 | 584 | 0 | 0% | — |
+| `program_countdown` / `integer_counter` / gates | ≤65 | same | 0 | 0% | — (little/no duplication) |
+| `program_md5` | ~261k | ~261k | ~0 | 0% | parameterized; too large for O(n²) anyway |
+
+### When it actually shrinks the program
+
+Two gates decide whether reuse pays off.
+
+**1. Exactness (the v1 limit).** `outliner.js` only matches *byte-identical*
+fragments — same operand addresses, labels renamed. The most-repeated patterns
+in `xorshift32`/`md5` (the 7-instruction `xor`/`and`/`or` gates, the full
+adder) are the *same shape* but with *different operand addresses*, so v1 finds
+nothing. The `integer_sum` full adder wins because all 7 copies use the *same*
+addresses (2, 3, 4, `in`, `out`). Parameterized clones need v2 (argument
+passing).
+
+**2. The cost model.** Net saving is
+
+`(N−1)·S − [ N·(operands·13 + ⌈log₂N⌉ + 1) + (N−1) ]`
+
+where `S` = body size, `N` = call sites, and each address operand costs ~13
+bits (`⌈log₂ 8192⌉`) to pass through argument registers:
+
+- **full adder** (`S`=29, 0 args) → wins big (−60%);
+- **`bit_xor`** (`S`=7, 3 address args) → *never* worth it — passing 3 addresses
+  (~39 bits) already exceeds the 7-instruction body;
+- **`add32`** (`S`≈1100, 3 args) → always worth it (~49 instr/call vs 1100).
+
+**3. Scalability caveat.** A *flat* return register costs `⌈log₂N⌉` bits per
+call, so it does **not** scale to huge `N`: md5's ~57k gate instances would
+*blow up* rather than shrink if shared naively. Big wins there need (a)
+parameterized bodies (v2) *and* (b) **nested / hierarchical returns**
+(subroutines calling subroutines) — which is exactly why real CPUs grew a call
+stack.
 
 ## Related
 
