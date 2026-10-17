@@ -51,8 +51,9 @@ python3 vm_programs/CopyJumpMachine.py vm_programs/program_xorshift32_loop.prg.t
 ```
 
 See `docs/history.md` for the build logs, `vm_programs/md5.md` for the MD5
-design notes, and `docs/research_roadmap.md` for the program-optimization
-research directions.
+design notes, `docs/research_roadmap.md` for the program-optimization
+research directions, and `docs/design_evolution.md` for the reasoned
+progression of all of it.
 
 ---
 

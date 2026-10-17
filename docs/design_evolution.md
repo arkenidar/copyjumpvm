@@ -1,0 +1,91 @@
+# Design evolution — how this project reasons its way forward
+
+> **This is a living log.** Each new step of *reasoning* is appended here
+> incrementally (not rewritten), so the document mirrors the evolution and
+> stays open for others to read and participate. The code lives in
+> `vm_programs/`; this file records *why* it looks the way it does.
+
+---
+
+## 1. Origin — the Hutter Prize thesis
+
+We did not start from "a copy+jump virtual machine." We started, ~20 years ago,
+from the **Hutter Prize**: *compression is a measurable proxy for intelligence*
+— a self-contained program that regenerates a file *is a model* of that file.
+
+**Key insight:** *compressed data = a program; decompression = execution;
+better compression = a better model.* This makes "find the smallest program
+that outputs D" the central question. → `compression_intelligence.md`
+
+## 2. The minimal machine — RESM / BBJJ
+
+To study that question on a tractable substrate, we minimized the machine
+itself: one instruction, *copy a bit, then jump to one of two places*.
+
+**Key insight:** the machine has **no ALU** and **no call stack** — nothing
+but copy + branch. Both the *data plane* (arithmetic/logic) and the *control
+plane* (subroutine reuse) are **software-defined**. → `resm_bbjj.md`
+
+## 3. Code reuse as graphs — outliner, then generator-aware
+
+Reuse without a stack: shared subgraphs + a return register + dispatch. We
+built `outliner.js` (post-hoc outlining of inlined code), measured it, and
+then realized something better.
+
+**Key insight:** a **generator knows its patterns by name**, so it should emit
+shared subroutines *from the start* instead of inlining and re-discovering
+them. `md5_gen.py` became **reuse-aware** (shared `add32` subroutines):
+`program_md5.prg.txt` dropped **260,996 → 65,637 instructions (~4×)** with no
+post-hoc pass. → `reuse_graphs_paths.md`
+
+## 4. Research framing — optimize copyjump *in general*
+
+Decoupled from any single benchmark, the question becomes a *science*:
+the space of programs, the rewrite rules, the complexity of "smallest
+program", synthesis, and the **ISA-richness ↔ program-size** tradeoff
+(the Kolmogorov invariance constant). → `research_roadmap.md`
+
+## 5. The next primitive — peek / poke (indirect addressing)
+
+The 64 MD5 rounds are *unrolled* because `K[i]`, `M[g]`, `s[i]` depend on the
+round index `i` at runtime — and **without indirection you can't compute an
+address**. Adding **peek** (read via an address held in a register) / **poke**
+(write via a register) would let us write *one* round body + a counter + data
+tables, and loop 64 times.
+
+**Key insight (cost model):** indirection makes parameterized subroutines
+*possible* but only *profitable* for large bodies or loops — it doesn't make a
+7-instruction `bit_xor` worth sharing (passing 3 addresses ≈ 39 bits already
+exceeds the body). The win is the **loop**, not the gates.
+
+## 6. Address-as-value = pointers — the whole tower
+
+"Address as value" **is a pointer** (peek/poke = pointer dereference). That
+one primitive unlocks the entire tower of data structures, each rung built in
+*software* on the previous one:
+
+```
+peek/poke  (address-as-value)     = pointer dereference
+  + pointer arithmetic (base + i) = arrays       (static AND dynamic indexing)
+  + an allocator (a program)      = heap         → dynamic arrays, objects
+  + a stack pointer (a register)  = stack        → push/pop
+  + stack of return addresses     = CALL STACK   → recursion  ← the "enabling"
+  + node = (data, *next)          = linked list  → trees → hash maps → …
+```
+
+**Key insight — the flip:** *without* peek/poke, copyjump is a **fixed-address
+machine** (FSM over a fixed bit-array — the "well-defined subset" with
+decidable halting). *With* peek/poke it becomes a **pointer machine**, where
+recursion and dynamic data structures become possible (and halting analysis
+gets harder). So the earlier "no call stack → no recursion" and this "pointers
+→ call stack → recursion" are two halves of one story: **a single primitive
+flips the machine from *fixed* to *dynamic*.**
+
+You don't add `malloc`, a stack, or a call-stack *to the ISA* — you add
+indirection and build the rest in software. A hash map is not an instruction;
+it's peek/poke + an allocator + a linked list.
+
+---
+
+*(next steps, to be appended as they are reasoned through: the peek/poke VM
+experiment, then the data-structure tower demonstrated on this substrate.)*

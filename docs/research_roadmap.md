@@ -1,5 +1,7 @@
 # Research roadmap — optimizing copy-jump systems, in general
 
+> For the *reasoned progression* that leads here, see `design_evolution.md`.
+
 This is the program-optimization view of RESM/BBJJ, decoupled from any single
 benchmark (the Hutter Prize is one instance; this is the *science* behind it).
 

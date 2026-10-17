@@ -2,7 +2,7 @@
 
 > Origin & motivation: see `compression_intelligence.md` (the Hutter-Prize
 > thesis this build log descends from). Research directions: see
-> `research_roadmap.md`.
+> `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
 ## 2026-10-17 — md5_gen.py: reuse-aware codegen (shared add32 subroutines)
 
