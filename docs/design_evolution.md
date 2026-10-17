@@ -118,3 +118,28 @@ expressible, so arrays / heap / stacks / call-stacks / recursion become
 
 *(next: the round loop — use peek to read `K[i]`/`M[g]`/`s[i]` and collapse the
 64× unrolled rounds into one loop; then demonstrate the data-structure tower.)*
+
+## 8. Deeper reuse + why the round *loop* is not worth it
+
+We shared the remaining fixed-address bodies — the **register rotation**
+(`A=D, D=C, C=B, B=BNEW`, 128 instr ×64 → one body) and the **rotate** (16
+shift amounts → 16 bodies). `program_md5.prg.txt`: 36,865 → **28,272
+instructions** (~9× smaller than the original 260,996).
+
+Then we tested the loop idea and found a **negative result worth recording**:
+
+**In a no-ALU machine, immediate constants beat data tables.** The 64 unrolled
+rounds are already near-optimal: the per-round cost that remains is `K[i]`
+loaded as *immediates* (32 `m` per round) — the cheapest possible encoding. A
+loop would read `K[i]` from a table via peek, which needs (a) initializing the
+table (2048 `m`), (b) address arithmetic or base+offset addressing to index it,
+and (c) a counter. That costs *more* than the immediates it replaces — because
+data here is also loaded via instructions, and reading it back costs extra
+peeks.
+
+So "collapse 64× into a loop" is a **non-optimization** for this substrate:
+code (immediates) and data (tables) cost the same to load, but immediates are
+consumed for free while tables are read back through peek.
+
+*(next: demonstrate the data-structure tower — a software stack / call-stack /
+linked list — now that peek/poke exist.)*

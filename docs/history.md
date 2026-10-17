@@ -4,6 +4,19 @@
 > thesis this build log descends from). Research directions: see
 > `research_roadmap.md`. Reasoned evolution: see `design_evolution.md`.
 
+## 2026-10-17 — md5_gen.py: share register rotation + rotate; the round-loop finding
+
+Shared the remaining fixed-address bodies (register rotation `A=D,D=C,C=B,B=BNEW`
+×64 → one body; left-rotate → 16 bodies by shift amount). `program_md5.prg.txt`:
+**36,865 → 28,272 instructions** (~9× smaller than the original 260,996).
+
+Also recorded a **negative result**: the "collapse the 64 rounds into a loop"
+step is a non-optimization here — in a no-ALU machine, immediate constants beat
+data tables (a loop needs table init + peek + address arithmetic, which costs
+more than the immediates it replaces). See `design_evolution.md` §8.
+
+---
+
 ## 2026-10-17 — peek/poke: indirect addressing as an addressing mode
 
 Extended `CopyJumpMachine.py` with indirect addressing: an operand prefixed
