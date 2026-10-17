@@ -127,3 +127,4 @@ stack.
 
 - `resm_bbjj.md` — the machine model (single instruction, no ALU, Turing map).
 - `vm_programs/md5.md` — a concrete compiled algorithm (inlined reuse).
+- `compression_intelligence.md` — the Hutter-Prize origin (decompressor-generator).

@@ -5,6 +5,14 @@ The "vm_programs" directory contains EXAMPLE programs in source format, a compil
 
 you can enjoy exploring this work of mine. PS: maybe I have "accidentally" found a way to redefine the Alan Turing's "halting problem". wouldn't it be cool?
 
+## Motivation — compression as intelligence
+
+This project began (about twenty years ago) from the **Hutter Prize** thesis
+that *compression is a measurable proxy for intelligence*: a self-contained
+program that regenerates a file is a model of that file. See
+`docs/compression_intelligence.md` for the origin and how this repo's
+decompressor-generator direction descends from it.
+
 ## Machine model — RESM / BBJJ ("copy + jump")
 
 copyjumpvm is an implementation of a minimal, Turing-complete machine called

@@ -1,5 +1,8 @@
 # History
 
+> Origin & motivation: see `compression_intelligence.md` (the Hutter-Prize
+> thesis this build log descends from).
+
 ## 2026-10-17 — outliner.js: inlining → subgraph reuse (graph rewrite)
 
 A Node rewriter (`vm_programs/outliner.js`) that turns inlined copy+jump code
